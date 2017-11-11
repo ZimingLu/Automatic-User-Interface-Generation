@@ -1,0 +1,2228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Component>
+    <Custom></Custom>
+    <Hidden>false</Hidden>
+    <ID>1</ID>
+    <LongDescription>
+        <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+    </LongDescription>
+    <Name>pas_reg</Name>
+    <ShortDescription></ShortDescription>
+    <ConstDefBlock>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>2</ID>
+        <LongDescription>
+            <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+        </LongDescription>
+        <Name>Constant_Definition_Block</Name>
+        <ShortDescription></ShortDescription>
+    </ConstDefBlock>
+    <EssenceVersion>20300</EssenceVersion>
+    <GenericDeclBlock>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>3</ID>
+        <LongDescription>
+            <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+        </LongDescription>
+        <Name>Generic_Declaration_Block</Name>
+        <ShortDescription></ShortDescription>
+    </GenericDeclBlock>
+    <ParamDeclBlock>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>4</ID>
+        <LongDescription>
+            <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+        </LongDescription>
+        <Name>Parameter_Declaration_Block</Name>
+        <ShortDescription></ShortDescription>
+        <ParamDecl xsi:type="IntegerDecl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom></Custom>
+            <Hidden>false</Hidden>
+            <ID>5</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>apb_if_base</Name>
+            <ShortDescription></ShortDescription>
+            <DefaultValue>0</DefaultValue>
+        </ParamDecl>
+        <ParamDecl xsi:type="IntegerDecl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom></Custom>
+            <Hidden>false</Hidden>
+            <ID>6</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p style="margin-top: 0"&gt;
+      
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>apb_if_range</Name>
+            <ShortDescription></ShortDescription>
+            <DefaultValue>0x1000</DefaultValue>
+        </ParamDecl>
+    </ParamDeclBlock>
+    <VLNV>
+        <Vendor>ifx</Vendor>
+        <Library>pmm</Library>
+        <Name>pas_reg</Name>
+        <Version>100</Version>
+    </VLNV>
+    <Interface>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>7</ID>
+        <LongDescription>
+            <html></html>
+        </LongDescription>
+        <Name>apb_if</Name>
+        <ShortDescription></ShortDescription>
+        <BaseAddress>$apb_if_base</BaseAddress>
+        <ExtVLNV>
+            <Vendor>ifx</Vendor>
+            <Library>arm</Library>
+            <Name>apb_if</Name>
+            <Version>100</Version>
+        </ExtVLNV>
+        <Range>0x26</Range>
+        <Role>Slave</Role>
+        <AddressBlock>
+            <XRefRegMemSet>
+                <XRefTargetID>8</XRefTargetID>
+                <Offset>0</Offset>
+            </XRefRegMemSet>
+        </AddressBlock>
+    </Interface>
+    <TopSpinClkStyle>asynchronous</TopSpinClkStyle>
+    <RegMemSet>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>8</ID>
+        <LongDescription>
+            <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+        </LongDescription>
+        <Name>pas_reg</Name>
+        <ShortDescription>pas_reg</ShortDescription>
+        <AddressUnit>8</AddressUnit>
+        <DataUnit>8</DataUnit>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_ld0_per";callback_get="get_ld0_per"</Custom>
+            <Hidden>false</Hidden>
+            <ID>9</ID>
+            <LongDescription>
+                <html>PWM period for LED 0</html>
+            </LongDescription>
+            <Name>ld0_per</Name>
+            <ShortDescription>PWM period for LED 0</ShortDescription>
+            <Offset>0x0</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>10</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>11</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>ld0_per</Name>
+                <ShortDescription>PWM period for LED 0</ShortDescription>
+                <Offset>0</Offset>
+                <Width>12</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_duty_cycle_ld0_blue";callback_get="get_duty_cycle_ld0_blue"</Custom>
+            <Hidden>false</Hidden>
+            <ID>12</ID>
+            <LongDescription>
+                <html>PWM duty cycle for LED 0 blue part</html>
+            </LongDescription>
+            <Name>duty_cycle_ld0_blue</Name>
+            <ShortDescription>PWM duty cycle for LED 0 blue part</ShortDescription>
+            <Offset>0x2</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>13</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>14</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>duty_cycle_ld0_blue</Name>
+                <ShortDescription>PWM duty cycle for LED 0 blue part</ShortDescription>
+                <Offset>0</Offset>
+                <Width>12</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_duty_cycle_ld0_green";callback_get="get_duty_cycle_ld0_green"</Custom>
+            <Hidden>false</Hidden>
+            <ID>15</ID>
+            <LongDescription>
+                <html>PWM duty cycle for LED 0 green part</html>
+            </LongDescription>
+            <Name>duty_cycle_ld0_green</Name>
+            <ShortDescription>PWM duty cycle for LED 0 green part</ShortDescription>
+            <Offset>0x4</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>16</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>17</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>duty_cycle_ld0_green</Name>
+                <ShortDescription>PWM duty cycle for LED 0 green part</ShortDescription>
+                <Offset>0</Offset>
+                <Width>12</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_ld4_on_off";callback_get="read_ld4_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>18</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    switch LED 4 on/off
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>ld4_ctrl</Name>
+            <ShortDescription>switch LED 4 on/off</ShortDescription>
+            <Offset>0x6</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>19</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>20</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>ld4_ctrl</Name>
+                <ShortDescription>switch LED 4 on/off</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_ld5_on_off";callback_get="read_ld5_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>21</ID>
+            <LongDescription>
+                <html>switch LED 5 on/off</html>
+            </LongDescription>
+            <Name>ld5_ctrl</Name>
+            <ShortDescription>switch LED 5 on/off</ShortDescription>
+            <Offset>0x7</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>22</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>23</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>ld5_ctrl</Name>
+                <ShortDescription>switch LED 5 on/off</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_ld6_on_off";callback_get="read_ld6_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>24</ID>
+            <LongDescription>
+                <html>switch LED 6 on/off</html>
+            </LongDescription>
+            <Name>ld6_ctrl</Name>
+            <ShortDescription>switch LED 6 on/off</ShortDescription>
+            <Offset>0x8</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>25</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>26</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>ld6_ctrl</Name>
+                <ShortDescription>switch LED 6 on/off</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_ld7_on_off";callback_get="read_ld7_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>27</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    switch LED 7 on/off
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>ld7_ctrl</Name>
+            <ShortDescription>switch LED 7 on/off</ShortDescription>
+            <Offset>0x9</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>28</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>29</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>ld7_ctrl</Name>
+                <ShortDescription>switch LED 7 on/off</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_sensor_en";callback_get="get_sensor_en"</Custom>
+            <Hidden>false</Hidden>
+            <ID>30</ID>
+            <LongDescription>
+                <html>enables sensor</html>
+            </LongDescription>
+            <Name>sensor_en</Name>
+            <ShortDescription>enables sensor</ShortDescription>
+            <Offset>0xa</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>31</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>32</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>sensor_en</Name>
+                <ShortDescription>enables sensor</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_sensor_meas";callback_get="get_sensor_meas"</Custom>
+            <Hidden>false</Hidden>
+            <ID>33</ID>
+            <LongDescription>
+                <html>start measurement  with 1, has to be cleared after measurement</html>
+            </LongDescription>
+            <Name>sensor_meas</Name>
+            <ShortDescription>start measurement  with 1, has to be cleared after measurement</ShortDescription>
+            <Offset>0xb</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>34</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>35</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>sensor_meas</Name>
+                <ShortDescription>start measurement  with 1, has to be cleared after measurement</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_heater_voltage";callback_get="get_heater_voltage"</Custom>
+            <Hidden>false</Hidden>
+            <ID>36</ID>
+            <LongDescription>
+                <html>heater voltage regulation target</html>
+            </LongDescription>
+            <Name>heater_voltage</Name>
+            <ShortDescription>heater voltage regulation target</ShortDescription>
+            <Offset>0xc</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>37</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x84d0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>38</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>heater_voltage</Name>
+                <ShortDescription>heater voltage regulation target</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_rheat_ref";callback_get="get_rheat_ref"</Custom>
+            <Hidden>false</Hidden>
+            <ID>39</ID>
+            <LongDescription>
+                <html>heater resistor reference value</html>
+            </LongDescription>
+            <Name>rheat_ref</Name>
+            <ShortDescription>heater resistor reference value</ShortDescription>
+            <Offset>0xe</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>40</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x4a38</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>41</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>rheat_ref</Name>
+                <ShortDescription>heater resistor reference value</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_rheat_alpha";callback_get="get_rheat_alpha"</Custom>
+            <Hidden>false</Hidden>
+            <ID>42</ID>
+            <LongDescription>
+                <html>heater resistance temperature coefficient</html>
+            </LongDescription>
+            <Name>rheat_alpha</Name>
+            <ShortDescription>heater resistance temperature coefficient</ShortDescription>
+            <Offset>0x10</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>43</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x4b0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>44</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>rheat_alpha</Name>
+                <ShortDescription>heater resistance temperature coefficient</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_adc_input_gain";callback_get="get_adc_input_gain"</Custom>
+            <Hidden>false</Hidden>
+            <ID>45</ID>
+            <LongDescription>
+                <html>gas sample delta sigma ADC input gain setting</html>
+            </LongDescription>
+            <Name>adc_input_gain</Name>
+            <ShortDescription>gas sample delta sigma ADC input gain setting</ShortDescription>
+            <Offset>0x12</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>46</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x6</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>47</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>adc_input_gain</Name>
+                <ShortDescription>gas sample delta sigma ADC input gain setting</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_DsmClkDiv";callback_get="get_DsmClkDiv"</Custom>
+            <Hidden>false</Hidden>
+            <ID>48</ID>
+            <LongDescription>
+                <html>gas sample rate setting</html>
+            </LongDescription>
+            <Name>sample_rate</Name>
+            <ShortDescription>gas sample rate setting</ShortDescription>
+            <Offset>0x13</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>49</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x32</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>50</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>sample_rate</Name>
+                <ShortDescription>gas sample rate setting</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_on_cycles";callback_get="get_on_cycles"</Custom>
+            <Hidden>false</Hidden>
+            <ID>51</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    heater on time in gas samples
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>on_cycles</Name>
+            <ShortDescription>heater on time in gas samples</ShortDescription>
+            <Offset>0x14</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>52</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x80</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>53</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p style="margin-top: 0"&gt;
+      
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>on_cycles</Name>
+                <ShortDescription>heater on time in gas samples</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_off_cycles";callback_get="get_off_cycles"</Custom>
+            <Hidden>false</Hidden>
+            <ID>54</ID>
+            <LongDescription>
+                <html>heater off time in gas samples</html>
+            </LongDescription>
+            <Name>off_cycles</Name>
+            <ShortDescription>heater off time in gas samples</ShortDescription>
+            <Offset>0x15</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>55</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x80</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>56</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>off_cycles</Name>
+                <ShortDescription>heater off time in gas samples</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_set_hh_temp";callback_get="get_set_hh_temp"</Custom>
+            <Hidden>false</Hidden>
+            <ID>57</ID>
+            <LongDescription>
+                <html>target for heater temperature hot phase</html>
+            </LongDescription>
+            <Name>set_hh_temp</Name>
+            <ShortDescription>target for heater temperature hot phase</ShortDescription>
+            <Offset>0x16</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>58</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x1770</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>59</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>set_hh_temp</Name>
+                <ShortDescription>target for heater temperature hot phase</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_wait_cycles";callback_get="get_wait_cycles"</Custom>
+            <Hidden>false</Hidden>
+            <ID>60</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    &lt;title&gt;measurement wait cycle before sampling starts&lt;/title&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>wait_cycles</Name>
+            <ShortDescription>measurement wait cycle before sampling starts</ShortDescription>
+            <Offset>0x18</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>61</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>62</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>wait_cycles</Name>
+                <ShortDescription>measurement wait cycle before sampling starts</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_meas_cnt";callback_get="get_meas_cnt"</Custom>
+            <Hidden>false</Hidden>
+            <ID>63</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    measurement cycles
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>meas_cnt</Name>
+            <ShortDescription>measurement cycles</ShortDescription>
+            <Offset>0x1a</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>64</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x10</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>65</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_cnt</Name>
+                <ShortDescription>measurement cycles</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_led_ctrl";callback_get="get_led_ctrl"</Custom>
+            <Hidden>false</Hidden>
+            <ID>66</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    LED control on AFE board
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>led_ctrl</Name>
+            <ShortDescription>LED control on AFE board</ShortDescription>
+            <Offset>0x1c</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>67</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>68</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>led_ctrl</Name>
+                <ShortDescription>LED control on AFE board</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="get_meas_done"</Custom>
+            <Hidden>false</Hidden>
+            <ID>69</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    &lt;title&gt;flag for measurement done&lt;/title&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>meas_done</Name>
+            <ShortDescription>flag for measurement done</ShortDescription>
+            <Offset>0x1d</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>70</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>71</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p style="margin-top: 0"&gt;
+      
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>meas_done</Name>
+                <ShortDescription>flag for measurement done</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="get_meas_result"</Custom>
+            <Hidden>false</Hidden>
+            <ID>72</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    &lt;title&gt;fifo to read out measurement results&lt;/title&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>meas_result</Name>
+            <ShortDescription>fifo to read out measurement results</ShortDescription>
+            <Offset>0x1e</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>73</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>74</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_result</Name>
+                <ShortDescription>fifo to read out measurement results</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_smpl_first";callback_get="get_smpl_first"</Custom>
+            <Hidden>false</Hidden>
+            <ID>75</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>smpl_first</Name>
+            <ShortDescription>First sample for computation of ppm value</ShortDescription>
+            <Offset>0x20</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>76</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>83</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>smpl_first</Name>
+                <ShortDescription></ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_smpl_last";callback_get="get_smpl_last"</Custom>
+            <Hidden>false</Hidden>
+            <ID>77</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>smpl_last</Name>
+            <ShortDescription>Last sample for computation of ppm value</ShortDescription>
+            <Offset>0x21</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>78</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>84</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>smpl_last</Name>
+                <ShortDescription></ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_k_factor";callback_get="get_k_factor"</Custom>
+            <Hidden>false</Hidden>
+            <ID>79</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>k_factor</Name>
+            <ShortDescription>Proportionality factor for ppm calculation</ShortDescription>
+            <Offset>0x22</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>80</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>85</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>k_factor</Name>
+                <ShortDescription></ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="get_ppm"</Custom>
+            <Hidden>false</Hidden>
+            <ID>81</ID>
+            <LongDescription>
+                <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+            </LongDescription>
+            <Name>ppm</Name>
+            <ShortDescription>result of CO2 calculation in ppm</ShortDescription>
+            <Offset>0x24</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>82</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>86</ID>
+                <LongDescription>
+                    <html>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;
+      &lt;!--
+        .style9 { color: #ffff33; background-color: #ff00ff }
+        .style8 { color: #990099; background-color: #66ffcc }
+        .style7 { color: #0066cc; background-color: #ccffcc }
+        .style6 { color: #009900; background-color: #ffffcc }
+        .style11 { color: #000066; background-color: #ccffcc }
+        .style5 { color: #cc0033; background-color: #99ff99 }
+        .style10 { color: #99ff99; background-color: #00cccc }
+        .style4 { color: #cc0033; background-color: #ccffff }
+        .style3 { color: #0000dd; background-color: teal }
+        .style2 { color: #0000cc; background-color: aqua }
+        .style1 { color: blue; background-color: silver }
+        .style0 { color: #000099; background-color: #ffffcc }
+      --&gt;
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</html>
+                </LongDescription>
+                <Name>ppm</Name>
+                <ShortDescription></ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+    </RegMemSet>
+</Component>
