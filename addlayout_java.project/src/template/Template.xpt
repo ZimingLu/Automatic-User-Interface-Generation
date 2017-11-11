@@ -1,0 +1,326 @@
+«IMPORT model»
+
+«EXTENSION template::GeneratorExtensions»
+    	
+«DEFINE documentRoot FOR DocumentRoot»
+«FILE "Main.java"»
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.*;
+import javax.swing.border.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.HashMap;
+import java.io.*;
+
+public class Main {
+	private boolean flag = true;
+	private HashMap<String, Register> registerData = new data().dataGenerate();
+	private LinkedList<BitField> bitField;
+	private int registerValue;
+    public static void main(String[] args) {
+		new Main().Form();
+    }
+    //layout part
+    public void Form(){
+		«EXPAND containerTemplate FOR this.container»
+		registerName.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				update(registerData, name, offset, dataWidth, bitField1Name, bitField2Name, registerName,
+						bitField1Value, bitField2Value);
+			}
+		});
+		bitField1Value.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				if(flag == true && e.getStateChange() == ItemEvent.SELECTED)
+					writeToFile1(registerData, name, offset, dataWidth, bitField1Name, bitField2Name, registerName,
+						bitField1Value, bitField2Value);
+			}
+		});
+		bitField2Value.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(flag == true && e.getStateChange() == ItemEvent.SELECTED)
+					writeToFile2(registerData, name, offset, dataWidth, bitField1Name, bitField2Name, registerName,
+						bitField1Value, bitField2Value);
+			}
+		});
+		f.pack();
+		f.setVisible(true);
+		update(registerData, name, offset, dataWidth, bitField1Name, bitField2Name, registerName, bitField1Value,
+				bitField2Value);
+	}
+
+	public void update(HashMap<String, Register> registerData, JLabel name, JLabel offset, JLabel dataWidth,
+			JLabel bitField1Name, JLabel bitField2Name, JComboBox registerName, JComboBox bitField1Value,
+			JComboBox bitField2Value) {
+		//read data from the file
+		String[] parts;
+		try {
+			FileInputStream fstream = new FileInputStream(
+					new File("C:/eclipseWorkspace/masterthesis_layout_1004.project/src-gen/file.txt"));
+			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+			String strLine;
+			while ((strLine = br.readLine()) != null) {
+				parts = strLine.split(" ");
+				if (parts[0].equals(registerName.getSelectedItem())) {
+					registerValue = Integer.parseInt(parts[1]);
+					break;
+				}
+			}
+			fstream.close();
+		} catch (Exception e) {
+		}
+		name.setText("Name: " + registerData.get(registerName.getSelectedItem()).getName());
+		offset.setText("offset: " + registerData.get(registerName.getSelectedItem()).getOffset());
+		dataWidth.setText("data width: " + registerData.get(registerName.getSelectedItem()).getDataWidth());
+		if (registerData.get(registerName.getSelectedItem()).getBitField().size() == 1)
+			bitField1Name.setText("Not used");
+		else {
+			bitField1Name.setText(registerData.get(registerName.getSelectedItem()).getBitField().get(1).getName());
+		}
+		bitField2Name.setText(registerData.get(registerName.getSelectedItem()).getBitField().get(0).getName());
+		flag = false;
+		if (registerData.get(registerName.getSelectedItem()).getBitField().size() == 1)
+			bitField1Value.setEnabled(false);
+		else {
+			bitField1Value.setEnabled(true);
+			bitField1Value.removeAllItems();
+			for (int i = 0; i < Math.pow(2,
+					registerData.get(registerName.getSelectedItem()).getBitField().get(1).getWidth()); i++)
+				bitField1Value.addItem(i);
+			bitField1Value.setSelectedIndex((registerValue & ((int) Math.pow(2,
+					registerData.get(registerName.getSelectedItem()).getBitField().get(1).getWidth())
+					- 1) << registerData.get(registerName.getSelectedItem()).getBitField().get(1)
+							.getOffset()) >> registerData.get(registerName.getSelectedItem()).getBitField().get(1)
+									.getOffset());
+		}
+		bitField2Value.removeAllItems();
+		for (int i = 0; i < Math.pow(2,
+				registerData.get(registerName.getSelectedItem()).getBitField().get(0).getWidth()); i++)
+			bitField2Value.addItem(i);
+		bitField2Value.setSelectedIndex((registerValue
+				& ((int) Math.pow(2, registerData.get(registerName.getSelectedItem()).getBitField().get(0).getWidth())
+						- 1) << registerData.get(registerName.getSelectedItem()).getBitField().get(0)
+								.getOffset()) >> registerData.get(registerName.getSelectedItem()).getBitField().get(0)
+										.getOffset());
+		flag = true;
+	}
+
+	public void writeToFile1(HashMap<String, Register> registerData, JLabel name, JLabel offset, JLabel dataWidth,
+			JLabel bitField1Name, JLabel bitField2Name, JComboBox registerName, JComboBox bitField1Value,
+			JComboBox bitField2Value) {
+		registerValue = (registerValue
+				& ((int) Math.pow(2, registerData.get(registerName.getSelectedItem()).getBitField().get(1).getWidth())
+						- 1) << registerData.get(registerName.getSelectedItem()).getBitField().get(1).getOffset())
+				^ registerValue
+				| ((int)bitField1Value.getSelectedItem() << registerData.get(registerName.getSelectedItem()).getBitField()
+						.get(1).getOffset());
+		try{
+			Writer output = new BufferedWriter(new FileWriter("C:/eclipseWorkspace/masterthesis_layout_1006.project/src-gen/file.txt", true)); //clears file every time
+			output.append(" " + registerName.getSelectedItem() + " " + registerValue);
+			output.close();
+		}catch(IOException e){};
+	}
+
+	public void writeToFile2(HashMap<String, Register> registerData, JLabel name, JLabel offset, JLabel dataWidth,
+			JLabel bitField1Name, JLabel bitField2Name, JComboBox registerName, JComboBox bitField1Value,
+			JComboBox bitField2Value) {
+		registerValue = (registerValue
+				& ((int) Math.pow(2, registerData.get(registerName.getSelectedItem()).getBitField().get(0).getWidth())
+						- 1) << registerData.get(registerName.getSelectedItem()).getBitField().get(0).getOffset())
+				^ registerValue
+				| ((int)bitField2Value.getSelectedIndex() << registerData.get(registerName.getSelectedItem()).getBitField()
+						.get(0).getOffset());
+		try{
+			Writer output = new BufferedWriter(new FileWriter("C:/eclipseWorkspace/masterthesis_layout_1006.project/src-gen/file.txt", true)); //clears file every time
+			output.append(" " + registerName.getSelectedItem() + " " + registerValue);
+			output.close();
+		}catch(IOException e){};
+	}
+}
+
+class data {
+	private HashMap<String, Register> registerData = new HashMap<>();
+	private Register regTmp;
+	private BitField bitTmp;
+    public HashMap<String, Register> dataGenerate(){
+        «EXPAND componentTemplate FOR this.component»
+        return registerData;
+    }
+}
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE containerTemplate FOR Container»
+    	//Form form = new Form();
+    	JFrame f = new JFrame("«this.name»");
+    	Container con = f.getContentPane();
+    	JPanel panelTotal = new JPanel();
+    	JPanel parentPanel = panelTotal;
+
+        JScrollPane scrollPane = new JScrollPane(panelTotal);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setAutoscrolls(true);
+        panelTotal.setLayout(new BoxLayout(panelTotal, BoxLayout.Y_AXIS));
+        con.add(scrollPane, BorderLayout.CENTER);
+    	Toolkit toolkit = Toolkit.getDefaultToolkit();
+    	Dimension sc = toolkit.getScreenSize();
+    	//f.setSize(840, 560);
+        f.setLocation(sc.width/3, sc.height/4);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //f.setResizable(false);
+        Border border = BorderFactory.createEtchedBorder(Color.gray, Color.black);
+    	Border border0 = BorderFactory.createTitledBorder(border, "Register Configuration",TitledBorder.LEFT, TitledBorder.TOP);
+    	
+    	Border border1;
+    	Border border3 = BorderFactory.createTitledBorder(border, "Register Attributes", TitledBorder.LEFT, TitledBorder.TOP);
+    	Border border4 = BorderFactory.createTitledBorder(border, "BitField Overview", TitledBorder.LEFT, TitledBorder.TOP);
+    	
+    	panelTotal.setBorder(border0);
+
+    	«EXPAND verticalLayout FOREACH verticalLayout»
+    	«EXPAND horizontalLayout FOREACH horizontalLayout»
+«ENDDEFINE»
+
+
+«DEFINE verticalLayout FOR VerticalLayout»
+	JPanel «this.name» = new JPanel();
+	«this.name».setLayout(new BoxLayout(«this.name», BoxLayout.Y_AXIS));
+	Border «this.name»border = BorderFactory.createTitledBorder(border, "«this.name»", TitledBorder.LEFT, TitledBorder.TOP);
+	«this.name».setBorder(«this.name»border);
+
+	parentPanel.add(«this.name»);
+	JPanel «this.name»ParentPanel = parentPanel;
+	parentPanel = «this.name»;
+	    «EXPAND verticalLayout FOREACH verticalChildren»
+    	«EXPAND horizontalLayout FOREACH horizontalChildren»
+    	«EXPAND label FOREACH labelChildren»
+    	«EXPAND textField FOREACH textFieldChildren»
+    	«EXPAND combobox FOREACH comboboxChildren»
+    	«EXPAND button FOREACH buttonChildren»
+    parentPanel = «this.name»ParentPanel;
+«ENDDEFINE»
+
+«DEFINE horizontalLayout FOR HorizontalLayout»
+	JPanel «this.name» = new JPanel();
+	«this.name».setLayout(new BoxLayout(«this.name», BoxLayout.X_AXIS));
+	Border «this.name»border = BorderFactory.createTitledBorder(border, "«this.name»", TitledBorder.LEFT, TitledBorder.TOP);
+	«this.name».setBorder(«this.name»border);
+	
+	parentPanel.add(«this.name»);
+	JPanel «this.name»ParentPanel = parentPanel;
+	parentPanel = «this.name»;
+	    «EXPAND verticalLayout FOREACH verticalChildren»
+    	«EXPAND horizontalLayout FOREACH horizontalChildren»
+    	«EXPAND label FOREACH labelChildren»
+    	«EXPAND textField FOREACH textFieldChildren»
+    	«EXPAND combobox FOREACH comboboxChildren»
+    	«EXPAND button FOREACH buttonChildren»
+    parentPanel = «this.name»ParentPanel;
+«ENDDEFINE»
+
+«DEFINE label FOR Label»
+	JLabel «this.name» = new JLabel(); 
+	«IF this.name == "name"»
+		name.setText("Name: " + registerData.get(registerName.getSelectedItem()).getName());
+	«ELSEIF this.name == "offset"»
+		offset.setText("offset: " + registerData.get(registerName.getSelectedItem()).getOffset());
+	«ELSEIF this.name == "dataWidth"»
+		dataWidth.setText("data width: " + registerData.get(registerName.getSelectedItem()).getDataWidth());
+	«ELSEIF this.name == "bitField1Name"»
+		if(registerData.get(registerName.getSelectedItem()).getBitField().size()==1)
+			bitField1Name.setText("Not used");
+		else{
+			bitField1Name.setText(registerData.get(registerName.getSelectedItem()).getBitField().get(1).getName());
+		}
+	«ELSEIF this.name == "bitField2Name"»
+		bitField2Name.setText(registerData.get(registerName.getSelectedItem()).getBitField().get(0).getName());
+	«ENDIF»
+	parentPanel.add(«this.name»);
+«ENDDEFINE»
+
+«DEFINE textField FOR TextField»
+	JTextField «this.name» = new JTextField(); 
+	parentPanel.add(«this.name»);
+«ENDDEFINE»
+
+«DEFINE combobox FOR Combobox»
+	JComboBox «this.name» = new JComboBox(); 
+	«IF this.name=="registerName"»
+		for(String item : registerData.keySet()){
+			«this.name».addItem(item);
+		}
+	«ELSEIF this.name == "bitField1Value"»
+		if(registerData.get(registerName.getSelectedItem()).getBitField().size()==1)
+			bitField1Value.setEnabled(false);
+		else{
+		for(int i=0; i<Math.pow(2, registerData.get(registerName.getSelectedItem()).getBitField().get(1).getWidth()); i++)
+			bitField1Value.addItem(i);
+		}
+	«ELSEIF this.name == "bitField2Value"»
+		for(int i=0; i<Math.pow(2, registerData.get(registerName.getSelectedItem()).getBitField().get(0).getWidth()); i++)
+			bitField2Value.addItem(i);
+	«ENDIF»
+	parentPanel.add(«this.name»);
+«ENDDEFINE»
+
+«DEFINE button FOR Button»
+	JButton «this.name» = new JButton("«this.name»"); 
+	parentPanel.add(«this.name»);
+«ENDDEFINE»
+
+
+//data part
+
+«DEFINE componentTemplate FOR Component»
+	«EXPAND regMemSetTemplate FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetTemplate FOR RegMemSet»
+	«EXPAND regMemElementTemplate FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR Register»
+	regTmp = new Register("«this.name»", «this.offset», «this.dataWidth»);
+	«EXPAND BitFieldTemplate FOREACH this.bitFieldElement»
+	registerData.put("«this.name»", regTmp);
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitFieldElement»
+
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitField»
+	bitTmp = new BitField("«this.name»", «this.offset», «this.width»);
+	regTmp.addBitField(bitTmp);
+«ENDDEFINE»
+
+//combobox part
+
+«DEFINE componentComboBox FOR Component»
+	«EXPAND regMemSetComboBox FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetComboBox FOR RegMemSet»
+	«EXPAND regMemElementComboBox FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementComboBox FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementComboBox FOR Register»
+	registerName.addItem("«this.name»");
+«ENDDEFINE»
+
+
+
+

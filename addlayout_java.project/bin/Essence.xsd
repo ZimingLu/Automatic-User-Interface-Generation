@@ -1,0 +1,2198 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="BooleanLiteral">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="IntegerLiteral">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="StringLiteral">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="BooleanExpr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="IntegerExpr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="StringExpr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType abstract="true" name="ReturnDataType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="void">
+		<xs:complexContent>
+			<xs:extension base="ReturnDataType">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="ValueDataType">
+		<xs:complexContent>
+			<xs:extension base="ReturnDataType">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="SignInterpretation" type="SignType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ObjectType" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>dig</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="Vector" type="ArrayDimension"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SimpleDataType">
+		<xs:complexContent>
+			<xs:extension base="ValueDataType">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="ComplexDataType">
+		<xs:complexContent>
+			<xs:extension base="ValueDataType">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Array">
+		<xs:complexContent>
+			<xs:extension base="ComplexDataType">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ValueDataType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="ArrayDimension" type="ArrayDimension"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Record">
+		<xs:complexContent>
+			<xs:extension base="ComplexDataType">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="DataTypeElement" type="DataTypeElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Union">
+		<xs:complexContent>
+			<xs:extension base="ComplexDataType">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="DataTypeElement" type="DataTypeElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="SignType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="unsigned"/>
+			<xs:enumeration value="signed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ArrayDimension">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Ascending" type="xs:boolean"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Left" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Right" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DataTypeElement">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ValueDataType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MethodDataType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="ReturnDataType" type="ReturnDataType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Reference" type="xs:boolean"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="MethodDataTypeElement" type="MethodDataTypeElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MethodDataTypeElement">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ValueDataType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Reference" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="SingleSourceNode">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Custom" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Hidden" type="BooleanExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ID" type="xs:int"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="LongDescription" type="DescriptionItem"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ShortDescription" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="ShortName" type="StringExpr"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Property" type="Property"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="XRefExtension" type="PathRef"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DescriptionItem">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="html" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="dita" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="ModelRoot">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="ConstDefBlock" type="ConstDefBlock"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="EssenceVersion" type="xs:int">
+						<xs:annotation>
+							<xs:documentation>20300</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="GenericDeclBlock" type="GenericDeclBlock"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Module" type="Module"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ParamDeclBlock" type="ParamDeclBlock"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="VLNV" type="VLNV"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Module">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Module" type="Module"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VLNV">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Vendor" type="StringLiteral"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Library" type="StringLiteral"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringLiteral"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Version" type="StringLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XRef">
+		<xs:complexContent>
+			<xs:extension base="Reference">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefTargetID" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XRefInternal">
+		<xs:complexContent>
+			<xs:extension base="XRef">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XRefExternal">
+		<xs:complexContent>
+			<xs:extension base="XRef">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConstDefBlock">
+		<xs:complexContent>
+			<xs:extension base="VarDefBlock">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ConstDef" type="ConstDef"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ParamDeclBlock">
+		<xs:complexContent>
+			<xs:extension base="VarDefBlock">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ParamDecl" type="ParamDecl"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GenericDeclBlock">
+		<xs:complexContent>
+			<xs:extension base="VarDefBlock">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="GenericDecl" type="GenericDecl"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="ConstDef">
+		<xs:complexContent>
+			<xs:extension base="VarDef">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BooleanDef">
+		<xs:complexContent>
+			<xs:extension base="ConstDef">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="BooleanLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IntegerDef">
+		<xs:complexContent>
+			<xs:extension base="ConstDef">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="IntegerLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StringDef">
+		<xs:complexContent>
+			<xs:extension base="ConstDef">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="StringLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="ParamDecl">
+		<xs:complexContent>
+			<xs:extension base="VarDef">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BooleanDecl">
+		<xs:complexContent>
+			<xs:extension base="ParamDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="BooleanLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IntegerDecl">
+		<xs:complexContent>
+			<xs:extension base="ParamDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="IntegerLiteral"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="EnumerationInteger"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StringDecl">
+		<xs:complexContent>
+			<xs:extension base="ParamDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="StringLiteral"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="EnumerationString"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="GenericDecl">
+		<xs:complexContent>
+			<xs:extension base="VarDef">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BooleanGenDecl">
+		<xs:complexContent>
+			<xs:extension base="GenericDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="BooleanLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IntegerGenDecl">
+		<xs:complexContent>
+			<xs:extension base="GenericDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="IntegerLiteral"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="EnumerationInteger"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StringGenDecl">
+		<xs:complexContent>
+			<xs:extension base="GenericDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="StringLiteral"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="EnumerationString"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DataGenDecl">
+		<xs:complexContent>
+			<xs:extension base="GenericDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ValueDataType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="StringLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EnumerationInteger">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="IntegerLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EnumerationString">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="StringLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Component" type="Component"/>
+	<xs:complexType name="Component">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Interface" type="Interface"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="RegViewBlock" type="RegViewBlock"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="TopSpinClkStyle" type="SyncMode"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="RegMemSet" type="RegMemSet"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Bus" type="Bus"/>
+	<xs:complexType name="Bus">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="ExtVLNV" type="VLNV"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="MaxMasters" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="MaxSlaves" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="NoneInterface" type="NoneInterface"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="System" type="System"/>
+	<xs:complexType name="System">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="ExtVLNV" type="VLNV"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Interface" type="Interface"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Connection" type="Connection"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="LocalInterfaceMap" type="LocalInterfaceMap"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Instance" type="Instance"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ShellInterfaceMap" type="ShellInterfaceMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="InterfaceDefinition" type="InterfaceDefinition"/>
+	<xs:complexType name="InterfaceDefinition">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="AddressUnit" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>8</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataUnit" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>8</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="ExtVLNV" type="VLNV"/>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="InterfaceDefView" type="InterfaceDefView"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegMemSet">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="AddressUnit" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>8</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataUnit" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>8</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="Special" type="SpecialType"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="MessageType" type="MessageType"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="OpCode" type="IntegerExpr"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="RegMemElement" type="RegMemElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="RegMemElement">
+		<xs:complexContent>
+			<xs:extension base="IndexVarUser">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Offset" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegMemSequence">
+		<xs:complexContent>
+			<xs:extension base="RegMemElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Count" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="MinIndex" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="IndexStep" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="IndexVar" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="AltFormat" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Pilot" type="xs:boolean"/>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="SequenceElement" type="RegMemElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="SequenceElement">
+		<xs:complexContent>
+			<xs:extension base="RegMemElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataWidth" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>32</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="AccessCondition" type="AccessCondition"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Register">
+		<xs:complexContent>
+			<xs:extension base="GeneralRegister">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="MirrorSize" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="TopSpinType" type="TopSpinType"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="XRefRegisterView" type="XRefRegisterView"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="BitFieldElement" type="BitFieldElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Memory">
+		<xs:complexContent>
+			<xs:extension base="SequenceElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="AccessType" type="AccessType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Size" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="Endianness" type="EndianType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GapElement">
+		<xs:complexContent>
+			<xs:extension base="SequenceElement">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="RealPort">
+		<xs:complexContent>
+			<xs:extension base="Port">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Direction" type="PortDirection"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="XRefDefaultValue" type="XRefDataVar"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="InterfaceDefPort">
+		<xs:complexContent>
+			<xs:extension base="GeneralPort">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefInternalSignal"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Direction" type="PortDirection"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="TopSpinType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="noTopSpin"/>
+			<xs:enumeration value="clc"/>
+			<xs:enumeration value="clccnt"/>
+			<xs:enumeration value="clcstat"/>
+			<xs:enumeration value="config"/>
+			<xs:enumeration value="control"/>
+			<xs:enumeration value="dmae"/>
+			<xs:enumeration value="errconf"/>
+			<xs:enumeration value="hwapivers"/>
+			<xs:enumeration value="icr"/>
+			<xs:enumeration value="id"/>
+			<xs:enumeration value="imsc"/>
+			<xs:enumeration value="irqsc"/>
+			<xs:enumeration value="irqsm"/>
+			<xs:enumeration value="irqss"/>
+			<xs:enumeration value="isr"/>
+			<xs:enumeration value="mis"/>
+			<xs:enumeration value="msconf"/>
+			<xs:enumeration value="readonlysync"/>
+			<xs:enumeration value="ris"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BitField">
+		<xs:complexContent>
+			<xs:extension base="BitFieldSequenceElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="AccessExternal" type="Access"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="AccessInternal" type="Access"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="MaxVal" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="MinVal" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Reserved" type="ReservedType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="SignInterpretation" type="SignType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Virtual" type="VirtualType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultMask" type="IntegerExpr"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="AccessLevel" type="AccessLevel"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="EnumerationElement" type="EnumerationElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Access">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="AccessType" type="AccessType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="StrobeType" type="StrobeType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ActionType" type="ActionType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="ReservedType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="unreserved"/>
+			<xs:enumeration value="reserved"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AccessLevel">
+		<xs:complexContent>
+			<xs:extension base="IndexVarUser">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="AccessLevel" type="IntegerLiteral"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="AccessType" type="AccessType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Enumeration">
+		<xs:complexContent>
+			<xs:extension base="EnumerationElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="AccessType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="read"/>
+			<xs:enumeration value="write"/>
+			<xs:enumeration value="readwrite"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StrobeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NoStrobe"/>
+			<xs:enumeration value="ReadStrobe"/>
+			<xs:enumeration value="WriteStrobe"/>
+			<xs:enumeration value="ReadWriteStrobe"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="clear"/>
+			<xs:enumeration value="enable"/>
+			<xs:enumeration value="interrupt"/>
+			<xs:enumeration value="pulse"/>
+			<xs:enumeration value="reset"/>
+			<xs:enumeration value="set"/>
+			<xs:enumeration value="status"/>
+			<xs:enumeration value="toggle"/>
+			<xs:enumeration value="register"/>
+			<xs:enumeration value="trigger"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ResetType">
+		<xs:complexContent>
+			<xs:extension base="IndexVarUser">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="ResetLevel" type="IntegerLiteral"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ResetMask" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ResetMode" type="SyncMode"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ResetType" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="ResetValue" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="SyncMode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="asynchronous"/>
+			<xs:enumeration value="synchronous"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Interface">
+		<xs:complexContent>
+			<xs:extension base="GeneralInterface">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="AddressUnit" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>8</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="DataUnit" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>8</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="BaseAddress" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="ExtVLNV" type="VLNV"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="Range" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="Role" type="InterfaceRoleType"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="SystemGroup" type="StringLiteral"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="AddressBlock" type="AddressBlock"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="InterfaceRoleType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Master"/>
+			<xs:enumeration value="Slave"/>
+			<xs:enumeration value="System"/>
+			<xs:enumeration value="Monitor"/>
+			<xs:enumeration value="MirroredMaster"/>
+			<xs:enumeration value="MirroredSlave"/>
+			<xs:enumeration value="MirroredSystem"/>
+			<xs:enumeration value="MirroredMonitor"/>
+			<xs:enumeration value="MonitoredMaster"/>
+			<xs:enumeration value="MonitoredSlave"/>
+			<xs:enumeration value="MonitoredSystem"/>
+			<xs:enumeration value="MirroredMonitoredMaster"/>
+			<xs:enumeration value="MirroredMonitoredSlave"/>
+			<xs:enumeration value="MirroredMonitoredSystem"/>
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="Internal"/>
+			<xs:enumeration value="Extension"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="InterfaceView">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InterfacePortMap" type="InterfacePortMap"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Port" type="Port"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WirePort">
+		<xs:complexContent>
+			<xs:extension base="RealPort">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="SimpleDataType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CablePort">
+		<xs:complexContent>
+			<xs:extension base="RealPort">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ComplexDataType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TransactionalPort">
+		<xs:complexContent>
+			<xs:extension base="RealPort">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="MethodDataType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Initiative" type="PortInitiative"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="PortDirection">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="in"/>
+			<xs:enumeration value="out"/>
+			<xs:enumeration value="inout"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AccessByIndex">
+		<xs:complexContent>
+			<xs:extension base="SimpleSubElementAccess">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Ascending" type="xs:boolean"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Left" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Right" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="SimpleSubElementAccess" type="SimpleSubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AccessByName">
+		<xs:complexContent>
+			<xs:extension base="SimpleSubElementAccess">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="SimpleSubElementAccess" type="SimpleSubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AddressBlock">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="XRefRegMemSet" type="XRefRegMemSet"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="XRefMasterInterface" type="XRefMasterInterface"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="XRefSlaveInterface" type="XRefSlaveInterface"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefRegMemSet">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Offset" type="IntegerExpr"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="AccessCondition" type="AccessCondition"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefMasterInterface">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Range" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="SrcOffset" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="TgtOffset" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefSlaveInterface">
+		<xs:complexContent>
+			<xs:extension base="XRefExternal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Range" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="SrcOffset" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="TgtOffset" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstance" type="XRefInstance"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="Signal">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="XRefDefaultValue" type="XRefDataVar"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WireSignal">
+		<xs:complexContent>
+			<xs:extension base="Signal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="SimpleDataType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CableSignal">
+		<xs:complexContent>
+			<xs:extension base="Signal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ComplexDataType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TransactionalSignal">
+		<xs:complexContent>
+			<xs:extension base="Signal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="MethodDataType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LocalPortMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefLocalPort" type="XRefInternalPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefInternalSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefInternalSignal">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SubElementAccess" type="SubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="GeneralInstance">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="ExtVLNV" type="VLNV"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ParamMap" type="ParamMap"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="GenericMap" type="GenericMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ComponentInstance">
+		<xs:complexContent>
+			<xs:extension base="InterfaceInstance">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BusInstance">
+		<xs:complexContent>
+			<xs:extension base="Instance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="BusInterfaceMap" type="BusInterfaceMap"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="BusNoneInterfaceMap" type="BusNoneInterfaceMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SystemInstance">
+		<xs:complexContent>
+			<xs:extension base="InterfaceInstance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InstanceShellInterfaceMap" type="InstanceShellInterfaceMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InstancePortMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstancePort" type="XRefExternalPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefInternalSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ParamMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefParamDecl" type="XRefParamDecl"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="CommonExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GenericMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefGenericDecl" type="XRefGenericDecl"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="CommonExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefExternalInterface">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefParamDecl">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefGenericDecl">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="BusErrorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ReadError"/>
+			<xs:enumeration value="WriteError"/>
+			<xs:enumeration value="ReadWriteError"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PortInitiative">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="provides"/>
+			<xs:enumeration value="requires"/>
+			<xs:enumeration value="both"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="InterfacePortMap">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefLocalPort" type="XRefInternalPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInterfacePort" type="XRefIFDPort"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefRealPort">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SubElementAccess" type="SubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefExternalPort">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SubElementAccess" type="SubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="SubElementAccess">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReturnElementAccess">
+		<xs:complexContent>
+			<xs:extension base="SubElementAccess">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SimpleSubElementAccess" type="SimpleSubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="SimpleSubElementAccess">
+		<xs:complexContent>
+			<xs:extension base="SubElementAccess">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PortRef">
+		<xs:complexContent>
+			<xs:extension base="Port">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefLocalPort" type="XRefRealPort"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InterfaceDefRole">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Role" type="InterfaceDefRoleType"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="SystemGroup" type="StringLiteral"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InterfaceDefPort" type="InterfaceDefPort"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="InterfaceDefRoleType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Master"/>
+			<xs:enumeration value="Slave"/>
+			<xs:enumeration value="System"/>
+			<xs:enumeration value="Monitor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="InterfaceDefView">
+		<xs:complexContent>
+			<xs:extension base="SignalOwner">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="InterfaceDefRole" type="InterfaceDefRole"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefInstance">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InterfaceDefWirePort">
+		<xs:complexContent>
+			<xs:extension base="InterfaceDefPort">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InterfaceDefCablePort">
+		<xs:complexContent>
+			<xs:extension base="InterfaceDefPort">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InterfaceDefTransactionalPort">
+		<xs:complexContent>
+			<xs:extension base="InterfaceDefPort">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Initiative" type="PortInitiative"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Connection">
+		<xs:complexContent>
+			<xs:extension base="SignalOwner">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="ExtVLNV" type="VLNV"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefInternalInterface">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefConnection">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InstanceInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstanceInterface" type="XRefExternalInterface"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefConnection" type="XRefConnection"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InstancePortMap" type="InstancePortMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BusInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefConnection" type="XRefConnection"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LocalInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefLocalInterface" type="XRefInternalInterface"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefConnection" type="XRefConnection"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="LocalPortMap" type="LocalPortMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MultiViewRegister">
+		<xs:complexContent>
+			<xs:extension base="GeneralRegister">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="XRefRegisterView" type="XRefRegisterView"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="RegisterView" type="RegisterView"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegisterView">
+		<xs:complexContent>
+			<xs:extension base="IndexVarUser">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="Depth" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="DepthVar" type="StringLiteral"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="BitFieldElement" type="BitFieldElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BitFieldSequence">
+		<xs:complexContent>
+			<xs:extension base="BitFieldElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Count" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="MinIndex" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="IndexStep" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="IndexVar" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="AltFormat" type="xs:string"/>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="BitFieldSequenceElement" type="BitFieldSequenceElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="BitFieldElement">
+		<xs:complexContent>
+			<xs:extension base="IndexVarUser">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Offset" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EnumerationSequence">
+		<xs:complexContent>
+			<xs:extension base="EnumerationElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Count" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="1" name="MinIndex" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="IndexStep" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="1" minOccurs="0" name="IndexVar" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="AltFormat" type="xs:string"/>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="Enumeration" type="Enumeration"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="EnumerationElement">
+		<xs:complexContent>
+			<xs:extension base="IndexVarUser">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BitFieldGapElement">
+		<xs:complexContent>
+			<xs:extension base="BitFieldSequenceElement">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="BitFieldSequenceElement">
+		<xs:complexContent>
+			<xs:extension base="BitFieldElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Width" type="IntegerExpr">
+						<xs:annotation>
+							<xs:documentation>1</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="VarDef">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="CommonExpr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="Enum">
+		<xs:complexContent>
+			<xs:extension base="ComplexDataType">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="EnumElement" type="EnumElement"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EnumElement">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="Value" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="Port">
+		<xs:complexContent>
+			<xs:extension base="GeneralPort">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefIFDPort">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SubElementAccess" type="SubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefInternalPort">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SubElementAccess" type="SubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AccessCondition">
+		<xs:complexContent>
+			<xs:extension base="IndexVarUser">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="AccessLevel" type="IntegerLiteral"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="BusErrorType" type="BusErrorType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SignalMap">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefLocalSignal" type="XRefInternalSignal"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInterfaceDefSignal" type="XRefExternalSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefExternalSignal">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SubElementAccess" type="SubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DataDecl">
+		<xs:complexContent>
+			<xs:extension base="ParamDecl">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ValueDataType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="DefaultValue" type="StringLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DataDef">
+		<xs:complexContent>
+			<xs:extension base="ConstDef">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DataType" type="ValueDataType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Value" type="StringLiteral"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefDataVar">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NoneInterface">
+		<xs:complexContent>
+			<xs:extension base="GeneralInterface">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BusNoneInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefBusNoneInterface" type="XRefNoneInterface"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefConnection" type="XRefConnection"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InstancePortMap" type="InstancePortMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefNoneInterface">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="SpecialType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Table"/>
+			<xs:enumeration value="Message"/>
+			<xs:enumeration value="RegisterGroup"/>
+			<xs:enumeration value="BurstGroup"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CONFIG"/>
+			<xs:enumeration value="RBS"/>
+			<xs:enumeration value="RBSU"/>
+			<xs:enumeration value="RBU"/>
+			<xs:enumeration value="TAS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Product" type="Product"/>
+	<xs:complexType name="Product">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Step" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="PackageInstance" type="PackageInstance"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="SiliconInstance" type="SiliconInstance"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Net" type="Net"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Net">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Package" type="Package"/>
+	<xs:complexType name="Package">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Type" type="StringExpr"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Pin" type="Pin"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Pin">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Silicon" type="Silicon"/>
+	<xs:complexType name="Silicon">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Step" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="PadHeight" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="KerfWidth" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="KerfHeight" type="IntegerExpr"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Instance" type="SiInstance"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Pad" type="Pad"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="PowerDomain" type="PowerDomain"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="Pad">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MultiPad">
+		<xs:complexContent>
+			<xs:extension base="Pad">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="SinglePad" type="SinglePad"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="SinglePad">
+		<xs:complexContent>
+			<xs:extension base="Pad">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XCoordinate" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="YCoordinate" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Spacer" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Opening" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Location" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="PadCount" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Place" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Orientation" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Power" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Ground" type="StringExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Function">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Type" type="FunctionType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Module" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefSiSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefSiSignal">
+		<xs:complexContent>
+			<xs:extension base="XRefVLNV">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiPortReq">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DriverStrength" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Set" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Type" type="StringExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TestReq">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="DriverStrength" type="StringExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProductInstance">
+		<xs:complexContent>
+			<xs:extension base="Instance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ProductInterfaceMap" type="ProductInterfaceMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProductPinMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefPin" type="XRefIndPin"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefInternalSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XRefDirect">
+		<xs:complexContent>
+			<xs:extension base="XRefExternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XRefVLNV">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="ExtVLNV" type="VLNV"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="EndianType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LittleEndian"/>
+			<xs:enumeration value="BigEndian"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="XRefPadType">
+		<xs:complexContent>
+			<xs:extension base="XRefVLNV">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProductPadMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefPad" type="XRefIndSinglePad"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefInternalSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiComponentInstance">
+		<xs:complexContent>
+			<xs:extension base="SiInstance">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiSystemInstance">
+		<xs:complexContent>
+			<xs:extension base="SiInstance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SiInstanceShellInterfaceMap" type="SiInstanceShellInterfaceMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="SiInstance">
+		<xs:complexContent>
+			<xs:extension base="GeneralInstance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SiInstanceInterfaceMap" type="SiInstanceInterfaceMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProductInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefConnection" type="XRefConnection"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ProductPinMap" type="ProductPinMap"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ProductPadMap" type="ProductPadMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiInstancePortMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstancePort" type="XRefExternalPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefSiSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiInstanceInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstanceInterface" type="XRefExternalInterface"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SiInstancePortMap" type="SiInstancePortMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PadMultiplexed">
+		<xs:complexContent>
+			<xs:extension base="SinglePad">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="ExtVLNV" type="VLNV"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefPort" type="XRefSiPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="PortGroup" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PadNonMultiplexed">
+		<xs:complexContent>
+			<xs:extension base="SinglePad">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ExtVLNV" type="VLNV"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="SiPortReq" type="SiPortReq"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="XRefPadType" type="XRefPadType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Function" type="Function"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PadSupply">
+		<xs:complexContent>
+			<xs:extension base="GeneralPad">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Spec" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefPowerDomain" type="XRefPowerDomain"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PadSpecial">
+		<xs:complexContent>
+			<xs:extension base="GeneralPad">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PowerDomain">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="PowerConsumption" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="MaxCurrent" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="AverageCurrent" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PadType">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Lib" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Type" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="DriverStrength" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Set" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Width" type="IntegerExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Spec" type="StringExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiPort">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Pdr" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="XRefTest" type="XRefTest"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="SiPortReq" type="SiPortReq"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Function" type="Function"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Test">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="ParallelFactor" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="TestReq" type="TestReq"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Function" type="Function"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiSignal">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PadTypeDB" type="PadTypeDB"/>
+	<xs:complexType name="PadTypeDB">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="PadType" type="PadType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SiPortDB" type="SiPortDB"/>
+	<xs:complexType name="SiPortDB">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SiPort" type="SiPort"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SiSignalDB" type="SiSignalDB"/>
+	<xs:complexType name="SiSignalDB">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SiSignal" type="SiSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TestDB" type="TestDB"/>
+	<xs:complexType name="TestDB">
+		<xs:complexContent>
+			<xs:extension base="ModelRoot">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Test" type="Test"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="GeneralPad">
+		<xs:complexContent>
+			<xs:extension base="SinglePad">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefPadType" type="XRefPadType"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Lib" type="StringExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Width" type="IntegerExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefNet">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PadNetMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefPad" type="XRefSinglePad"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefNet" type="XRefNet"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PinNetMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefPin" type="XRefPin"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefNet" type="XRefNet"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiliconInstance">
+		<xs:complexContent>
+			<xs:extension base="GeneralInstance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="PadNetMap" type="PadNetMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PackageInstance">
+		<xs:complexContent>
+			<xs:extension base="GeneralInstance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="PinNetMap" type="PinNetMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefSinglePad">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefPin">
+		<xs:complexContent>
+			<xs:extension base="XRefDirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefIndSinglePad">
+		<xs:complexContent>
+			<xs:extension base="XRefIndirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefIndPin">
+		<xs:complexContent>
+			<xs:extension base="XRefIndirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefPowerDomain">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="Instance">
+		<xs:complexContent>
+			<xs:extension base="GeneralInstance">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefSiPort">
+		<xs:complexContent>
+			<xs:extension base="XRefVLNV">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefTest">
+		<xs:complexContent>
+			<xs:extension base="XRefVLNV">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="FunctionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Input"/>
+			<xs:enumeration value="Output"/>
+			<xs:enumeration value="HWOutput"/>
+			<xs:enumeration value="InputTest"/>
+			<xs:enumeration value="OutputTest"/>
+			<xs:enumeration value="AnalogTest"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType abstract="true" name="DataType">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShellInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefShellInterface" type="XRefExternalInterface"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefConnection" type="XRefConnection"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ShellPortMap" type="ShellPortMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShellPortMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefShellPort" type="XRefExternalPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefInternalSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InstanceShellInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstanceShellInterface" type="XRefIndInterface"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefConnection" type="XRefConnection"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InstanceShellPortMap" type="InstanceShellPortMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InstanceShellPortMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstanceShellPort" type="XRefIndPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefInternalSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiInstanceShellInterfaceMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstanceShellInterface" type="XRefIndInterface"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SiInstanceShellPortMap" type="SiInstanceShellPortMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiInstanceShellPortMap">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefInstanceShellPort" type="XRefIndPort"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="XRefSignal" type="XRefSiSignal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="XRefIndirect">
+		<xs:complexContent>
+			<xs:extension base="XRefExternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefIndInterface">
+		<xs:complexContent>
+			<xs:extension base="XRefIndirect">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefIndPort">
+		<xs:complexContent>
+			<xs:extension base="XRefIndirect">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="0" name="SubElementAccess" type="SubElementAccess"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="VirtualType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="false"/>
+			<xs:enumeration value="true"/>
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="toInternal"/>
+			<xs:enumeration value="toExternal"/>
+			<xs:enumeration value="both"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType abstract="true" name="VarDefBlock">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="GeneralPort">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="SignalOwner">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Signal" type="Signal"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SignalMap" type="SignalMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="InterfaceInstance">
+		<xs:complexContent>
+			<xs:extension base="Instance">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InstanceInterfaceMap" type="InstanceInterfaceMap"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="GeneralInterface">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="InterfaceView" type="InterfaceView"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Property">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Key" type="xs:string"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Property" type="Property"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Value" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="PathExpr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType abstract="true" name="Reference">
+		<xs:complexContent>
+			<xs:extension base="EssenceBase">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PathRef">
+		<xs:complexContent>
+			<xs:extension base="Reference">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="Location" type="PathExpr"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="Name" type="StringExpr"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="EssenceBase">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="GeneralRegister">
+		<xs:complexContent>
+			<xs:extension base="SequenceElement">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="NoShadow" type="xs:boolean">
+						<xs:annotation>
+							<xs:documentation>true</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="ResetType" type="ResetType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="IndexVarUser">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XRefRegisterView">
+		<xs:complexContent>
+			<xs:extension base="XRefInternal">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegViewBlock">
+		<xs:complexContent>
+			<xs:extension base="SingleSourceNode">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="RegisterView" type="RegisterView"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="BehaviorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ReadWrite"/>
+			<xs:enumeration value="Read"/>
+			<xs:enumeration value="ReadOnly"/>
+			<xs:enumeration value="WriteRead0"/>
+			<xs:enumeration value="WriteRead1"/>
+			<xs:enumeration value="WriteReadX"/>
+			<xs:enumeration value="WriteOnly"/>
+			<xs:enumeration value="NoneRead0"/>
+			<xs:enumeration value="NoneRead1"/>
+			<xs:enumeration value="NoneReadX"/>
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="Read0Only"/>
+			<xs:enumeration value="Read1Only"/>
+			<xs:enumeration value="ReadXOnly"/>
+			<xs:enumeration value="NoneOnly"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

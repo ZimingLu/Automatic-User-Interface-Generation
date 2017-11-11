@@ -1,0 +1,421 @@
+«IMPORT model»
+
+«EXTENSION template::GeneratorExtensions»
+    	
+«DEFINE documentRoot FOR DocumentRoot»
+«FILE "FormMain.cs"»
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace MasterThesis
+{
+    public partial class FormMain : Form
+    {
+        private DevicePort devicePort;
+        private BackgroundWorker backgroundWorkerCommunicate;
+        private string loggerFileName = "log.txt";
+
+        public FormMain()
+        {
+            InitializeComponent();
+            // Initialize members
+            devicePort = new DevicePort();
+
+            // Initialize COM ports
+            this.buttonCOMPortRefresh_Click(this, null);
+
+
+            // Initialize Backgroundworker
+            this.backgroundWorkerCommunicate = new BackgroundWorker();
+            this.backgroundWorkerCommunicate.WorkerSupportsCancellation = false;
+            this.backgroundWorkerCommunicate.WorkerReportsProgress = false;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (devicePort != null && devicePort.IsPortOpen)
+                devicePort.ClosePort();
+        }
+        
+         private void comboBoxCOMPorts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxCOMPorts.SelectedIndex > 0)
+            {   // connect to selected COM port
+                devicePort.OpenPort((String)(comboBoxCOMPorts.SelectedItem));
+            }
+            else
+            {   // disconnect from COM Port (if one is open)
+                devicePort.ClosePort();
+
+            }
+
+            EnableConnectionSettings(comboBoxCOMPorts.SelectedIndex > 0);
+        }
+
+        private void buttonCOMPortRefresh_Click(object sender, EventArgs e)
+        {
+            comboBoxCOMPorts.Items.Clear();
+            comboBoxCOMPorts.Items.Add("Off");
+            comboBoxCOMPorts.Items.AddRange(devicePort.GetPortNames());
+            comboBoxCOMPorts.SelectedIndex = 0;
+        }
+
+        private void comboBoxProtocol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelSensorHubPort.Visible = comboBoxProtocol.Enabled && comboBoxProtocol.SelectedIndex == 0;
+            numericUpDownSensorHubPort.Visible = comboBoxProtocol.Enabled && comboBoxProtocol.SelectedIndex == 0;
+            labelSensorHubChannel.Visible = comboBoxProtocol.Enabled && comboBoxProtocol.SelectedIndex == 0;
+            numericUpDownSensorHubChannel.Visible = comboBoxProtocol.Enabled && comboBoxProtocol.SelectedIndex == 0;
+
+            if (comboBoxProtocol.Enabled && comboBoxProtocol.SelectedIndex == 0)
+            {   // Selected protocol is I2C
+                labelSensorHubDeviceAddress.Visible = true;
+                labelSensorHubDeviceAddress.Text = "Address";
+                labelSensorHubDeviceAddress.Location = new Point(595, 19);
+                numericUpDownSensorHubDeviceAddress.Visible = true;
+                numericUpDownSensorHubDeviceAddress.Location = new Point(645, 15);
+            }
+            else if (comboBoxProtocol.Enabled && comboBoxProtocol.SelectedIndex == 1)
+            {   // Selected protocol is SPI
+                labelSensorHubDeviceAddress.Visible = true;
+                labelSensorHubDeviceAddress.Text = "Slave";
+                labelSensorHubDeviceAddress.Location = new Point(365, 19);
+                numericUpDownSensorHubDeviceAddress.Visible = true;
+                numericUpDownSensorHubDeviceAddress.Location = new Point(415, 15);
+            }
+            else
+            {   // No valid protocol is selected
+                labelSensorHubDeviceAddress.Visible = false;
+                numericUpDownSensorHubDeviceAddress.Visible = false;
+            }
+        }
+        
+        private void buttonReadSensor_Click(object sender, EventArgs e)
+        {
+        	«EXPAND allSensorReadComponent FOR this.component»
+        }
+        
+        private void buttonExecuteMeasurement_Click(object sender, EventArgs e)
+        {}
+        
+        «EXPAND ControlsCallBack FOR this.component»
+        
+        #region Communication Functions
+        private void send_write_command(byte register, byte[] value)
+        {
+            switch (comboBoxProtocol.SelectedIndex)
+            {
+                case 0: // I2C Protocol selected
+                    this.devicePort.Write((byte)(this.numericUpDownSensorHubPort.Value),
+                        (byte)(1+this.numericUpDownSensorHubChannel.Value),
+                        (byte)this.numericUpDownSensorHubDeviceAddress.Value,
+                        register, value);
+                    break;
+                case 1: // SPI Protocol selected
+                    this.devicePort.Write((byte)this.numericUpDownSensorHubDeviceAddress.Value,
+                        register, value);
+                    break;
+                default: // not a valid selection
+                    throw new ApplicationException("Unknown protocol selected.");
+            }
+        }
+
+        private byte[] send_read_command(byte register, uint noBytes, bool skipRead)
+        {
+            // if skipRead variable is set to true, the first read only triggers the reading and the second
+            // read returns the value. This needs to be set to false for fifo readings after the first read.
+            try
+            {
+                switch (comboBoxProtocol.SelectedIndex)
+                {
+                    case 0: // I2C Protocol selected
+                        if (skipRead)
+                            this.devicePort.Read((byte)(this.numericUpDownSensorHubPort.Value),
+                                (byte)(1 + this.numericUpDownSensorHubChannel.Value),
+                                (byte)this.numericUpDownSensorHubDeviceAddress.Value, register, noBytes);
+                        return this.devicePort.Read((byte)(this.numericUpDownSensorHubPort.Value),
+                            (byte)(1 + this.numericUpDownSensorHubChannel.Value),
+                            (byte)this.numericUpDownSensorHubDeviceAddress.Value, register, noBytes);
+                    case 1: // SPI Protocol selected
+                        if (skipRead)
+                            this.devicePort.Read((byte)this.numericUpDownSensorHubDeviceAddress.Value,
+                                register, noBytes);
+                        return this.devicePort.Read((byte)this.numericUpDownSensorHubDeviceAddress.Value,
+                            register, noBytes);
+                    default: // not a valid selection
+                        throw new ApplicationException("Unknown protocol selected.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("During runtime, some error occurred. For details see below:\n\n" + ex.Message, "An Error Occurred:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+        #endregion
+        
+        #region Convenience Functions
+        void EnableConnectionSettings(bool status)
+        {
+            labelProtocol.Visible = status;
+            comboBoxProtocol.Visible = status;
+            tabControlMain.Visible = status;
+            if (!status)
+                comboBoxProtocol.SelectedIndex = -1;
+            else
+                comboBoxProtocol.SelectedIndex = 0;
+        }
+
+        private int ByteArray2Int(byte[] values)
+        {
+            int value = values[values.Length -1];
+            bool isnegative = value>127;
+            if (isnegative)
+                value = value-128;
+            for (int index = values.Length -2; index >=0; index--)
+            {
+                value = 256*value + values[index];
+            }
+            if (isnegative)
+                value = value- (byte)(Math.Pow(256,values.Length)/2);
+            return value;
+        }
+
+        private string ByteArray2String(byte[] values)
+        {
+            string result ="";
+            foreach (byte value in values)
+            {
+                result += value.ToString() + "; ";
+            }
+            return result;
+        }
+        #endregion
+
+        #region Chart Functions
+        private void chart_initialize()
+        {
+
+        }
+        private void chart_update(double[] yvals)
+        {
+            
+        }
+        #endregion
+        
+        
+    }
+}
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE allSensorReadComponent FOR Component»
+	«EXPAND RegMemRead FOREACH this.regMemSet»
+«ENDDEFINE»
+
+«DEFINE RegMemRead FOR RegMemSet»
+	«EXPAND RegisterRead FOREACH this.regMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterRead FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterRead FOR Register»
+	«EXPAND BitFieldRead FOREACH this.bitFieldElement»
+«ENDDEFINE»
+
+«DEFINE BitFieldRead FOR BitFieldElement»
+«ENDDEFINE»
+
+«DEFINE BitFieldRead FOR BitField»
+«IF this.accessExternal.accessType.toString() == 'readwrite'»
+	«IF this.width== "1"»
+	this.checkBox_«this.name»_Read(sender, null);
+	«ELSE»       
+	this.numericUpDown_«this.name»_Read(sender, null);
+«ENDIF»
+«ENDIF»
+
+«IF this.accessExternal.accessType.toString() == 'read'»
+	this.textBox_«this.name»_Read(sender, null);
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE ControlsCallBack FOR Component»
+	«EXPAND RegMemControlsCallBack FOREACH this.regMemSet»
+«ENDDEFINE»
+
+«DEFINE RegMemControlsCallBack FOR RegMemSet»
+	«EXPAND RegisterControlsCallBack FOREACH this.regMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterControlsCallBack FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterControlsCallBack FOR Register»
+	«FOREACH this.bitFieldElement AS a»
+		int «a.name»RegOffset = «this.offset»;
+		int «a.name»RegDataWidth = «this.dataWidth»;
+	«ENDFOREACH»
+	«EXPAND BitFieldControlsCallBack FOREACH this.bitFieldElement»
+«ENDDEFINE»
+
+«DEFINE BitFieldControlsCallBack FOR BitFieldElement»
+«ENDDEFINE»
+
+
+«DEFINE BitFieldControlsCallBack FOR BitField»
+«IF this.accessExternal.accessType.toString() == 'write'»
+	«IF this.width== "1"»
+       private void checkBox_«this.name»_Write(object sender, EventArgs e)
+        {
+           send_write_command((byte)«this.name»RegOffset, new byte[1] { (byte)(checkBox_«this.name».Checked ? 1 : 0)  });
+        }
+     «ELSE»
+       private void numericUpDown_«this.name»_Write(object sender, EventArgs e)
+        {
+	        byte nobytes = (byte)Math.Ceiling((decimal)(«this.name»RegDataWidth / 8));
+	        byte[] valueAsByteArray = new byte[nobytes];
+	        decimal value = this.numericUpDown_«this.name».Value;
+	        for (int index = 0; index< nobytes; index++)
+	        {
+	            valueAsByteArray[index] = (byte)(value % 256);
+	            value = (value-valueAsByteArray[index]) / 256;
+	        }
+	        send_write_command((byte)«this.name»RegOffset, valueAsByteArray);
+        }
+	  «ENDIF»
+«ENDIF»
+
+«IF this.accessExternal.accessType.toString() == 'readwrite'»
+	«IF this.width== "1"»
+       private void checkBox_«this.name»_Write(object sender, EventArgs e)
+        {
+           send_write_command((byte)«this.name»RegOffset, new byte[1] { (byte)(checkBox_«this.name».Checked ? 1 : 0)  });
+        }
+       private void checkBox_«this.name»_Read(object sender, EventArgs e)
+        {
+           byte[] result = send_read_command((byte)«this.name»RegOffset, 1, true);
+           if (result == null)
+               return;
+           checkBox_«this.name».Checked = (result[0] != 0);
+        }
+        private void checkBox_«this.name»_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             // Read current value of register if r was pressed
+             if (e.KeyChar == 'r')
+                this.checkBox_«this.name»_Read(sender, null);
+        }
+     «ELSE»
+     private void numericUpDown_«this.name»_Write(object sender, EventArgs e)
+     {
+        byte nobytes = (byte)Math.Ceiling((decimal)(«this.name»RegDataWidth / 8));
+        byte[] valueAsByteArray = new byte[nobytes];
+        decimal value = this.numericUpDown_«this.name».Value;
+        for (int index = 0; index< nobytes; index++)
+        {
+            valueAsByteArray[index] = (byte)(value % 256);
+            value = (value-valueAsByteArray[index]) / 256;
+        }
+        send_write_command((byte)«this.name»RegOffset, valueAsByteArray);
+      }
+        
+        private void numericUpDown_«this.name»_Read(object sender, EventArgs e)
+        {
+             // Read current value of register
+            byte nobytes = (byte)Math.Ceiling((decimal)(«this.name»RegDataWidth / 8));
+            byte[] result = send_read_command((byte)«this.name»RegOffset, nobytes, true);
+            if (result == null)
+                return;
+            decimal value = 0;
+            if(nobytes == 1){
+            	value = result[0];
+            }
+            else{
+	            for (int index = 0; index < nobytes; index++)
+	            {
+	                value = 256 * value + result[nobytes - index - 1];
+	            }
+            }
+
+            this.numericUpDown_«this.name».Value = value;
+        }
+        private void numericUpDown_«this.name»_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             // Read current value of register if r was pressed
+             if (e.KeyChar == 'r')
+                this.numericUpDown_«this.name»_Read(sender, null);
+        }
+	  «ENDIF»
+«ENDIF»
+
+«IF this.accessExternal.accessType.toString() == 'read'»
+		private void textBox_«this.name»_Read(object sender, EventArgs e)
+        {
+            byte nobytes = (byte)Math.Ceiling((decimal)(«this.name»RegDataWidth / 8));
+            byte[] result = send_read_command((byte)«this.name»RegOffset, nobytes, true);
+            if (result == null)
+                return;
+            if(nobytes == 1)
+            	this.textBox_«this.name».Text = result[0].ToString();
+			else{
+	            int value = result[0];
+	            for (int byteindex = 1; byteindex < result.Length; byteindex++)
+	            {
+	                value = 256 * value + result[byteindex];
+	            }
+	            this.textBox_«this.name».Text = value.ToString();
+            }
+        }
+        
+        private void textBox_«this.name»_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             // Read current value of register if r was pressed
+             if (e.KeyChar == 'r')
+                this.textBox_«this.name»_Read(sender, null);
+        }
+«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE ComponentControlsDeclarations FOR Component»
+	«EXPAND RegMemControlsDeclaration FOREACH this.regMemSet»
+«ENDDEFINE»
+
+«DEFINE RegMemControlsDeclaration FOR RegMemSet»
+	«EXPAND RegisterControlsDeclaration FOREACH this.regMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterControlsDeclaration FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterControlsDeclaration FOR Register»
+	private System.Windows.Forms.GroupBox groupbox_«this.name»;
+	«EXPAND BitFieldControlsDeclaration FOREACH this.bitFieldElement»
+«ENDDEFINE»
+
+«DEFINE BitFieldControlsDeclaration FOR BitFieldElement»
+«ENDDEFINE»
+«DEFINE BitFieldControlsDeclaration FOR BitField»
+«IF this.accessExternal.accessType.toString() == 'readwrite'»
+   «IF this.width == "1"»
+       private System.Windows.Forms.CheckBox checkBox_«this.name»;
+	«ELSE»
+       private System.Windows.Forms.Label label_«this.name»;
+       private System.Windows.Forms.NumericUpDown numericUpDown_«this.name»;
+     «ENDIF»
+«ENDIF»
+«IF this.accessExternal.accessType.toString() == 'read'»
+   	   private System.Windows.Forms.Label label_«this.name»;
+       private System.Windows.Forms.TextBox textBox_«this.name»;
+«ENDIF»
+«ENDDEFINE»

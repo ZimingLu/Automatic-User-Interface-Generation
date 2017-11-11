@@ -1,0 +1,11 @@
+import model;
+import modelextension;
+
+//Xtend mapping for Java in template file
+String eval(Object this) : JAVA
+    template.FirstTest.evaluate(java.lang.Object);
+    
+String generateLabel(String labelName, java::lang::Object value) : JAVA
+    template.LabelTemplate.generateLabel(java.lang.String, java.lang.String);
+    
+    

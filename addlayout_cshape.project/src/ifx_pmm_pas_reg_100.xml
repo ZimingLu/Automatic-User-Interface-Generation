@@ -1,0 +1,1968 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Component>
+    <Custom></Custom>
+    <Hidden>false</Hidden>
+    <ID>1</ID>
+    <LongDescription>
+        <html></html>
+    </LongDescription>
+    <Name>pas_reg</Name>
+    <ShortDescription></ShortDescription>
+    <ConstDefBlock>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>2</ID>
+        <LongDescription>
+            <html></html>
+        </LongDescription>
+        <Name>Constant_Definition_Block</Name>
+        <ShortDescription></ShortDescription>
+    </ConstDefBlock>
+    <EssenceVersion>20300</EssenceVersion>
+    <GenericDeclBlock>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>3</ID>
+        <LongDescription>
+            <html></html>
+        </LongDescription>
+        <Name>Generic_Declaration_Block</Name>
+        <ShortDescription></ShortDescription>
+    </GenericDeclBlock>
+    <ParamDeclBlock>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>4</ID>
+        <LongDescription>
+            <html></html>
+        </LongDescription>
+        <Name>Parameter_Declaration_Block</Name>
+        <ShortDescription></ShortDescription>
+        <ParamDecl xsi:type="IntegerDecl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom></Custom>
+            <Hidden>false</Hidden>
+            <ID>5</ID>
+            <LongDescription>
+                <html></html>
+            </LongDescription>
+            <Name>apb_if_base</Name>
+            <ShortDescription></ShortDescription>
+            <DefaultValue>0</DefaultValue>
+        </ParamDecl>
+        <ParamDecl xsi:type="IntegerDecl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom></Custom>
+            <Hidden>false</Hidden>
+            <ID>6</ID>
+            <LongDescription>
+                <html></html>
+            </LongDescription>
+            <Name>apb_if_range</Name>
+            <ShortDescription></ShortDescription>
+            <DefaultValue>0x1000</DefaultValue>
+        </ParamDecl>
+    </ParamDeclBlock>
+    <VLNV>
+        <Vendor>ifx</Vendor>
+        <Library>pmm</Library>
+        <Name>pas_reg</Name>
+        <Version>100</Version>
+    </VLNV>
+    <Interface>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>7</ID>
+        <LongDescription>
+            <html></html>
+        </LongDescription>
+        <Name>apb_if</Name>
+        <ShortDescription></ShortDescription>
+        <BaseAddress>$apb_if_base</BaseAddress>
+        <ExtVLNV>
+            <Vendor>ifx</Vendor>
+            <Library>arm</Library>
+            <Name>apb_if</Name>
+            <Version>100</Version>
+        </ExtVLNV>
+        <Range>0x28</Range>
+        <Role>Slave</Role>
+        <AddressBlock>
+            <XRefRegMemSet>
+                <XRefTargetID>8</XRefTargetID>
+                <Offset>0</Offset>
+            </XRefRegMemSet>
+        </AddressBlock>
+    </Interface>
+    <TopSpinClkStyle>asynchronous</TopSpinClkStyle>
+    <RegMemSet>
+        <Custom></Custom>
+        <Hidden>false</Hidden>
+        <ID>8</ID>
+        <LongDescription>
+            <html></html>
+        </LongDescription>
+        <Name>pas_reg</Name>
+        <ShortDescription>pas_reg</ShortDescription>
+        <AddressUnit>8</AddressUnit>
+        <DataUnit>8</DataUnit>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_pwm_period";callback_get="get_pwm_period"</Custom>
+            <Hidden>false</Hidden>
+            <ID>9</ID>
+            <LongDescription>
+                <html>PWM period in # of root clock cycles</html>
+            </LongDescription>
+            <Name>pwm_per</Name>
+            <ShortDescription>PWM period in # of root clock cycles</ShortDescription>
+            <Offset>0x0</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>10</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>11</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>pwm_per</Name>
+                <ShortDescription>PWM period in # of root clock cycles</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>12</ID>
+            <LongDescription>
+                <html>Heat time in # of PWM periods * 16
+00h --&gt; 100h</html>
+            </LongDescription>
+            <Name>heat_smpls</Name>
+            <ShortDescription>Heat time in # of PWM periods * 16
+00h --&gt; 100h</ShortDescription>
+            <Offset>0x2</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>13</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>14</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>heat_smpls</Name>
+                <ShortDescription>Heat time in # of PWM periods * 16
+00h --&gt; 100h</ShortDescription>
+                <Offset>0</Offset>
+                <Width>6</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>15</ID>
+            <LongDescription>
+                <html>Measturement time in # of PWM periods * 16,
+ 00h --&gt; 100h</html>
+            </LongDescription>
+            <Name>meas_smpls</Name>
+            <ShortDescription>Measturement time in # of PWM periods * 16,
+ 00h --&gt; 100h</ShortDescription>
+            <Offset>0x3</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>16</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>17</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_smpls</Name>
+                <ShortDescription>Measturement time in # of PWM periods * 16,
+ 00h --&gt; 100h</ShortDescription>
+                <Offset>0</Offset>
+                <Width>6</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>18</ID>
+            <LongDescription>
+                <html>Number of measurement accumulations
+0-&gt;1x, 1-&gt;2x, 2-&gt;4x, 3-&gt; 8x, &amp;#8230;, 7-&gt;128x</html>
+            </LongDescription>
+            <Name>meas_accu</Name>
+            <ShortDescription>Number of measurement accumulations
+0-&gt;1x, 1-&gt;2x, 2-&gt;4x, 3-&gt; 8x, &amp;#8230;, 7-&gt;128x</ShortDescription>
+            <Offset>0x4</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>19</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>20</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_accu</Name>
+                <ShortDescription>Number of measurement accumulations
+0-&gt;1x, 1-&gt;2x, 2-&gt;4x, 3-&gt; 8x, &amp;#8230;, 7-&gt;128x</ShortDescription>
+                <Offset>0</Offset>
+                <Width>3</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="get_gas_concentration"</Custom>
+            <Hidden>false</Hidden>
+            <ID>21</ID>
+            <LongDescription>
+                <html>Gas concentration in ppm, 4096-&gt; overflow</html>
+            </LongDescription>
+            <Name>gas_val</Name>
+            <ShortDescription>Gas concentration in ppm, 4096-&gt; overflow</ShortDescription>
+            <Offset>0x5</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>22</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>23</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>gas_val</Name>
+                <ShortDescription>Gas concentration in ppm, 4096-&gt; overflow</ShortDescription>
+                <Offset>0</Offset>
+                <Width>12</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>24</ID>
+            <LongDescription>
+                <html>0b-&gt; one shot
+1b-&gt;continuous
+Write 0b to terminated continuous conversion</html>
+            </LongDescription>
+            <Name>meas_ctrl</Name>
+            <ShortDescription>write 1b -&gt; start measurement
+write 0b -&gt; abort measurement
+read 1b -&gt; measurement ongoing
+read 0b -&gt; no measurement ongoing</ShortDescription>
+            <Offset>0x7</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>25</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>26</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_run</Name>
+                <ShortDescription>write 1b -&gt; start measurement
+write 0b -&gt; abort measurement
+read 1b -&gt; measurement ongoing
+read 0b -&gt; no measurement ongoing</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>27</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_cont</Name>
+                <ShortDescription>0b-&gt; one shot
+1b-&gt;continuous
+Write 0b to terminated continuous conversion</ShortDescription>
+                <Offset>1</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>28</ID>
+            <LongDescription>
+                <html>Repetition period for continuous measurements in multiples or 100ms, up to 25.5s</html>
+            </LongDescription>
+            <Name>meas_per</Name>
+            <ShortDescription>Repetition period for continuous measurements in multiples or 100ms, up to 25.5s</ShortDescription>
+            <Offset>0x8</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>29</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>30</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_per</Name>
+                <ShortDescription>Repetition period for continuous measurements in multiples or 100ms, up to 25.5s</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>31</ID>
+            <LongDescription>
+                <html>00b-&gt; sample sensor response [adc dgitits]
+01b-&gt; sample pwm duty cycle [root clock]
+10b-&gt; sample heater resistance [adc digits]
+11b-&gt; sampel heater temperature [degC], only uC version</html>
+            </LongDescription>
+            <Name>meas_mode</Name>
+            <ShortDescription>00b-&gt; sample sensor response [adc dgitits]
+01b-&gt; sample pwm duty cycle [root clock]
+10b-&gt; sample heater resistance [adc digits]
+11b-&gt; sampel heater temperature [degC], only uC version</ShortDescription>
+            <Offset>0x9</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>32</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>33</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_mode</Name>
+                <ShortDescription>00b-&gt; sample sensor response [adc dgitits]
+01b-&gt; sample pwm duty cycle [root clock]
+10b-&gt; sample heater resistance [adc digits]
+11b-&gt; sampel heater temperature [degC], only uC version</ShortDescription>
+                <Offset>0</Offset>
+                <Width>2</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>34</ID>
+            <LongDescription>
+                <html>Reflects which sample is currently being processed</html>
+            </LongDescription>
+            <Name>meas_smpl_sts</Name>
+            <ShortDescription>Reflects which sample is currently being processed</ShortDescription>
+            <Offset>0xa</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>35</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>36</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_smpl_sts</Name>
+                <ShortDescription>Reflects which sample is currently being processed</ShortDescription>
+                <Offset>0</Offset>
+                <Width>6</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>37</ID>
+            <LongDescription>
+                <html>Reflects which accumulation cycle is currently being processed</html>
+            </LongDescription>
+            <Name>meas_accu_sts</Name>
+            <ShortDescription>Reflects which accumulation cycle is currently being processed</ShortDescription>
+            <Offset>0xb</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>38</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>39</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_accu_sts</Name>
+                <ShortDescription>Reflects which accumulation cycle is currently being processed</ShortDescription>
+                <Offset>0</Offset>
+                <Width>6</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>40</ID>
+            <LongDescription>
+                <html>Measurement offset adjust</html>
+            </LongDescription>
+            <Name>meas_ofs</Name>
+            <ShortDescription>Measurement offset adjust</ShortDescription>
+            <Offset>0xc</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>41</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>42</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_ofs</Name>
+                <ShortDescription>Measurement offset adjust</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>43</ID>
+            <LongDescription>
+                <html>Amplification gain for difference between meas_ofs and actual gain.
+0-&gt;1x, 1-&gt;2x, 2-&gt;4x, 3-&gt; 8x, &amp;#8230;, 6-&gt;64x, 7-&gt;reserved</html>
+            </LongDescription>
+            <Name>meas_gain</Name>
+            <ShortDescription>Amplification gain for difference between meas_ofs and actual gain.
+0-&gt;1x, 1-&gt;2x, 2-&gt;4x, 3-&gt; 8x, &amp;#8230;, 6-&gt;64x, 7-&gt;reserved</ShortDescription>
+            <Offset>0xd</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>44</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>45</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_gain</Name>
+                <ShortDescription>Amplification gain for difference between meas_ofs and actual gain.
+0-&gt;1x, 1-&gt;2x, 2-&gt;4x, 3-&gt; 8x, &amp;#8230;, 6-&gt;64x, 7-&gt;reserved</ShortDescription>
+                <Offset>0</Offset>
+                <Width>3</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_duty_cycle_led1";callback_get="get_duty_cycle_led1"</Custom>
+            <Hidden>false</Hidden>
+            <ID>46</ID>
+            <LongDescription>
+                <html>PWM on time during heating in # of root clock cycles</html>
+            </LongDescription>
+            <Name>pwm_duty_heat</Name>
+            <ShortDescription>PWM on time during heating in # of root clock cycles</ShortDescription>
+            <Offset>0xe</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>47</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>48</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>pwm_duty_heat</Name>
+                <ShortDescription>PWM on time during heating in # of root clock cycles</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="set_duty_cycle_led2";callback_get="get_duty_cycle_led2"</Custom>
+            <Hidden>false</Hidden>
+            <ID>49</ID>
+            <LongDescription>
+                <html>PWM on time during cooling in # of root clock cycles</html>
+            </LongDescription>
+            <Name>pwm_duty_cool</Name>
+            <ShortDescription>PWM on time during cooling in # of root clock cycles</ShortDescription>
+            <Offset>0x10</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>50</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>51</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>pwm_duty_cool</Name>
+                <ShortDescription>PWM on time during cooling in # of root clock cycles</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>52</ID>
+            <LongDescription>
+                <html>target temperature during heating (adc digits or degC)</html>
+            </LongDescription>
+            <Name>temp_set_heat</Name>
+            <ShortDescription>target temperature during heating (adc digits or degC)</ShortDescription>
+            <Offset>0x12</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>53</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>54</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>temp_set_heat</Name>
+                <ShortDescription>target temperature during heating (adc digits or degC)</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>55</ID>
+            <LongDescription>
+                <html>target temperature during cooling (adc digits or degC)</html>
+            </LongDescription>
+            <Name>temp_set_cool</Name>
+            <ShortDescription>target temperature during cooling (adc digits or degC)</ShortDescription>
+            <Offset>0x14</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>56</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>57</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>temp_set_cool</Name>
+                <ShortDescription>target temperature during cooling (adc digits or degC)</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>58</ID>
+            <LongDescription>
+                <html>0b-&gt; adc digits
+1b -&gt; deg centigrade (only uC version)</html>
+            </LongDescription>
+            <Name>temp_set_mode</Name>
+            <ShortDescription>0b-&gt; adc digits
+1b -&gt; deg centigrade (only uC version)</ShortDescription>
+            <Offset>0x16</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>59</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>60</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>temp_set_mode</Name>
+                <ShortDescription>0b-&gt; adc digits
+1b -&gt; deg centigrade (only uC version)</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_led1_on_off";callback_get="read_led1_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>61</ID>
+            <LongDescription>
+                <html>heater regulation enable 
+0b-&gt;use pwm_duty_*, 
+1b-&gt;regulate to temp_set_*</html>
+            </LongDescription>
+            <Name>heat_reg_en</Name>
+            <ShortDescription>heater regulation enable 
+0b-&gt;use pwm_duty_*, 
+1b-&gt;regulate to temp_set_*</ShortDescription>
+            <Offset>0x17</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>62</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>63</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>heat_reg_en</Name>
+                <ShortDescription>heater regulation enable 
+0b-&gt;use pwm_duty_*, 
+1b-&gt;regulate to temp_set_*</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_led2_on_off";callback_get="read_led2_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>64</ID>
+            <LongDescription>
+                <html>Heater PID regulator proportional term</html>
+            </LongDescription>
+            <Name>temp_reg_p</Name>
+            <ShortDescription>Heater PID regulator proportional term</ShortDescription>
+            <Offset>0x18</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>65</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>66</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>temp_reg_p</Name>
+                <ShortDescription>Heater PID regulator proportional term</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_led3_on_off";callback_get="read_led3_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>67</ID>
+            <LongDescription>
+                <html>Heater PID regulator integral term</html>
+            </LongDescription>
+            <Name>temp_reg_i</Name>
+            <ShortDescription>Heater PID regulator integral term</ShortDescription>
+            <Offset>0x19</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>68</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>69</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>temp_reg_i</Name>
+                <ShortDescription>Heater PID regulator integral term</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="turn_led4_on_off";callback_get="read_led4_on_off"</Custom>
+            <Hidden>false</Hidden>
+            <ID>70</ID>
+            <LongDescription>
+                <html>Heater PID regulator differential term</html>
+            </LongDescription>
+            <Name>temp_reg_d</Name>
+            <ShortDescription>Heater PID regulator differential term</ShortDescription>
+            <Offset>0x1a</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>71</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>72</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>temp_reg_d</Name>
+                <ShortDescription>Heater PID regulator differential term</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>73</ID>
+            <LongDescription>
+                <html>write 1 -&gt; start measurement
+write 0 -&gt; abort measurement
+read 1 -&gt; measurement ongoing
+read 0 -&gt; no measurement ongoing</html>
+            </LongDescription>
+            <Name>util_run</Name>
+            <ShortDescription>write 1 -&gt; start measurement
+write 0 -&gt; abort measurement
+read 1 -&gt; measurement ongoing
+read 0 -&gt; no measurement ongoing</ShortDescription>
+            <Offset>0x1b</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>74</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>75</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>util_run</Name>
+                <ShortDescription>write 1 -&gt; start measurement
+write 0 -&gt; abort measurement
+read 1 -&gt; measurement ongoing
+read 0 -&gt; no measurement ongoing</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>76</ID>
+            <LongDescription>
+                <html>Die temperature measurement result</html>
+            </LongDescription>
+            <Name>util_tdie</Name>
+            <ShortDescription>Die temperature measurement result</ShortDescription>
+            <Offset>0x1c</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>77</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>78</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>util_tdie</Name>
+                <ShortDescription>Die temperature measurement result</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>79</ID>
+            <LongDescription>
+                <html>Supply volrtage measurement result</html>
+            </LongDescription>
+            <Name>util_vsup</Name>
+            <ShortDescription>Supply volrtage measurement result</ShortDescription>
+            <Offset>0x1e</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>80</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>81</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>util_vsup</Name>
+                <ShortDescription>Supply volrtage measurement result</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="write_AFE_ADR";callback_get="read_AFE_ADR"</Custom>
+            <Hidden>false</Hidden>
+            <ID>82</ID>
+            <LongDescription>
+                <html>Utility mesurement termination interrupt enable:
+ 0b-&gt; disabled, 
+1b-&gt; enabled</html>
+            </LongDescription>
+            <Name>int_en</Name>
+            <ShortDescription>Messurement termination interrupt enable:
+ 0b-&gt; disabled, 
+1b-&gt; enabled</ShortDescription>
+            <Offset>0x20</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>83</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>84</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_int_en</Name>
+                <ShortDescription>Messurement termination interrupt enable:
+ 0b-&gt; disabled, 
+1b-&gt; enabled</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>85</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>util_int_en</Name>
+                <ShortDescription>Utility mesurement termination interrupt enable:
+ 0b-&gt; disabled, 
+1b-&gt; enabled</ShortDescription>
+                <Offset>1</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>86</ID>
+            <LongDescription>
+                <html>Utility measurement termination interrupt status: 
+0b-&gt; not asserted, 
+1b-&gt;asserted, 
+write 0b to clear heat_int_sts</html>
+            </LongDescription>
+            <Name>int_sts</Name>
+            <ShortDescription>Measurement termination interrupt status: 
+0b-&gt; not asserted, 
+1b-&gt;asserted, 
+write 0b to clear heat_int_sts</ShortDescription>
+            <Offset>0x21</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>87</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>88</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_int_sts</Name>
+                <ShortDescription>Measurement termination interrupt status: 
+0b-&gt; not asserted, 
+1b-&gt;asserted, 
+write 0b to clear heat_int_sts</ShortDescription>
+                <Offset>0</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>89</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>util_int_sts</Name>
+                <ShortDescription>Utility measurement termination interrupt status: 
+0b-&gt; not asserted, 
+1b-&gt;asserted, 
+write 0b to clear heat_int_sts</ShortDescription>
+                <Offset>1</Offset>
+                <Width>1</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="write_AFE_DATA";callback_get="read_AFE_DATA"</Custom>
+            <Hidden>false</Hidden>
+            <ID>90</ID>
+            <LongDescription>
+                <html>nvm address, writing this field immediately updates nvm_data update</html>
+            </LongDescription>
+            <Name>nvm_addr</Name>
+            <ShortDescription>nvm address, writing this field immediately updates nvm_data update</ShortDescription>
+            <Offset>0x22</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>91</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>92</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>nvm_addr</Name>
+                <ShortDescription>nvm address, writing this field immediately updates nvm_data update</ShortDescription>
+                <Offset>0</Offset>
+                <Width>10</Width>
+                <AccessExternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>readwrite</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>93</ID>
+            <LongDescription>
+                <html>nvm data</html>
+            </LongDescription>
+            <Name>nvm_data</Name>
+            <ShortDescription>nvm data</ShortDescription>
+            <Offset>0x24</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>94</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>95</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>nvm_data</Name>
+                <ShortDescription>nvm data</ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>96</ID>
+            <LongDescription>
+                <html></html>
+            </LongDescription>
+            <Name>meas_data_fifo_status</Name>
+            <ShortDescription></ShortDescription>
+            <Offset>0x25</Offset>
+            <DataWidth>8</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>97</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>98</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_data_fifo_status</Name>
+                <ShortDescription></ShortDescription>
+                <Offset>0</Offset>
+                <Width>8</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+        <RegMemElement xsi:type="Register" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Custom>callback_set="NULL";callback_get="NULL"</Custom>
+            <Hidden>false</Hidden>
+            <ID>99</ID>
+            <LongDescription>
+                <html>64 Byte FIFO</html>
+            </LongDescription>
+            <Name>meas_data_fifo</Name>
+            <ShortDescription>64 Byte FIFO</ShortDescription>
+            <Offset>0x26</Offset>
+            <DataWidth>16</DataWidth>
+            <NoShadow>true</NoShadow>
+            <ResetType>
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>100</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>DefaultName</Name>
+                <ShortDescription></ShortDescription>
+                <ResetLevel>0</ResetLevel>
+                <ResetMask>0</ResetMask>
+                <ResetMode>asynchronous</ResetMode>
+                <ResetType>0</ResetType>
+                <ResetValue>0x0</ResetValue>
+            </ResetType>
+            <MirrorSize>1</MirrorSize>
+            <TopSpinType>noTopSpin</TopSpinType>
+            <BitFieldElement xsi:type="BitField">
+                <Custom></Custom>
+                <Hidden>false</Hidden>
+                <ID>101</ID>
+                <LongDescription>
+                    <html></html>
+                </LongDescription>
+                <Name>meas_data</Name>
+                <ShortDescription>64 Byte FIFO</ShortDescription>
+                <Offset>0</Offset>
+                <Width>16</Width>
+                <AccessExternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessExternal>
+                <AccessInternal>
+                    <AccessType>read</AccessType>
+                    <StrobeType>NoStrobe</StrobeType>
+                </AccessInternal>
+                <MaxVal>0</MaxVal>
+                <MinVal>0</MinVal>
+                <Reserved>unreserved</Reserved>
+                <SignInterpretation>unsigned</SignInterpretation>
+                <Virtual>false</Virtual>
+                <DefaultValue>0</DefaultValue>
+                <DefaultMask>0</DefaultMask>
+            </BitFieldElement>
+        </RegMemElement>
+    </RegMemSet>
+</Component>

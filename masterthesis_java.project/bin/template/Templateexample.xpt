@@ -1,0 +1,112 @@
+«IMPORT model»
+«IMPORT modelextension»
+
+«EXTENSION template::GeneratorExtensions»
+«DEFINE documentRoot FOR DocumentRoot»
+«FILE "Main.java"»
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+		new Main().Form();
+    }
+    
+    private Component[] getComponents(Component container) {
+        ArrayList<Component> list = null;
+
+        try {
+            list = new ArrayList<Component>(Arrays.asList(
+                  ((Container) container).getComponents()));
+            for (int index = 0; index < list.size(); index++) {
+                for (Component currentComponent : getComponents(list.get(index))) {
+                    list.add(currentComponent);
+                }
+            }
+        } catch (ClassCastException e) {
+            list = new ArrayList<Component>();
+        }
+
+        return list.toArray(new Component[list.size()]);
+    }
+    
+    public boolean isInteger(String s) {
+	    try { 
+	        Integer.parseInt(s); 
+	    } catch(NumberFormatException e) { 
+	        return false; 
+	    } catch(NullPointerException e) {
+	        return false;
+	    }
+	    return true;
+	}
+    
+    public void Form(){
+    	Form form = new Form();
+    	String name;
+    	int dataWidth;
+    	JLabel[] labelTemp;
+    	JComboBox<Integer>[] comboboxTemp;
+    	Integer[] selection = new Integer[]{0, 1};
+    	JFrame f = new JFrame("User Interface");
+    	Container con = f.getContentPane();
+    	JPanel panelTotal = new JPanel();
+        JScrollPane scrollPane = new JScrollPane(panelTotal);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setAutoscrolls(true);
+        panelTotal.setLayout(new BoxLayout(panelTotal, BoxLayout.Y_AXIS));
+        con.add(scrollPane, BorderLayout.CENTER);
+    	Toolkit toolkit = Toolkit.getDefaultToolkit();
+    	Dimension sc = toolkit.getScreenSize();
+    	f.setSize(840, 560);
+        f.setLocation(sc.width/3, sc.height/4);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //f.setResizable(false);
+    	Border border = BorderFactory.createEtchedBorder(Color.gray, Color.black);
+    	Border border0 = BorderFactory.createTitledBorder(border, "Register Configuration",TitledBorder.LEFT, TitledBorder.TOP);
+    	Border border1;
+    	Border border2 = BorderFactory.createTitledBorder(border, "General Info", TitledBorder.LEFT, TitledBorder.TOP);
+    	Border border3 = BorderFactory.createTitledBorder(border, "Register Attributes", TitledBorder.LEFT, TitledBorder.TOP);
+    	Border border4 = BorderFactory.createTitledBorder(border, "BitField Overview", TitledBorder.LEFT, TitledBorder.TOP);
+    	
+    	panelTotal.setBorder(border0);
+        «EXPAND componentTemplate FOR this.component»
+        f.setVisible(true);
+    }
+}
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE componentTemplate FOR Component»
+	«EXPAND regMemSetTemplate FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetTemplate FOR RegMemSet»
+	«EXPAND regMemElementTemplate FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR Register»
+	JPanel «this.name»Panel = new JPanel();	
+	JPanel «this.name»GeneralInfo = new JPanel(new GridLayout(3, 1, 5, 5));	
+	JPanel «this.name»RegAttributes = new JPanel(new GridLayout(6, 1, 5, 5));	
+	JPanel «this.name»BitField = new JPanel();
+	JTextField «this.name»DataInput = new JTextField();
+	«EXPAND BitFieldTemplate FOREACH this.bitFieldElement»
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitField»
+	for(int index=dataWidth-1-«this.offset», i=0; i<«this.width»; i++, index--){
+		comboboxTemp[index].setEnabled(true);
+		labelTemp[index].setText("«this.name»" + "[" + i + "]");
+	}
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR RegMemElement»
+«ENDDEFINE»
+«DEFINE BitFieldTemplate FOR BitFieldElement»
+«ENDDEFINE»

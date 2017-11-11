@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="ASCII"?>
+<essence:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:essence="file:///C:/eclipseWorkspace/masterthesis_cshape.project/src/metamodel/essence.ecore">
+  <component custom="" iD="1" name="pas_reg" shortDescription="" essenceVersion="20300" topSpinClkStyle="asynchronous">
+    <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+    <constDefBlock custom="" iD="2" name="Constant_Definition_Block" shortDescription="">
+      <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+    </constDefBlock>
+    <genericDeclBlock custom="" iD="3" name="Generic_Declaration_Block" shortDescription="">
+      <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+    </genericDeclBlock>
+    <paramDeclBlock custom="" iD="4" name="Parameter_Declaration_Block" shortDescription="">
+      <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+      <paramDecl xsi:type="essence:IntegerDecl" custom="" iD="5" name="apb_if_base" shortDescription="" defaultValue="0">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+      </paramDecl>
+      <paramDecl xsi:type="essence:IntegerDecl" custom="" iD="6" name="apb_if_range" shortDescription="" defaultValue="0x1000">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    &lt;p style=&quot;margin-top: 0&quot;>&#xA;      &#xA;    &lt;/p>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+      </paramDecl>
+    </paramDeclBlock>
+    <vLNV vendor="ifx" library="pmm" name="pas_reg" version="100"/>
+    <interface custom="" iD="7" name="apb_if" shortDescription="" baseAddress="$apb_if_base" range="0x26" role="Slave">
+      <longDescription html=""/>
+      <extVLNV vendor="ifx" library="arm" name="apb_if" version="100"/>
+      <addressBlock>
+        <xRefRegMemSet xRefTargetID="8" offset="0"/>
+      </addressBlock>
+    </interface>
+    <regMemSet custom="" iD="8" name="pas_reg" shortDescription="pas_reg">
+      <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_ld0_per&quot;;callback_get=&quot;get_ld0_per&quot;" iD="9" name="ld0_per" shortDescription="PWM period for LED 0" offset="0x0" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="PWM period for LED 0"/>
+        <resetType custom="" iD="10" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="11" name="ld0_per" shortDescription="PWM period for LED 0" offset="0" width="12" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_duty_cycle_ld0_blue&quot;;callback_get=&quot;get_duty_cycle_ld0_blue&quot;" iD="12" name="duty_cycle_ld0_blue" shortDescription="PWM duty cycle for LED 0 blue part" offset="0x2" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="PWM duty cycle for LED 0 blue part"/>
+        <resetType custom="" iD="13" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="14" name="duty_cycle_ld0_blue" shortDescription="PWM duty cycle for LED 0 blue part" offset="0" width="12" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_duty_cycle_ld0_green&quot;;callback_get=&quot;get_duty_cycle_ld0_green&quot;" iD="15" name="duty_cycle_ld0_green" shortDescription="PWM duty cycle for LED 0 green part" offset="0x4" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="PWM duty cycle for LED 0 green part"/>
+        <resetType custom="" iD="16" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="17" name="duty_cycle_ld0_green" shortDescription="PWM duty cycle for LED 0 green part" offset="0" width="12" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_ld4_on_off&quot;;callback_get=&quot;read_ld4_on_off&quot;" iD="18" name="ld4_ctrl" shortDescription="switch LED 4 on/off" offset="0x6" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    switch LED 4 on/off&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="19" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="20" name="ld4_ctrl" shortDescription="switch LED 4 on/off" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_ld5_on_off&quot;;callback_get=&quot;read_ld5_on_off&quot;" iD="21" name="ld5_ctrl" shortDescription="switch LED 5 on/off" offset="0x7" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="switch LED 5 on/off"/>
+        <resetType custom="" iD="22" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="23" name="ld5_ctrl" shortDescription="switch LED 5 on/off" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_ld6_on_off&quot;;callback_get=&quot;read_ld6_on_off&quot;" iD="24" name="ld6_ctrl" shortDescription="switch LED 6 on/off" offset="0x8" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="switch LED 6 on/off"/>
+        <resetType custom="" iD="25" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="26" name="ld6_ctrl" shortDescription="switch LED 6 on/off" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_ld7_on_off&quot;;callback_get=&quot;read_ld7_on_off&quot;" iD="27" name="ld7_ctrl" shortDescription="switch LED 7 on/off" offset="0x9" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    switch LED 7 on/off&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="28" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="29" name="ld7_ctrl" shortDescription="switch LED 7 on/off" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_sensor_en&quot;;callback_get=&quot;get_sensor_en&quot;" iD="30" name="sensor_en" shortDescription="enables sensor" offset="0xa" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="enables sensor"/>
+        <resetType custom="" iD="31" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="32" name="sensor_en" shortDescription="enables sensor" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_sensor_meas&quot;;callback_get=&quot;get_sensor_meas&quot;" iD="33" name="sensor_meas" shortDescription="start measurement  with 1, has to be cleared after measurement" offset="0xb" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="start measurement  with 1, has to be cleared after measurement"/>
+        <resetType custom="" iD="34" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="35" name="sensor_meas" shortDescription="start measurement  with 1, has to be cleared after measurement" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_heater_voltage&quot;;callback_get=&quot;get_heater_voltage&quot;" iD="36" name="heater_voltage" shortDescription="heater voltage regulation target" offset="0xc" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="heater voltage regulation target"/>
+        <resetType custom="" iD="37" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x84d0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="38" name="heater_voltage" shortDescription="heater voltage regulation target" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_rheat_ref&quot;;callback_get=&quot;get_rheat_ref&quot;" iD="39" name="rheat_ref" shortDescription="heater resistor reference value" offset="0xe" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="heater resistor reference value"/>
+        <resetType custom="" iD="40" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x4a38">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="41" name="rheat_ref" shortDescription="heater resistor reference value" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_rheat_alpha&quot;;callback_get=&quot;get_rheat_alpha&quot;" iD="42" name="rheat_alpha" shortDescription="heater resistance temperature coefficient" offset="0x10" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="heater resistance temperature coefficient"/>
+        <resetType custom="" iD="43" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x4b0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="44" name="rheat_alpha" shortDescription="heater resistance temperature coefficient" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_adc_input_gain&quot;;callback_get=&quot;get_adc_input_gain&quot;" iD="45" name="adc_input_gain" shortDescription="gas sample delta sigma ADC input gain setting" offset="0x12" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="gas sample delta sigma ADC input gain setting"/>
+        <resetType custom="" iD="46" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x6">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="47" name="adc_input_gain" shortDescription="gas sample delta sigma ADC input gain setting" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_DsmClkDiv&quot;;callback_get=&quot;get_DsmClkDiv&quot;" iD="48" name="sample_rate" shortDescription="gas sample rate setting" offset="0x13" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="gas sample rate setting"/>
+        <resetType custom="" iD="49" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x32">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="50" name="sample_rate" shortDescription="gas sample rate setting" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_on_cycles&quot;;callback_get=&quot;get_on_cycles&quot;" iD="51" name="on_cycles" shortDescription="heater on time in gas samples" offset="0x14" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    heater on time in gas samples&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="52" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x80">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="53" name="on_cycles" shortDescription="heater on time in gas samples" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    &lt;p style=&quot;margin-top: 0&quot;>&#xA;      &#xA;    &lt;/p>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_off_cycles&quot;;callback_get=&quot;get_off_cycles&quot;" iD="54" name="off_cycles" shortDescription="heater off time in gas samples" offset="0x15" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="heater off time in gas samples"/>
+        <resetType custom="" iD="55" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x80">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="56" name="off_cycles" shortDescription="heater off time in gas samples" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_set_hh_temp&quot;;callback_get=&quot;get_set_hh_temp&quot;" iD="57" name="set_hh_temp" shortDescription="target for heater temperature hot phase" offset="0x16" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="target for heater temperature hot phase"/>
+        <resetType custom="" iD="58" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x1770">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="59" name="set_hh_temp" shortDescription="target for heater temperature hot phase" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_wait_cycles&quot;;callback_get=&quot;get_wait_cycles&quot;" iD="60" name="wait_cycles" shortDescription="measurement wait cycle before sampling starts" offset="0x18" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &lt;title>measurement wait cycle before sampling starts&lt;/title>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="61" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="62" name="wait_cycles" shortDescription="measurement wait cycle before sampling starts" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_meas_cnt&quot;;callback_get=&quot;get_meas_cnt&quot;" iD="63" name="meas_cnt" shortDescription="measurement cycles" offset="0x1a" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    measurement cycles&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="64" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x10">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="65" name="meas_cnt" shortDescription="measurement cycles" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_led_ctrl&quot;;callback_get=&quot;get_led_ctrl&quot;" iD="66" name="led_ctrl" shortDescription="LED control on AFE board" offset="0x1c" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    LED control on AFE board&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="67" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="68" name="led_ctrl" shortDescription="LED control on AFE board" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;get_meas_done&quot;" iD="69" name="meas_done" shortDescription="flag for measurement done" offset="0x1d" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &lt;title>flag for measurement done&lt;/title>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="70" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="71" name="meas_done" shortDescription="flag for measurement done" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    &lt;p style=&quot;margin-top: 0&quot;>&#xA;      &#xA;    &lt;/p>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="read"/>
+          <accessInternal accessType="read"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;get_meas_result&quot;" iD="72" name="meas_result" shortDescription="fifo to read out measurement results" offset="0x1e" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &lt;title>fifo to read out measurement results&lt;/title>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="73" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="74" name="meas_result" shortDescription="fifo to read out measurement results" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html=""/>
+          <accessExternal accessType="read"/>
+          <accessInternal accessType="read"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_smpl_first&quot;;callback_get=&quot;get_smpl_first&quot;" iD="75" name="smpl_first" shortDescription="First sample for computation of ppm value" offset="0x20" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="76" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="83" name="smpl_first" shortDescription="" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_smpl_last&quot;;callback_get=&quot;get_smpl_last&quot;" iD="77" name="smpl_last" shortDescription="Last sample for computation of ppm value" offset="0x21" dataWidth="8" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="78" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="84" name="smpl_last" shortDescription="" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_k_factor&quot;;callback_get=&quot;get_k_factor&quot;" iD="79" name="k_factor" shortDescription="Proportionality factor for ppm calculation" offset="0x22" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="80" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="85" name="k_factor" shortDescription="" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="readwrite"/>
+          <accessInternal accessType="readwrite"/>
+        </bitFieldElement>
+      </regMemElement>
+      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;get_ppm&quot;" iD="81" name="ppm" shortDescription="result of CO2 calculation in ppm" offset="0x24" dataWidth="16" topSpinType="noTopSpin">
+        <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <resetType custom="" iD="82" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0">
+          <longDescription html=""/>
+        </resetType>
+        <bitFieldElement xsi:type="essence:BitField" custom="" iD="86" name="ppm" shortDescription="" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
+          <longDescription html="&lt;html>&#xA;  &lt;head>&#xA;    &lt;style type=&quot;text/css&quot;>&#xA;      &lt;!--&#xA;        .style9 { color: #ffff33; background-color: #ff00ff }&#xA;        .style8 { color: #990099; background-color: #66ffcc }&#xA;        .style7 { color: #0066cc; background-color: #ccffcc }&#xA;        .style6 { color: #009900; background-color: #ffffcc }&#xA;        .style11 { color: #000066; background-color: #ccffcc }&#xA;        .style5 { color: #cc0033; background-color: #99ff99 }&#xA;        .style10 { color: #99ff99; background-color: #00cccc }&#xA;        .style4 { color: #cc0033; background-color: #ccffff }&#xA;        .style3 { color: #0000dd; background-color: teal }&#xA;        .style2 { color: #0000cc; background-color: aqua }&#xA;        .style1 { color: blue; background-color: silver }&#xA;        .style0 { color: #000099; background-color: #ffffcc }&#xA;      -->&#xA;    &lt;/style>&#xA;    &#xA;  &lt;/head>&#xA;  &lt;body>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <accessExternal accessType="read"/>
+          <accessInternal accessType="read"/>
+        </bitFieldElement>
+      </regMemElement>
+    </regMemSet>
+  </component>
+</essence:DocumentRoot>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated masterThesis -->
+      <package
+            uri="http://www.infineon.com/essence.xsd"
+            class="model.ModelPackage"
+            genModel="src/metamodel/masterThesis.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated masterThesis -->
+      <parser
+            type="model"
+            class="model.util.ModelResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated masterThesis -->
+      <package
+            uri="http://www.infineon.com/essence/modelextension"
+            class="modelextension.ModelextensionPackage"
+            genModel="src/metamodel/masterThesis.genmodel"/>
+   </extension>
+
+</plugin>

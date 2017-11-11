@@ -1,0 +1,263 @@
+«IMPORT model»
+«IMPORT modelextension»
+
+«EXTENSION template::GeneratorExtensions»
+«DEFINE documentRoot FOR DocumentRoot»
+«FILE "Main.java"»
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+		new Main().Form();
+    }
+    
+    private Component[] getComponents(Component container) {
+        ArrayList<Component> list = null;
+
+        try {
+            list = new ArrayList<Component>(Arrays.asList(
+                  ((Container) container).getComponents()));
+            for (int index = 0; index < list.size(); index++) {
+                for (Component currentComponent : getComponents(list.get(index))) {
+                    list.add(currentComponent);
+                }
+            }
+        } catch (ClassCastException e) {
+            list = new ArrayList<Component>();
+        }
+
+        return list.toArray(new Component[list.size()]);
+    }
+    
+    public boolean isInteger(String s) {
+	    try { 
+	        Integer.parseInt(s); 
+	    } catch(NumberFormatException e) { 
+	        return false; 
+	    } catch(NullPointerException e) {
+	        return false;
+	    }
+	    return true;
+	}
+    
+    public void Form(){
+    	Form form = new Form();
+    	String name;
+    	int dataWidth;
+    	JLabel[] labelTemp;
+    	JComboBox<Integer>[] comboboxTemp;
+    	Integer[] selection = new Integer[]{0, 1};
+    	JFrame f = new JFrame("User Interface");
+    	Container con = f.getContentPane();
+    	JPanel panelTotal = new JPanel();
+        JScrollPane scrollPane = new JScrollPane(panelTotal);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setAutoscrolls(true);
+        panelTotal.setLayout(new BoxLayout(panelTotal, BoxLayout.Y_AXIS));
+        con.add(scrollPane, BorderLayout.CENTER);
+    	Toolkit toolkit = Toolkit.getDefaultToolkit();
+    	Dimension sc = toolkit.getScreenSize();
+    	f.setSize(840, 560);
+        f.setLocation(sc.width/3, sc.height/4);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //f.setResizable(false);
+    	Border border = BorderFactory.createEtchedBorder(Color.gray, Color.black);
+    	Border border0 = BorderFactory.createTitledBorder(border, "Register Configuration",TitledBorder.LEFT, TitledBorder.TOP);
+    	Border border1;
+    	Border border2 = BorderFactory.createTitledBorder(border, "General Info", TitledBorder.LEFT, TitledBorder.TOP);
+    	Border border3 = BorderFactory.createTitledBorder(border, "Register Attributes", TitledBorder.LEFT, TitledBorder.TOP);
+    	Border border4 = BorderFactory.createTitledBorder(border, "BitField Overview", TitledBorder.LEFT, TitledBorder.TOP);
+    	
+    	panelTotal.setBorder(border0);
+        «EXPAND componentTemplate FOR this.component»
+        f.setVisible(true);
+    }
+}
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE componentTemplate FOR Component»
+	«EXPAND regMemSetTemplate FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetTemplate FOR RegMemSet»
+	«EXPAND regMemElementTemplate FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR Register»
+	JPanel «this.name»Panel = new JPanel();	
+	JPanel «this.name»GeneralInfo = new JPanel(new GridLayout(3, 1, 5, 5));	
+	JPanel «this.name»RegAttributes = new JPanel(new GridLayout(6, 1, 5, 5));	
+	JPanel «this.name»BitField = new JPanel();
+	JTextField «this.name»DataInput = new JTextField();
+	«this.name»DataInput.setText("0x");
+	«this.name»DataInput.setEnabled(false);
+	
+	
+	border1 = BorderFactory.createTitledBorder(border, "Register " + "«this.name»",TitledBorder.LEFT, TitledBorder.TOP);
+    «this.name»Panel.setBorder(border1);
+    «this.name»Panel.setLayout(new BoxLayout(«this.name»Panel, BoxLayout.Y_AXIS));
+    
+    //General info part
+    «this.name»GeneralInfo.setBorder(border2);
+    //«this.name»GeneralInfo.setLayout(new BoxLayout(«this.name»GeneralInfo, BoxLayout.PAGE_AXIS));
+	JLabel «this.name»Label = new JLabel("Name: " + "«this.name»");
+	//«this.name»Label.setMaximumSize(new Dimension(Integer.MAX_VALUE, «this.name»Label.getMinimumSize().height));
+	«this.name»GeneralInfo.add(«this.name»Label);
+	JLabel «this.name»ShortNameLabel = new JLabel("shortName: " + "«this.shortName»");
+	«this.name»GeneralInfo.add(«this.name»ShortNameLabel);
+	JLabel «this.name»HiddenLabel = new JLabel("hidden: " + "«this.hidden»");
+	«this.name»GeneralInfo.add(«this.name»HiddenLabel);
+	«this.name»Panel.add(«this.name»GeneralInfo);
+	//Register attribute part
+	«this.name»RegAttributes.setBorder(border3);
+    //«this.name»RegAttributes.setLayout(new BoxLayout(«this.name»RegAttributes, BoxLayout.Y_AXIS));
+	«this.name»Panel.add(«this.name»RegAttributes);
+	JLabel «this.name»OffsetLabel = new JLabel("Offset: " + "«this.offset»");
+	«this.name»RegAttributes.add(«this.name»OffsetLabel);
+	JLabel «this.name»RelOffsetLabel = new JLabel("Rel Offset: " + "«this.offset»");
+	«this.name»RegAttributes.add(«this.name»RelOffsetLabel);
+	JLabel «this.name»DataWidth = new JLabel("Rel Offset: " + "«this.dataWidth»");
+	«this.name»RegAttributes.add(«this.name»DataWidth);
+	JLabel «this.name»NoShadowLabel = new JLabel("No Shadow: ");
+	«this.name»RegAttributes.add(«this.name»NoShadowLabel);
+	JCheckBox «this.name»NoShadowCheckBox = new JCheckBox();
+	«IF this.noShadow==true»«this.name»NoShadowCheckBox.setSelected(true);
+	«ELSE»«this.name»NoShadowCheckBox.setSelected(false);
+	«ENDIF»
+	«this.name»RegAttributes.add(«this.name»NoShadowCheckBox);
+	JLabel «this.name»MirrorSizeLabel = new JLabel("Mirror Size: " + «this.mirrorSize»);
+	«this.name»RegAttributes.add(«this.name»MirrorSizeLabel);
+	//BitField Overview
+	
+	«this.name»BitField.setBorder(border4);
+	«this.name»BitField.setLayout(new BoxLayout(«this.name»BitField, BoxLayout.Y_AXIS));
+	«this.name»Panel.add(«this.name»BitField);	
+	
+	JCheckBox «this.name»BitCheck = new JCheckBox("BitField Configuration");
+	«this.name»BitCheck.setSelected(true);
+	«this.name»BitField.add(«this.name»BitCheck);
+	JCheckBox «this.name»DataInputCheck = new JCheckBox("Data Input Configuration");
+	«this.name»DataInputCheck.setSelected(false);
+	
+	JPanel «this.name»BitFieldPanel = new JPanel();
+	«this.name»BitField.add(«this.name»BitFieldPanel);
+	«this.name»BitFieldPanel.setLayout(new BoxLayout(«this.name»BitFieldPanel, BoxLayout.X_AXIS));
+	
+	JPanel «this.name»BitInputPanel = new JPanel();
+	«this.name»BitField.add(«this.name»BitInputPanel);
+	«this.name»BitInputPanel.setLayout(new BoxLayout(«this.name»BitInputPanel, BoxLayout.X_AXIS));
+	«this.name»BitCheck.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(!«this.name»BitCheck.isSelected()){
+                for(Component component : getComponents(«this.name»BitFieldPanel)) {
+    				component.setEnabled(false);
+				}
+				«this.name»DataInputCheck.setSelected(true);
+				«this.name»DataInput.setEnabled(true);
+            }
+            else{
+                for(Component component : getComponents(«this.name»BitFieldPanel)) {
+    				component.setEnabled(true);
+				}
+				«this.name»DataInputCheck.setSelected(false);
+				«this.name»DataInput.setEnabled(false);
+            }
+        }
+    });
+    
+   	«this.name»DataInputCheck.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(«this.name»DataInputCheck.isSelected()){
+                for(Component component : getComponents(«this.name»BitFieldPanel)) {
+    				component.setEnabled(false);
+				}
+				«this.name»BitCheck.setSelected(false);
+				«this.name»DataInput.setEnabled(true);
+            }
+            else{
+                for(Component component : getComponents(«this.name»BitFieldPanel)) {
+    				component.setEnabled(true);
+				}
+				«this.name»BitCheck.setSelected(true);
+				«this.name»DataInput.setEnabled(false);
+            }
+        }
+    });
+    Action «this.name»action = new AbstractAction()
+	{
+	    @Override
+	    public void actionPerformed(ActionEvent e)
+	    {
+	        String dataInput = «this.name»DataInput.getText().substring(2);
+	        if(isInteger(dataInput) && Integer.parseInt(dataInput) >=0 && Integer.parseInt(dataInput) < (int)Math.pow(2, «this.dataWidth»)){
+	        	form.send(Integer.parseInt(dataInput));
+	        }
+	        else{
+	        	JOptionPane.showMessageDialog(f,
+				    "The input value is an integer between 0 ~ " + ((int)Math.pow(2, «this.dataWidth»)-1),
+				    "Warning",
+				    JOptionPane.WARNING_MESSAGE);
+	        }
+	    }
+	};
+
+	JPanel[] «this.name»BitPanel = new JPanel[«this.dataWidth»];
+	JLabel[] «this.name»BitLabel = new JLabel[«this.dataWidth»];
+	JComboBox<Integer>[] «this.name»ComboBoxList = new JComboBox[«this.dataWidth»];
+	name = "«this.name»";
+	labelTemp = «this.name»BitLabel;
+	comboboxTemp = «this.name»ComboBoxList;
+	dataWidth = «this.dataWidth»;
+	for(int i=0; i<«this.dataWidth»; i++){
+		«this.name»BitPanel[i] = new JPanel();
+		«this.name»BitPanel[i].setLayout(new BoxLayout(«this.name»BitPanel[i], BoxLayout.Y_AXIS));
+		«this.name»BitFieldPanel.add(«this.name»BitPanel[i]);
+		
+		«this.name»BitLabel[i] = new JLabel("  ");
+		«this.name»ComboBoxList[i] = new JComboBox(selection);
+		«this.name»ComboBoxList[i].setEnabled(false);
+		«this.name»ComboBoxList[i].addActionListener (new ActionListener () {
+		    public void actionPerformed(ActionEvent e) {
+		    	int sendData=0;
+		    	for(int i=0; i<«this.dataWidth»; i++){
+		    		sendData = sendData*2+(int)«this.name»ComboBoxList[i].getSelectedItem();
+		    	}
+		        form.send(sendData);
+		    }
+		});
+		«this.name»BitPanel[i].add(«this.name»BitLabel[i]);
+		«this.name»BitPanel[i].add(«this.name»ComboBoxList[i]);
+		«this.name»BitPanel[i].setPreferredSize(new Dimension(40, 40));
+	}
+	«EXPAND BitFieldTemplate FOREACH this.bitFieldElement »
+	
+	«this.name»BitField.add(«this.name»DataInputCheck);
+	«this.name»BitField.add(«this.name»DataInput);
+	«this.name»DataInput.addActionListener(«this.name»action);
+	
+	//final total panel
+	panelTotal.add(«this.name»Panel);
+	panelTotal.add(new JSeparator());
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitFieldElement»
+
+«ENDDEFINE»
+«DEFINE BitFieldTemplate FOR BitField»
+	for(int index=dataWidth-1-«this.offset», i=0; i<«this.width»; i++, index--){
+		comboboxTemp[index].setEnabled(true);
+		labelTemp[index].setText("«this.name»" + "[" + i + "]");
+	}
+«ENDDEFINE»

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modelextension" nsURI="http://www.infineon.com/essence/modelextension"
+    nsPrefix="essenceextension">
+  <eClassifiers xsi:type="ecore:EClass" name="UnresolvedReference" eSuperTypes="essence.ecore#//SingleSourceNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EssenceBaseExtension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Parent" eType="ecore:EClass essence.ecore#//EssenceBase"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="suppressedSetVisibility" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceBase" abstract="true" interface="true">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//SequenceElementBase"/>
+    </eTypeParameters>
+    <eOperations name="getCountValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return InternalModelServiceImpl.EXPRESSIONSERVICE.getIntegerExpression(this, this.getCount(), ixVars);"/>
+      </eAnnotations>
+      <eParameters name="ixVars" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getMinIndexValue" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return InternalModelServiceImpl.EXPRESSIONSERVICE.getIntegerExpression(this, this.getMinIndex(), ixVars);"/>
+      </eAnnotations>
+      <eParameters name="ixVars" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getIndexStepValue" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return InternalModelServiceImpl.EXPRESSIONSERVICE.getIntegerExpression(this, this.getIndexStep(), ixVars);"/>
+      </eAnnotations>
+      <eParameters name="ixVars" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getIndexVar" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getElement" upperBound="-1">
+      <eGenericType eTypeParameter="#//SequenceBase/T"/>
+    </eOperations>
+    <eOperations name="getAltFormat" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceElementBase" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SequenceIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Offset" abstract="true" interface="true">
+    <eOperations name="getOffsetValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return InternalModelServiceImpl.EXPRESSIONSERVICE.getIntegerExpression(this, this.getOffset(), ixVars);"/>
+      </eAnnotations>
+      <eParameters name="ixVars" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="setOffset">
+      <eParameters name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OffsetSequence" abstract="true" interface="true">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//OffsetSequenceElement"/>
+    </eTypeParameters>
+    <eOperations name="getLength" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return com.infineon.essence.model.impl.InternalModelServiceImpl.SEQUENCESERVICE.getLength((OffsetSequence&lt;?>)this, ixVars);"/>
+      </eAnnotations>
+      <eParameters name="ixVars" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getElement" upperBound="-1">
+      <eGenericType eTypeParameter="#//OffsetSequence/T"/>
+    </eOperations>
+    <eGenericSuperTypes eClassifier="#//Offset"/>
+    <eGenericSuperTypes eClassifier="#//SequenceBase">
+      <eTypeArguments eTypeParameter="#//OffsetSequence/T"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OffsetSequenceElement" abstract="true"
+      interface="true" eSuperTypes="#//SequenceElementBase #//Offset">
+    <eOperations name="getLength" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return InternalModelServiceImpl.SEQUENCESERVICE.getLength(this, ixVars);"/>
+      </eAnnotations>
+      <eParameters name="ixVars" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getFullLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return InternalModelServiceImpl.SEQUENCESERVICE.getFullLength(this, ixVars);"/>
+      </eAnnotations>
+      <eParameters name="ixVars" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommonAccessLevel" abstract="true" interface="true">
+    <eOperations name="refreshCommonAccessLevel">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="if (commonAccessLevel != null) {&#xA;&#x9;commonAccessLevel.clear();&#xA;&#x9;commonAccessLevel.addAll(InternalModelServiceImpl.BUSINESSLOGICSERVICE.getCommonAccessLevel(this));&#xA;}"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CommonAccessLevel" upperBound="-1"
+        eType="ecore:EClass essence.ecore#//AccessLevel" transient="true" derived="true"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeOwner" abstract="true" interface="true">
+    <eOperations name="getDataType" eType="ecore:EClass essence.ecore#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BitResetType" abstract="true" interface="true">
+    <eOperations name="refreshBitResetType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="if (bitResetType != null) {&#xA;&#x9;bitResetType.clear();&#xA;&#x9;bitResetType.addAll(InternalModelServiceImpl.BUSINESSLOGICSERVICE.getBitResetType(this));&#xA;}"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BitResetType" upperBound="-1"
+        eType="ecore:EClass essence.ecore#//ResetType" transient="true" derived="true"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

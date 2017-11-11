@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="userLayout" nsURI="http://org/eclipse/example/userLayout" nsPrefix="org.eclipse.example.userLayout">
+  <eClassifiers xsi:type="ecore:EClass" name="Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verticalLayout" upperBound="-1"
+        eType="#//VerticalLayout" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="horizontalLayout" upperBound="-1"
+        eType="#//HorizontalLayout" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttonChildren" upperBound="-1"
+        eType="#//Button" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelChildren" upperBound="-1"
+        eType="#//Label" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comboboxChildren" upperBound="-1"
+        eType="#//Combobox" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textFieldChildren" upperBound="-1"
+        eType="#//TextField" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerticalLayout">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verticalChildren" upperBound="-1"
+        eType="#//VerticalLayout" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="horizontalChildren" upperBound="-1"
+        eType="#//HorizontalLayout" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttonChildren" upperBound="-1"
+        eType="#//Button" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelChildren" upperBound="-1"
+        eType="#//Label" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comboboxChildren" upperBound="-1"
+        eType="#//Combobox" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textFieldChildren" upperBound="-1"
+        eType="#//TextField" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HorizontalLayout">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verticalChildren" upperBound="-1"
+        eType="#//VerticalLayout" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="horizontalChildren" upperBound="-1"
+        eType="#//HorizontalLayout" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttonChildren" upperBound="-1"
+        eType="#//Button" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelChildren" upperBound="-1"
+        eType="#//Label" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comboboxChildren" upperBound="-1"
+        eType="#//Combobox" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textFieldChildren" upperBound="-1"
+        eType="#//TextField" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Combobox">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Button">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
