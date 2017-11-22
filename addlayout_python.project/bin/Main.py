@@ -34,6 +34,12 @@ class MyGui:
 	    
 		
 		
+label = Label(parent, text='label', font=('Arial', 10))
+label.pack(side=parentLayout)
+
+	label['text'] = (label)
+
+
 		
 		
 

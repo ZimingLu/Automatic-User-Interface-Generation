@@ -173,6 +173,12 @@ namespace WindowsFormsApp1
     
 	
 	
+	Label label = new Label(); 
+	
+		label.Text = "label";
+	
+	parentPanel.Controls.Add(label);
+
 	
 	ComboBox registerName = new ComboBox(); 
 	registerName.Enabled = true;

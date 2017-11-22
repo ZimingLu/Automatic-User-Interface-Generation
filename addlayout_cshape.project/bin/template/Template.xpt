@@ -1,6 +1,4 @@
 «IMPORT model»
-
-«EXTENSION template::GeneratorExtensions»
     	
 «DEFINE documentRoot FOR DocumentRoot»
 «FILE "Main.cs"»
@@ -331,6 +329,8 @@ namespace WindowsFormsApp1
 		}
 	«ELSEIF this.name == "bitField2Name"»
 		bitField2Name.Text = registerData[(string)registerName.SelectedItem].getBitField().First.Value.getName();
+	«ELSE»
+		«this.name».Text = "«this.name»";
 	«ENDIF»
 	parentPanel.Controls.Add(«this.name»);
 «ENDDEFINE»

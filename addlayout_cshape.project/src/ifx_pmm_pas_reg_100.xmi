@@ -1,414 +1,1543 @@
 <?xml version="1.0" encoding="ASCII"?>
-<essence:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:essence="file:///C:/eclipseWorkspace/addlayout_cshape.project/src/metamodel/essence2.ecore">
-    <container name="container">
-  <verticalLayout
-      name="Configuration">
-    <verticalChildren
-        name="register">
-      <comboboxChildren
-          name="registerName"/>
-    </verticalChildren>
-    <verticalChildren
-        name="infos">
-      <labelChildren
-          name="name"/>
-      <labelChildren
-          name="offset"/>
-      <labelChildren
-          name="dataWidth"/>
-    </verticalChildren>
-    <horizontalChildren
-        name="values">
+<essence:DocumentRoot
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:essence="file:///C:/eclipseWorkspace/addlayout_java.project/src/metamodel/essence.ecore">
+  <container
+      name="container">
+    <verticalLayout
+        name="Configuration">
       <verticalChildren
-          name="bitField1">
+          name="register">
         <labelChildren
-            name="bitField1Name"/>
+            name="label"/>
         <comboboxChildren
-            name="bitField1Value"/>
+            name="registerName"/>
       </verticalChildren>
       <verticalChildren
-          name="bitField2">
+          name="infos">
         <labelChildren
-            name="bitField2Name"/>
-        <comboboxChildren
-            name="bitField2Value"/>
+            name="name"/>
+        <labelChildren
+            name="offset"/>
+        <labelChildren
+            name="dataWidth"/>
       </verticalChildren>
-    </horizontalChildren>
-  </verticalLayout>
-</container>
-  
-<component custom="" iD="1" name="pas_reg" shortDescription="" essenceVersion="20300" topSpinClkStyle="asynchronous">
-    <longDescription html=""/>
-    <constDefBlock custom="" iD="2" name="Constant_Definition_Block" shortDescription="">
-      <longDescription html=""/>
+      <horizontalChildren
+          name="values">
+        <verticalChildren
+            name="bitField1">
+          <labelChildren
+              name="bitField1Name"/>
+          <comboboxChildren
+              name="bitField1Value"/>
+        </verticalChildren>
+        <verticalChildren
+            name="bitField2">
+          <labelChildren
+              name="bitField2Name"/>
+          <comboboxChildren
+              name="bitField2Value"/>
+        </verticalChildren>
+      </horizontalChildren>
+    </verticalLayout>
+  </container>
+  <component
+      custom=""
+      iD="1"
+      name="pas_reg"
+      shortDescription=""
+      essenceVersion="20300"
+      topSpinClkStyle="asynchronous">
+    <longDescription
+        html=""/>
+    <constDefBlock
+        custom=""
+        iD="2"
+        name="Constant_Definition_Block"
+        shortDescription="">
+      <longDescription
+          html=""/>
     </constDefBlock>
-    <genericDeclBlock custom="" iD="3" name="Generic_Declaration_Block" shortDescription="">
-      <longDescription html=""/>
+    <genericDeclBlock
+        custom=""
+        iD="3"
+        name="Generic_Declaration_Block"
+        shortDescription="">
+      <longDescription
+          html=""/>
     </genericDeclBlock>
-    <paramDeclBlock custom="" iD="4" name="Parameter_Declaration_Block" shortDescription="">
-      <longDescription html=""/>
-      <paramDecl xsi:type="essence:IntegerDecl" custom="" iD="5" name="apb_if_base" shortDescription="" defaultValue="0">
-        <longDescription html=""/>
+    <paramDeclBlock
+        custom=""
+        iD="4"
+        name="Parameter_Declaration_Block"
+        shortDescription="">
+      <longDescription
+          html=""/>
+      <paramDecl
+          xsi:type="essence:IntegerDecl"
+          custom=""
+          iD="5"
+          name="apb_if_base"
+          shortDescription=""
+          defaultValue="0">
+        <longDescription
+            html=""/>
       </paramDecl>
-      <paramDecl xsi:type="essence:IntegerDecl" custom="" iD="6" name="apb_if_range" shortDescription="" defaultValue="0x1000">
-        <longDescription html=""/>
+      <paramDecl
+          xsi:type="essence:IntegerDecl"
+          custom=""
+          iD="6"
+          name="apb_if_range"
+          shortDescription=""
+          defaultValue="0x1000">
+        <longDescription
+            html=""/>
       </paramDecl>
     </paramDeclBlock>
-    <vLNV vendor="ifx" library="pmm" name="pas_reg" version="100"/>
-    <interface custom="" iD="7" name="apb_if" shortDescription="" baseAddress="$apb_if_base" range="0x28" role="Slave">
-      <longDescription html=""/>
-      <extVLNV vendor="ifx" library="arm" name="apb_if" version="100"/>
+    <vLNV vendor="ifx"
+        library="pmm"
+        name="pas_reg"
+        version="100"/>
+    <interface
+        custom=""
+        iD="7"
+        name="apb_if"
+        shortDescription=""
+        baseAddress="$apb_if_base"
+        range="0x28"
+        role="Slave">
+      <longDescription
+          html=""/>
+      <extVLNV
+          vendor="ifx"
+          library="arm"
+          name="apb_if"
+          version="100"/>
       <addressBlock>
-        <xRefRegMemSet xRefTargetID="8" offset="0"/>
+        <xRefRegMemSet
+            xRefTargetID="8"
+            offset="0"/>
       </addressBlock>
     </interface>
-    <regMemSet custom="" iD="8" name="pas_reg" shortDescription="pas_reg">
-      <longDescription html=""/>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_pwm_period&quot;;callback_get=&quot;get_pwm_period&quot;" iD="9" name="pwm_per" shortDescription="PWM period in # of root clock cycles" offset="0x0" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="PWM period in # of root clock cycles"/>
-        <resetType custom="" iD="10" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+    <regMemSet
+        custom=""
+        iD="8"
+        name="pas_reg"
+        shortDescription="pas_reg">
+      <longDescription
+          html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;set_pwm_period&quot;;callback_get=&quot;get_pwm_period&quot;"
+          iD="9"
+          name="pwm_per"
+          shortDescription="PWM period in # of root clock cycles"
+          offset="0x0"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="PWM period in # of root clock cycles"/>
+        <resetType
+            custom=""
+            iD="10"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="11" name="pwm_per" shortDescription="PWM period in # of root clock cycles" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="11"
+            name="pwm_per"
+            shortDescription="PWM period in # of root clock cycles"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="12" name="heat_smpls" shortDescription="Heat time in # of PWM periods * 16&#xA;00h --> 100h" offset="0x2" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Heat time in # of PWM periods * 16&#xA;00h --> 100h"/>
-        <resetType custom="" iD="13" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="12"
+          name="heat_smpls"
+          shortDescription="Heat time in # of PWM periods * 16&#xA;00h --> 100h"
+          offset="0x2"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Heat time in # of PWM periods * 16&#xA;00h --> 100h"/>
+        <resetType
+            custom=""
+            iD="13"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="14" name="heat_smpls" shortDescription="Heat time in # of PWM periods * 16&#xA;00h --> 100h" offset="0" width="6" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="14"
+            name="heat_smpls"
+            shortDescription="Heat time in # of PWM periods * 16&#xA;00h --> 100h"
+            offset="0"
+            width="6"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="15" name="meas_smpls" shortDescription="Measturement time in # of PWM periods * 16,&#xA; 00h --> 100h" offset="0x3" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Measturement time in # of PWM periods * 16,&#xA; 00h --> 100h"/>
-        <resetType custom="" iD="16" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="15"
+          name="meas_smpls"
+          shortDescription="Measturement time in # of PWM periods * 16,&#xA; 00h --> 100h"
+          offset="0x3"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Measturement time in # of PWM periods * 16,&#xA; 00h --> 100h"/>
+        <resetType
+            custom=""
+            iD="16"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="17" name="meas_smpls" shortDescription="Measturement time in # of PWM periods * 16,&#xA; 00h --> 100h" offset="0" width="6" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="17"
+            name="meas_smpls"
+            shortDescription="Measturement time in # of PWM periods * 16,&#xA; 00h --> 100h"
+            offset="0"
+            width="6"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="18" name="meas_accu" shortDescription="Number of measurement accumulations&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 7->128x" offset="0x4" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Number of measurement accumulations&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 7->128x"/>
-        <resetType custom="" iD="19" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="18"
+          name="meas_accu"
+          shortDescription="Number of measurement accumulations&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 7->128x"
+          offset="0x4"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Number of measurement accumulations&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 7->128x"/>
+        <resetType
+            custom=""
+            iD="19"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="20" name="meas_accu" shortDescription="Number of measurement accumulations&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 7->128x" offset="0" width="3" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="20"
+            name="meas_accu"
+            shortDescription="Number of measurement accumulations&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 7->128x"
+            offset="0"
+            width="3"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;get_gas_concentration&quot;" iD="21" name="gas_val" shortDescription="Gas concentration in ppm, 4096-> overflow" offset="0x5" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="Gas concentration in ppm, 4096-> overflow"/>
-        <resetType custom="" iD="22" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;get_gas_concentration&quot;"
+          iD="21"
+          name="gas_val"
+          shortDescription="Gas concentration in ppm, 4096-> overflow"
+          offset="0x5"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Gas concentration in ppm, 4096-> overflow"/>
+        <resetType
+            custom=""
+            iD="22"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="23" name="gas_val" shortDescription="Gas concentration in ppm, 4096-> overflow" offset="0" width="12" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="23"
+            name="gas_val"
+            shortDescription="Gas concentration in ppm, 4096-> overflow"
+            offset="0"
+            width="12"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="24" name="meas_ctrl" shortDescription="write 1b -> start measurement&#xA;write 0b -> abort measurement&#xA;read 1b -> measurement ongoing&#xA;read 0b -> no measurement ongoing" offset="0x7" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="0b-> one shot&#xA;1b->continuous&#xA;Write 0b to terminated continuous conversion"/>
-        <resetType custom="" iD="25" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="24"
+          name="meas_ctrl"
+          shortDescription="write 1b -> start measurement&#xA;write 0b -> abort measurement&#xA;read 1b -> measurement ongoing&#xA;read 0b -> no measurement ongoing"
+          offset="0x7"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="0b-> one shot&#xA;1b->continuous&#xA;Write 0b to terminated continuous conversion"/>
+        <resetType
+            custom=""
+            iD="25"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="26" name="meas_run" shortDescription="write 1b -> start measurement&#xA;write 0b -> abort measurement&#xA;read 1b -> measurement ongoing&#xA;read 0b -> no measurement ongoing" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="26"
+            name="meas_run"
+            shortDescription="write 1b -> start measurement&#xA;write 0b -> abort measurement&#xA;read 1b -> measurement ongoing&#xA;read 0b -> no measurement ongoing"
+            offset="0"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="27" name="meas_cont" shortDescription="0b-> one shot&#xA;1b->continuous&#xA;Write 0b to terminated continuous conversion" offset="1" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="27"
+            name="meas_cont"
+            shortDescription="0b-> one shot&#xA;1b->continuous&#xA;Write 0b to terminated continuous conversion"
+            offset="1"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="28" name="meas_per" shortDescription="Repetition period for continuous measurements in multiples or 100ms, up to 25.5s" offset="0x8" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Repetition period for continuous measurements in multiples or 100ms, up to 25.5s"/>
-        <resetType custom="" iD="29" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="28"
+          name="meas_per"
+          shortDescription="Repetition period for continuous measurements in multiples or 100ms, up to 25.5s"
+          offset="0x8"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Repetition period for continuous measurements in multiples or 100ms, up to 25.5s"/>
+        <resetType
+            custom=""
+            iD="29"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="30" name="meas_per" shortDescription="Repetition period for continuous measurements in multiples or 100ms, up to 25.5s" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="30"
+            name="meas_per"
+            shortDescription="Repetition period for continuous measurements in multiples or 100ms, up to 25.5s"
+            offset="0"
+            width="8"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="31" name="meas_mode" shortDescription="00b-> sample sensor response [adc dgitits]&#xA;01b-> sample pwm duty cycle [root clock]&#xA;10b-> sample heater resistance [adc digits]&#xA;11b-> sampel heater temperature [degC], only uC version" offset="0x9" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="00b-> sample sensor response [adc dgitits]&#xA;01b-> sample pwm duty cycle [root clock]&#xA;10b-> sample heater resistance [adc digits]&#xA;11b-> sampel heater temperature [degC], only uC version"/>
-        <resetType custom="" iD="32" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="31"
+          name="meas_mode"
+          shortDescription="00b-> sample sensor response [adc dgitits]&#xA;01b-> sample pwm duty cycle [root clock]&#xA;10b-> sample heater resistance [adc digits]&#xA;11b-> sampel heater temperature [degC], only uC version"
+          offset="0x9"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="00b-> sample sensor response [adc dgitits]&#xA;01b-> sample pwm duty cycle [root clock]&#xA;10b-> sample heater resistance [adc digits]&#xA;11b-> sampel heater temperature [degC], only uC version"/>
+        <resetType
+            custom=""
+            iD="32"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="33" name="meas_mode" shortDescription="00b-> sample sensor response [adc dgitits]&#xA;01b-> sample pwm duty cycle [root clock]&#xA;10b-> sample heater resistance [adc digits]&#xA;11b-> sampel heater temperature [degC], only uC version" offset="0" width="2" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="33"
+            name="meas_mode"
+            shortDescription="00b-> sample sensor response [adc dgitits]&#xA;01b-> sample pwm duty cycle [root clock]&#xA;10b-> sample heater resistance [adc digits]&#xA;11b-> sampel heater temperature [degC], only uC version"
+            offset="0"
+            width="2"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="34" name="meas_smpl_sts" shortDescription="Reflects which sample is currently being processed" offset="0xa" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Reflects which sample is currently being processed"/>
-        <resetType custom="" iD="35" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="34"
+          name="meas_smpl_sts"
+          shortDescription="Reflects which sample is currently being processed"
+          offset="0xa"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Reflects which sample is currently being processed"/>
+        <resetType
+            custom=""
+            iD="35"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="36" name="meas_smpl_sts" shortDescription="Reflects which sample is currently being processed" offset="0" width="6" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="36"
+            name="meas_smpl_sts"
+            shortDescription="Reflects which sample is currently being processed"
+            offset="0"
+            width="6"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="37" name="meas_accu_sts" shortDescription="Reflects which accumulation cycle is currently being processed" offset="0xb" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Reflects which accumulation cycle is currently being processed"/>
-        <resetType custom="" iD="38" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="37"
+          name="meas_accu_sts"
+          shortDescription="Reflects which accumulation cycle is currently being processed"
+          offset="0xb"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Reflects which accumulation cycle is currently being processed"/>
+        <resetType
+            custom=""
+            iD="38"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="39" name="meas_accu_sts" shortDescription="Reflects which accumulation cycle is currently being processed" offset="0" width="6" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="39"
+            name="meas_accu_sts"
+            shortDescription="Reflects which accumulation cycle is currently being processed"
+            offset="0"
+            width="6"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="40" name="meas_ofs" shortDescription="Measurement offset adjust" offset="0xc" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Measurement offset adjust"/>
-        <resetType custom="" iD="41" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="40"
+          name="meas_ofs"
+          shortDescription="Measurement offset adjust"
+          offset="0xc"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Measurement offset adjust"/>
+        <resetType
+            custom=""
+            iD="41"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="42" name="meas_ofs" shortDescription="Measurement offset adjust" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="42"
+            name="meas_ofs"
+            shortDescription="Measurement offset adjust"
+            offset="0"
+            width="8"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="43" name="meas_gain" shortDescription="Amplification gain for difference between meas_ofs and actual gain.&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 6->64x, 7->reserved" offset="0xd" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Amplification gain for difference between meas_ofs and actual gain.&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 6->64x, 7->reserved"/>
-        <resetType custom="" iD="44" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="43"
+          name="meas_gain"
+          shortDescription="Amplification gain for difference between meas_ofs and actual gain.&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 6->64x, 7->reserved"
+          offset="0xd"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Amplification gain for difference between meas_ofs and actual gain.&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 6->64x, 7->reserved"/>
+        <resetType
+            custom=""
+            iD="44"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="45" name="meas_gain" shortDescription="Amplification gain for difference between meas_ofs and actual gain.&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 6->64x, 7->reserved" offset="0" width="3" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="45"
+            name="meas_gain"
+            shortDescription="Amplification gain for difference between meas_ofs and actual gain.&#xA;0->1x, 1->2x, 2->4x, 3-> 8x, &amp;#8230;, 6->64x, 7->reserved"
+            offset="0"
+            width="3"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_duty_cycle_led1&quot;;callback_get=&quot;get_duty_cycle_led1&quot;" iD="46" name="pwm_duty_heat" shortDescription="PWM on time during heating in # of root clock cycles" offset="0xe" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="PWM on time during heating in # of root clock cycles"/>
-        <resetType custom="" iD="47" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;set_duty_cycle_led1&quot;;callback_get=&quot;get_duty_cycle_led1&quot;"
+          iD="46"
+          name="pwm_duty_heat"
+          shortDescription="PWM on time during heating in # of root clock cycles"
+          offset="0xe"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="PWM on time during heating in # of root clock cycles"/>
+        <resetType
+            custom=""
+            iD="47"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="48" name="pwm_duty_heat" shortDescription="PWM on time during heating in # of root clock cycles" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="48"
+            name="pwm_duty_heat"
+            shortDescription="PWM on time during heating in # of root clock cycles"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;set_duty_cycle_led2&quot;;callback_get=&quot;get_duty_cycle_led2&quot;" iD="49" name="pwm_duty_cool" shortDescription="PWM on time during cooling in # of root clock cycles" offset="0x10" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="PWM on time during cooling in # of root clock cycles"/>
-        <resetType custom="" iD="50" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;set_duty_cycle_led2&quot;;callback_get=&quot;get_duty_cycle_led2&quot;"
+          iD="49"
+          name="pwm_duty_cool"
+          shortDescription="PWM on time during cooling in # of root clock cycles"
+          offset="0x10"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="PWM on time during cooling in # of root clock cycles"/>
+        <resetType
+            custom=""
+            iD="50"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="51" name="pwm_duty_cool" shortDescription="PWM on time during cooling in # of root clock cycles" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="51"
+            name="pwm_duty_cool"
+            shortDescription="PWM on time during cooling in # of root clock cycles"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="52" name="temp_set_heat" shortDescription="target temperature during heating (adc digits or degC)" offset="0x12" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="target temperature during heating (adc digits or degC)"/>
-        <resetType custom="" iD="53" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="52"
+          name="temp_set_heat"
+          shortDescription="target temperature during heating (adc digits or degC)"
+          offset="0x12"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="target temperature during heating (adc digits or degC)"/>
+        <resetType
+            custom=""
+            iD="53"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="54" name="temp_set_heat" shortDescription="target temperature during heating (adc digits or degC)" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="54"
+            name="temp_set_heat"
+            shortDescription="target temperature during heating (adc digits or degC)"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="55" name="temp_set_cool" shortDescription="target temperature during cooling (adc digits or degC)" offset="0x14" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="target temperature during cooling (adc digits or degC)"/>
-        <resetType custom="" iD="56" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="55"
+          name="temp_set_cool"
+          shortDescription="target temperature during cooling (adc digits or degC)"
+          offset="0x14"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="target temperature during cooling (adc digits or degC)"/>
+        <resetType
+            custom=""
+            iD="56"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="57" name="temp_set_cool" shortDescription="target temperature during cooling (adc digits or degC)" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="57"
+            name="temp_set_cool"
+            shortDescription="target temperature during cooling (adc digits or degC)"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="58" name="temp_set_mode" shortDescription="0b-> adc digits&#xA;1b -> deg centigrade (only uC version)" offset="0x16" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="0b-> adc digits&#xA;1b -> deg centigrade (only uC version)"/>
-        <resetType custom="" iD="59" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="58"
+          name="temp_set_mode"
+          shortDescription="0b-> adc digits&#xA;1b -> deg centigrade (only uC version)"
+          offset="0x16"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="0b-> adc digits&#xA;1b -> deg centigrade (only uC version)"/>
+        <resetType
+            custom=""
+            iD="59"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="60" name="temp_set_mode" shortDescription="0b-> adc digits&#xA;1b -> deg centigrade (only uC version)" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="60"
+            name="temp_set_mode"
+            shortDescription="0b-> adc digits&#xA;1b -> deg centigrade (only uC version)"
+            offset="0"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_led1_on_off&quot;;callback_get=&quot;read_led1_on_off&quot;" iD="61" name="heat_reg_en" shortDescription="heater regulation enable &#xA;0b->use pwm_duty_*, &#xA;1b->regulate to temp_set_*" offset="0x17" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="heater regulation enable &#xA;0b->use pwm_duty_*, &#xA;1b->regulate to temp_set_*"/>
-        <resetType custom="" iD="62" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;turn_led1_on_off&quot;;callback_get=&quot;read_led1_on_off&quot;"
+          iD="61"
+          name="heat_reg_en"
+          shortDescription="heater regulation enable &#xA;0b->use pwm_duty_*, &#xA;1b->regulate to temp_set_*"
+          offset="0x17"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="heater regulation enable &#xA;0b->use pwm_duty_*, &#xA;1b->regulate to temp_set_*"/>
+        <resetType
+            custom=""
+            iD="62"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="63" name="heat_reg_en" shortDescription="heater regulation enable &#xA;0b->use pwm_duty_*, &#xA;1b->regulate to temp_set_*" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="63"
+            name="heat_reg_en"
+            shortDescription="heater regulation enable &#xA;0b->use pwm_duty_*, &#xA;1b->regulate to temp_set_*"
+            offset="0"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_led2_on_off&quot;;callback_get=&quot;read_led2_on_off&quot;" iD="64" name="temp_reg_p" shortDescription="Heater PID regulator proportional term" offset="0x18" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Heater PID regulator proportional term"/>
-        <resetType custom="" iD="65" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;turn_led2_on_off&quot;;callback_get=&quot;read_led2_on_off&quot;"
+          iD="64"
+          name="temp_reg_p"
+          shortDescription="Heater PID regulator proportional term"
+          offset="0x18"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Heater PID regulator proportional term"/>
+        <resetType
+            custom=""
+            iD="65"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="66" name="temp_reg_p" shortDescription="Heater PID regulator proportional term" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="66"
+            name="temp_reg_p"
+            shortDescription="Heater PID regulator proportional term"
+            offset="0"
+            width="8"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_led3_on_off&quot;;callback_get=&quot;read_led3_on_off&quot;" iD="67" name="temp_reg_i" shortDescription="Heater PID regulator integral term" offset="0x19" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Heater PID regulator integral term"/>
-        <resetType custom="" iD="68" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;turn_led3_on_off&quot;;callback_get=&quot;read_led3_on_off&quot;"
+          iD="67"
+          name="temp_reg_i"
+          shortDescription="Heater PID regulator integral term"
+          offset="0x19"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Heater PID regulator integral term"/>
+        <resetType
+            custom=""
+            iD="68"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="69" name="temp_reg_i" shortDescription="Heater PID regulator integral term" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="69"
+            name="temp_reg_i"
+            shortDescription="Heater PID regulator integral term"
+            offset="0"
+            width="8"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;turn_led4_on_off&quot;;callback_get=&quot;read_led4_on_off&quot;" iD="70" name="temp_reg_d" shortDescription="Heater PID regulator differential term" offset="0x1a" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Heater PID regulator differential term"/>
-        <resetType custom="" iD="71" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;turn_led4_on_off&quot;;callback_get=&quot;read_led4_on_off&quot;"
+          iD="70"
+          name="temp_reg_d"
+          shortDescription="Heater PID regulator differential term"
+          offset="0x1a"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Heater PID regulator differential term"/>
+        <resetType
+            custom=""
+            iD="71"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="72" name="temp_reg_d" shortDescription="Heater PID regulator differential term" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="72"
+            name="temp_reg_d"
+            shortDescription="Heater PID regulator differential term"
+            offset="0"
+            width="8"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="73" name="util_run" shortDescription="write 1 -> start measurement&#xA;write 0 -> abort measurement&#xA;read 1 -> measurement ongoing&#xA;read 0 -> no measurement ongoing" offset="0x1b" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="write 1 -> start measurement&#xA;write 0 -> abort measurement&#xA;read 1 -> measurement ongoing&#xA;read 0 -> no measurement ongoing"/>
-        <resetType custom="" iD="74" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="73"
+          name="util_run"
+          shortDescription="write 1 -> start measurement&#xA;write 0 -> abort measurement&#xA;read 1 -> measurement ongoing&#xA;read 0 -> no measurement ongoing"
+          offset="0x1b"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="write 1 -> start measurement&#xA;write 0 -> abort measurement&#xA;read 1 -> measurement ongoing&#xA;read 0 -> no measurement ongoing"/>
+        <resetType
+            custom=""
+            iD="74"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="75" name="util_run" shortDescription="write 1 -> start measurement&#xA;write 0 -> abort measurement&#xA;read 1 -> measurement ongoing&#xA;read 0 -> no measurement ongoing" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="75"
+            name="util_run"
+            shortDescription="write 1 -> start measurement&#xA;write 0 -> abort measurement&#xA;read 1 -> measurement ongoing&#xA;read 0 -> no measurement ongoing"
+            offset="0"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="76" name="util_tdie" shortDescription="Die temperature measurement result" offset="0x1c" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="Die temperature measurement result"/>
-        <resetType custom="" iD="77" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="76"
+          name="util_tdie"
+          shortDescription="Die temperature measurement result"
+          offset="0x1c"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Die temperature measurement result"/>
+        <resetType
+            custom=""
+            iD="77"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="78" name="util_tdie" shortDescription="Die temperature measurement result" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="78"
+            name="util_tdie"
+            shortDescription="Die temperature measurement result"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="79" name="util_vsup" shortDescription="Supply volrtage measurement result" offset="0x1e" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="Supply volrtage measurement result"/>
-        <resetType custom="" iD="80" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="79"
+          name="util_vsup"
+          shortDescription="Supply volrtage measurement result"
+          offset="0x1e"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Supply volrtage measurement result"/>
+        <resetType
+            custom=""
+            iD="80"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="81" name="util_vsup" shortDescription="Supply volrtage measurement result" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="81"
+            name="util_vsup"
+            shortDescription="Supply volrtage measurement result"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;write_AFE_ADR&quot;;callback_get=&quot;read_AFE_ADR&quot;" iD="82" name="int_en" shortDescription="Messurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled" offset="0x20" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Utility mesurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled"/>
-        <resetType custom="" iD="83" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;write_AFE_ADR&quot;;callback_get=&quot;read_AFE_ADR&quot;"
+          iD="82"
+          name="int_en"
+          shortDescription="Messurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled"
+          offset="0x20"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Utility mesurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled"/>
+        <resetType
+            custom=""
+            iD="83"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="84" name="meas_int_en" shortDescription="Messurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="84"
+            name="meas_int_en"
+            shortDescription="Messurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled"
+            offset="0"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="85" name="util_int_en" shortDescription="Utility mesurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled" offset="1" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="85"
+            name="util_int_en"
+            shortDescription="Utility mesurement termination interrupt enable:&#xA; 0b-> disabled, &#xA;1b-> enabled"
+            offset="1"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="86" name="int_sts" shortDescription="Measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts" offset="0x21" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="Utility measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts"/>
-        <resetType custom="" iD="87" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="86"
+          name="int_sts"
+          shortDescription="Measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts"
+          offset="0x21"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="Utility measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts"/>
+        <resetType
+            custom=""
+            iD="87"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="88" name="meas_int_sts" shortDescription="Measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts" offset="0" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="88"
+            name="meas_int_sts"
+            shortDescription="Measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts"
+            offset="0"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="89" name="util_int_sts" shortDescription="Utility measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts" offset="1" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="89"
+            name="util_int_sts"
+            shortDescription="Utility measurement termination interrupt status: &#xA;0b-> not asserted, &#xA;1b->asserted, &#xA;write 0b to clear heat_int_sts"
+            offset="1"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;write_AFE_DATA&quot;;callback_get=&quot;read_AFE_DATA&quot;" iD="90" name="nvm_addr" shortDescription="nvm address, writing this field immediately updates nvm_data update" offset="0x22" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="nvm address, writing this field immediately updates nvm_data update"/>
-        <resetType custom="" iD="91" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;write_AFE_DATA&quot;;callback_get=&quot;read_AFE_DATA&quot;"
+          iD="90"
+          name="nvm_addr"
+          shortDescription="nvm address, writing this field immediately updates nvm_data update"
+          offset="0x22"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="nvm address, writing this field immediately updates nvm_data update"/>
+        <resetType
+            custom=""
+            iD="91"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="92" name="nvm_addr" shortDescription="nvm address, writing this field immediately updates nvm_data update" offset="0" width="10" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="readwrite"/>
-          <accessInternal accessType="readwrite"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="92"
+            name="nvm_addr"
+            shortDescription="nvm address, writing this field immediately updates nvm_data update"
+            offset="0"
+            width="10"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="readwrite"/>
+          <accessInternal
+              accessType="readwrite"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="93" name="nvm_data" shortDescription="nvm data" offset="0x24" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html="nvm data"/>
-        <resetType custom="" iD="94" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="93"
+          name="nvm_data"
+          shortDescription="nvm data"
+          offset="0x24"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="nvm data"/>
+        <resetType
+            custom=""
+            iD="94"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="95" name="nvm_data" shortDescription="nvm data" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="95"
+            name="nvm_data"
+            shortDescription="nvm data"
+            offset="0"
+            width="8"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="96" name="meas_data_fifo_status" shortDescription="" offset="0x25" dataWidth="8" topSpinType="noTopSpin">
-        <longDescription html=""/>
-        <resetType custom="" iD="97" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="96"
+          name="meas_data_fifo_status"
+          shortDescription=""
+          offset="0x25"
+          dataWidth="8"
+          topSpinType="noTopSpin">
+        <longDescription
+            html=""/>
+        <resetType
+            custom=""
+            iD="97"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="98" name="meas_data_fifo_status" shortDescription="" offset="0" width="8" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="98"
+            name="meas_data_fifo_status"
+            shortDescription=""
+            offset="0"
+            width="8"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
-      <regMemElement xsi:type="essence:Register" custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;" iD="99" name="meas_data_fifo" shortDescription="64 Byte FIFO" offset="0x26" dataWidth="16" topSpinType="noTopSpin">
-        <longDescription html="64 Byte FIFO"/>
-        <resetType custom="" iD="100" shortDescription="" resetLevel="0" resetMask="0" resetMode="asynchronous" resetType="0" resetValue="0x0">
-          <longDescription html=""/>
+      <regMemElement
+          xsi:type="essence:Register"
+          custom="callback_set=&quot;NULL&quot;;callback_get=&quot;NULL&quot;"
+          iD="99"
+          name="meas_data_fifo"
+          shortDescription="64 Byte FIFO"
+          offset="0x26"
+          dataWidth="16"
+          topSpinType="noTopSpin">
+        <longDescription
+            html="64 Byte FIFO"/>
+        <resetType
+            custom=""
+            iD="100"
+            shortDescription=""
+            resetLevel="0"
+            resetMask="0"
+            resetMode="asynchronous"
+            resetType="0"
+            resetValue="0x0">
+          <longDescription
+              html=""/>
         </resetType>
-        <bitFieldElement xsi:type="essence:BitField" custom="" iD="101" name="meas_data" shortDescription="64 Byte FIFO" offset="0" width="16" maxVal="0" minVal="0" reserved="unreserved" signInterpretation="unsigned" virtual="false">
-          <longDescription html=""/>
-          <accessExternal accessType="read"/>
-          <accessInternal accessType="read"/>
+        <bitFieldElement
+            xsi:type="essence:BitField"
+            custom=""
+            iD="101"
+            name="meas_data"
+            shortDescription="64 Byte FIFO"
+            offset="0"
+            width="16"
+            maxVal="0"
+            minVal="0"
+            reserved="unreserved"
+            signInterpretation="unsigned"
+            virtual="false">
+          <longDescription
+              html=""/>
+          <accessExternal
+              accessType="read"/>
+          <accessInternal
+              accessType="read"/>
         </bitFieldElement>
       </regMemElement>
     </regMemSet>
   </component>
+  <container
+      name="container">
+    <verticalLayout
+        name="Configuration">
+      <verticalChildren
+          name="register">
+        <labelChildren
+            name="label"/>
+        <comboboxChildren
+            name="registerName"/>
+      </verticalChildren>
+      <verticalChildren
+          name="infos">
+        <labelChildren
+            name="name"/>
+        <labelChildren
+            name="offset"/>
+        <labelChildren
+            name="dataWidth"/>
+      </verticalChildren>
+      <horizontalChildren
+          name="values">
+        <verticalChildren
+            name="bitField1">
+          <labelChildren
+              name="bitField1Name"/>
+          <comboboxChildren
+              name="bitField1Value"/>
+        </verticalChildren>
+        <verticalChildren
+            name="bitField2">
+          <labelChildren
+              name="bitField2Name"/>
+          <comboboxChildren
+              name="bitField2Value"/>
+        </verticalChildren>
+      </horizontalChildren>
+    </verticalLayout>
+  </container>
 </essence:DocumentRoot>

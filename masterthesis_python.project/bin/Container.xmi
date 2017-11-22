@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.example.userLayout:Container
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.eclipse.example.userLayout="http://org/eclipse/example/userLayout"
+    xsi:schemaLocation="http://org/eclipse/example/userLayout metamodel/UserLayout.ecore"
+    name="container">
+  <verticalLayout
+      name="Configuration">
+    <verticalChildren
+        name="register">
+      <comboboxChildren
+          name="registerName"/>
+    </verticalChildren>
+    <verticalChildren
+        name="infos">
+      <labelChildren
+          name="name"/>
+      <labelChildren
+          name="offset"/>
+      <labelChildren
+          name="dataWidth"/>
+    </verticalChildren>
+    <horizontalChildren
+        name="values">
+      <verticalChildren
+          name="bitField1">
+        <labelChildren
+            name="bitField1Name"/>
+        <comboboxChildren
+            name="bitField1Value"/>
+      </verticalChildren>
+      <verticalChildren
+          name="bitField2">
+        <labelChildren
+            name="bitField2Name"/>
+        <comboboxChildren
+            name="bitField2Value"/>
+      </verticalChildren>
+    </horizontalChildren>
+  </verticalLayout>
+</org.eclipse.example.userLayout:Container>

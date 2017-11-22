@@ -1,0 +1,417 @@
+«IMPORT model»
+    	
+«DEFINE documentRoot FOR DocumentRoot»
+«FILE "Main.cs"»
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace WindowsFormsApp1
+{
+    public class Form1 : Form
+    {
+        private Boolean flag = true;
+        private Dictionary<String, Register> registerData = new data().dataGenerate();
+        private LinkedList<BitField> bitField;
+        private int registerValue;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+        
+                public void writeToFile1(Dictionary<String, Register> registerData, Label name, Label offset, Label dataWidth,
+        Label bitField1Name, Label bitField2Name, ComboBox registerName, ComboBox bitField1Value,
+        ComboBox bitField2Value)
+        {
+            registerValue = (registerValue
+                    & ((int)Math.Pow(2, registerData[(string)registerName.SelectedItem].getBitField().Last.Value.getWidth())
+                            - 1) << registerData[(string)registerName.SelectedItem].getBitField().Last.Value.getOffset())
+                    ^ registerValue
+                    | ((int)bitField1Value.SelectedItem << registerData[(string)registerName.SelectedItem].getBitField()
+                            .Last.Value.getOffset());
+            File.AppendAllText(@"C: \Users\LuYongch\source\repos\WindowsFormsApp2\WindowsFormsApp1\file1.txt",
+       (string)registerName.SelectedItem + " " + registerValue.ToString());
+        }
+
+        public void writeToFile2(Dictionary<String, Register> registerData, Label name, Label offset, Label dataWidth,
+        Label bitField1Name, Label bitField2Name, ComboBox registerName, ComboBox bitField1Value,
+        ComboBox bitField2Value)
+        {
+            registerValue = (registerValue
+                    & ((int)Math.Pow(2, registerData[(string)registerName.SelectedItem].getBitField().First.Value.getWidth())
+                            - 1) << registerData[(string)registerName.SelectedItem].getBitField().First.Value.getOffset())
+                    ^ registerValue
+                    | ((int)bitField2Value.SelectedItem << registerData[(string)registerName.SelectedItem].getBitField()
+                            .First.Value.getOffset());
+            File.AppendAllText(@"C: \Users\LuYongch\source\repos\WindowsFormsApp2\WindowsFormsApp1\file1.txt",
+                   (string)registerName.SelectedItem + " " + registerValue.ToString());
+        }
+        
+        public void update(Dictionary<String, Register> registerData, Label name, Label offset, Label dataWidth,
+        Label bitField1Name, Label bitField2Name, ComboBox registerName, ComboBox bitField1Value,
+        ComboBox bitField2Value)
+        {
+            //read data from the file
+            String[] parts;
+            String strLine;
+            // Read the file and display it line by line.  
+            System.IO.StreamReader file =
+                new System.IO.StreamReader(@"C:\Users\LuYongch\source\repos\WindowsFormsApp2\WindowsFormsApp1\file1.txt");
+            while ((strLine = file.ReadLine()) != null)
+            {
+                parts = strLine.Split(' ');
+                if (parts[0].Equals(registerName.SelectedItem))
+                {
+                    registerValue = Int32.Parse(parts[1]);
+                    break;
+                }
+            }
+            file.Close();
+            name.Text = "Name: " + registerData[(string)registerName.SelectedItem].getName();
+            offset.Text = "offset: " + registerData[(string)registerName.SelectedItem].getOffset();
+            dataWidth.Text = "data width: " + registerData[(string)registerName.SelectedItem].getDataWidth();
+            if (registerData[(string)registerName.SelectedItem].getBitField().Count() == 1)
+                bitField1Name.Text = "Not used";
+            else
+            {
+                bitField1Name.Text = registerData[(string)registerName.SelectedItem].getBitField().First.Value.getName();
+            }
+            bitField2Name.Text = registerData[(string)registerName.SelectedItem].getBitField().First.Value.getName();
+            flag = false;
+            if (registerData[(string)registerName.SelectedItem].getBitField().Count() == 1)
+                bitField1Value.Enabled = false;
+            else
+            {
+                bitField1Value.Enabled = true;
+                bitField1Value.Items.Clear();
+                for (int i = 0; i < Math.Pow(2,
+                        registerData[(string)registerName.SelectedItem].getBitField().Last.Value.getWidth()); i++)
+                    bitField1Value.Items.Add(i);
+                bitField1Value.SelectedIndex = (registerValue & ((int)Math.Pow(2,
+                        registerData[(string)registerName.SelectedItem].getBitField().Last.Value.getWidth())
+                        - 1) << registerData[(string)registerName.SelectedItem].getBitField().Last.Value
+                                .getOffset()) >> registerData[(string)registerName.SelectedItem].getBitField().Last.Value
+                                        .getOffset();
+            }
+            bitField2Value.Items.Clear();
+            for (int i = 0; i < Math.Pow(2,
+                    registerData[(string)registerName.SelectedItem].getBitField().First.Value.getWidth()); i++)
+                bitField2Value.Items.Add(i);
+            bitField2Value.SelectedIndex = (registerValue
+                    & ((int)Math.Pow(2, registerData[(string)registerName.SelectedItem].getBitField().First.Value.getWidth())
+                            - 1) << registerData[(string)registerName.SelectedItem].getBitField().First.Value
+                                    .getOffset()) >> registerData[(string)registerName.SelectedItem].getBitField().First.Value
+                                            .getOffset();
+            flag = true;
+        }
+                /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+        	«EXPAND containerTemplate FOR this.container»
+
+
+	public class data {
+		private Dictionary<String, Register> registerData = new Dictionary<String, Register>();
+		private Register regTmp;
+		private BitField bitTmp;
+	    public Dictionary<String, Register> dataGenerate(){
+	        «EXPAND componentTemplate FOR this.component»
+	        return registerData;
+	    }
+	}
+
+
+	public class BitField{
+		private String name;
+		
+		private int offset;
+		private int width;
+		
+		public BitField(String name, int offset, int width){
+			this.name = name;
+			this.offset = offset;
+			this.width = width;
+		} 
+		
+		public void setName(String name){
+			this.name = name;
+		}
+		
+		public String getName(){
+			return name;
+		}
+		
+		public void setOffset(int offset){
+			this.offset = offset;
+		}
+		
+		public int getOffset(){
+			return offset;
+		}
+		
+		public void setWidth(int width){
+			this.width = width;
+		}
+		
+		public int getWidth(){
+			return width;
+		}
+	}
+	
+	public class Register{
+		private String name;
+		
+		private int offset;
+		private int dataWidth;
+		private LinkedList<BitField> bitField = new LinkedList<BitField>();
+		
+		public Register(String name, int offset, int dataWidth){
+			this.name = name;
+			this.offset = offset;
+			this.dataWidth = dataWidth;
+		}
+		
+		public void setName(String name){
+			this.name = name;
+		}
+		
+		public String getName(){
+			return name;
+		}
+		
+		
+		public int getOffset(){
+			return offset;
+		}
+		
+		public void setDataWidth(int dataWidth){
+			this.dataWidth = dataWidth;
+		}
+		
+		public int getDataWidth(){
+			return dataWidth;
+		}
+		
+		public void addBitField(BitField bit){
+			bitField.AddLast(bit);
+		}
+		
+		public LinkedList<BitField> getBitField(){
+			return bitField;
+		}
+	}
+}
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE containerTemplate FOR Container»
+    	this.components = new System.ComponentModel.Container();
+        FlowLayoutPanel parentPanel = new FlowLayoutPanel();
+        parentPanel.BorderStyle = BorderStyle.FixedSingle;
+        parentPanel.FlowDirection = FlowDirection.TopDown;
+        parentPanel.Size = new System.Drawing.Size(888, 3110);
+        parentPanel.WrapContents = false;
+        // 
+        // Form1
+        // 
+        //this.AllowDrop = true;
+        //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+        //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        //this.AutoScroll = true;
+        //this.ClientSize = new System.Drawing.Size(912, 458);
+        this.Controls.Add(parentPanel);
+        this.Name = "«this.name»";
+        this.Text = "«this.name»";
+        
+		«EXPAND verticalLayout FOREACH verticalLayout»
+    	«EXPAND horizontalLayout FOREACH horizontalLayout»
+    	registerName.SelectedIndexChanged +=
+        new EventHandler(delegate (Object o, EventArgs a)
+        {
+            update(registerData, name, offset, dataWidth,
+     bitField1Name, bitField2Name, registerName, bitField1Value,
+     bitField2Value);
+        });
+             bitField1Value.SelectedIndexChanged +=
+	new EventHandler(delegate (Object o, EventArgs a)
+	{
+	    writeToFile1(registerData, name, offset, dataWidth,
+	bitField1Name, bitField2Name, registerName, bitField1Value,
+	bitField2Value);
+	});
+	
+	            bitField2Value.SelectedIndexChanged +=
+	new EventHandler(delegate (Object o, EventArgs a)
+	{
+	writeToFile2(registerData, name, offset, dataWidth,
+	bitField1Name, bitField2Name, registerName, bitField1Value,
+	bitField2Value);
+	});
+    	}
+    }
+«ENDDEFINE»
+
+
+«DEFINE verticalLayout FOR VerticalLayout»
+    FlowLayoutPanel «this.name» = new FlowLayoutPanel();
+    «this.name».BorderStyle = BorderStyle.FixedSingle;
+    «this.name».FlowDirection = FlowDirection.TopDown;
+    «this.name».AutoSize = true;
+    «this.name».AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+	parentPanel.Controls.Add(«this.name»);
+	FlowLayoutPanel «this.name»ParentPanel = parentPanel;
+	parentPanel = «this.name»;
+    «EXPAND verticalLayout FOREACH verticalChildren»
+	«EXPAND horizontalLayout FOREACH horizontalChildren»
+	«EXPAND label FOREACH labelChildren»
+	«EXPAND combobox FOREACH comboboxChildren»
+    parentPanel = «this.name»ParentPanel;
+«ENDDEFINE»
+
+«DEFINE horizontalLayout FOR HorizontalLayout»
+    FlowLayoutPanel «this.name» = new FlowLayoutPanel();
+    «this.name».BorderStyle = BorderStyle.FixedSingle;
+    «this.name».FlowDirection = FlowDirection.LeftToRight;
+    «this.name».AutoSize = true;
+    «this.name».AutoSizeMode = AutoSizeMode.GrowAndShrink;
+	
+	parentPanel.Controls.Add(«this.name»);
+	FlowLayoutPanel «this.name»ParentPanel = parentPanel;
+	parentPanel = «this.name»;
+    «EXPAND verticalLayout FOREACH verticalChildren»
+    «EXPAND horizontalLayout FOREACH horizontalChildren»
+	«EXPAND label FOREACH labelChildren»
+	«EXPAND combobox FOREACH comboboxChildren»
+    parentPanel = «this.name»ParentPanel;
+«ENDDEFINE»
+
+«DEFINE label FOR Label»
+	Label «this.name» = new Label(); 
+	«IF this.name == "name"»
+		name.Text = "Name: " + registerData[(string)registerName.SelectedItem].getName();
+	«ELSEIF this.name == "offset"»
+		offset.Text = "offset: " + registerData[(string)registerName.SelectedItem].getOffset();
+	«ELSEIF this.name == "dataWidth"»
+		dataWidth.Text = "data width: " + registerData[(string)registerName.SelectedItem].getDataWidth();
+	«ELSEIF this.name == "bitField1Name"»
+		if(registerData[(string)registerName.SelectedItem].getBitField().Count()==1)
+			bitField1Name.Text = "Not used";
+		else{
+			bitField1Name.Text = registerData[(string)registerName.SelectedItem].getBitField().Last.Value.getName();
+		}
+	«ELSEIF this.name == "bitField2Name"»
+		bitField2Name.Text = registerData[(string)registerName.SelectedItem].getBitField().First.Value.getName();
+	«ENDIF»
+	parentPanel.Controls.Add(«this.name»);
+«ENDDEFINE»
+
+«DEFINE textField FOR TextField»
+	JTextField «this.name» = new JTextField(); 
+	parentPanel.add(«this.name»);
+«ENDDEFINE»
+
+«DEFINE combobox FOR Combobox»
+	ComboBox «this.name» = new ComboBox(); 
+	«this.name».Enabled = true;
+	«this.name».DropDownStyle = ComboBoxStyle.DropDownList;
+	«IF this.name=="registerName"»
+		foreach(string item in registerData.Keys){
+			«this.name».Items.Add(item);
+		}
+		«this.name».SelectedIndex=0;
+		
+	«ELSEIF this.name == "bitField1Value"»
+		if(registerData[(string)registerName.SelectedItem].getBitField().Count()==1)
+			bitField1Value.Enabled = false;
+		else{
+		for(int i=0; i<Math.Pow(2, registerData[(string)registerName.SelectedItem].getBitField().Last.Value.getWidth()); i++)
+			bitField1Value.Items.Add(i);
+			«this.name».SelectedIndex=0;
+		}
+	«ELSEIF this.name == "bitField2Value"»
+		for(int i=0; i<Math.Pow(2, registerData[(string)registerName.SelectedItem].getBitField().First.Value.getWidth()); i++)
+			bitField2Value.Items.Add(i);
+		«this.name».SelectedIndex=0;
+	«ENDIF»
+	parentPanel.Controls.Add(«this.name»);
+«ENDDEFINE»
+
+«DEFINE button FOR Button»
+	JButton «this.name» = new JButton("«this.name»"); 
+	parentPanel.add(«this.name»);
+«ENDDEFINE»
+
+
+//data part
+
+«DEFINE componentTemplate FOR Component»
+	«EXPAND regMemSetTemplate FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetTemplate FOR RegMemSet»
+	«EXPAND regMemElementTemplate FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR Register»
+	regTmp = new Register("«this.name»", «this.offset», «this.dataWidth»);
+	«EXPAND BitFieldTemplate FOREACH this.bitFieldElement»
+	registerData.Add("«this.name»", regTmp);
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitFieldElement»
+
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitField»
+	bitTmp = new BitField("«this.name»", «this.offset», «this.width»);
+	regTmp.addBitField(bitTmp);
+«ENDDEFINE»
+
+//combobox part
+
+«DEFINE componentComboBox FOR Component»
+	«EXPAND regMemSetComboBox FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetComboBox FOR RegMemSet»
+	«EXPAND regMemElementComboBox FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementComboBox FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementComboBox FOR Register»
+	registerName.addItem("«this.name»");
+«ENDDEFINE»
+

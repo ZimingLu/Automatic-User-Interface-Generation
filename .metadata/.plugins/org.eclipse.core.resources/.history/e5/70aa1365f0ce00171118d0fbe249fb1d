@@ -1,0 +1,214 @@
+«IMPORT model»
+    	
+«DEFINE documentRoot FOR DocumentRoot»
+«FILE "Main.py"»
+from Tkinter import *
+import ttk
+from Register import Register
+from BitField import BitField
+
+class MyGui:
+    def __init__(self):
+    	Data = data()
+        registerData = Data.dataGenerate()
+«EXPAND containerTemplate FOR this.container»
+class data:
+	def dataGenerate(self):
+		registerData = {}
+		«EXPAND componentTemplate FOR this.component»
+		return registerData
+myGui = MyGui()
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE containerTemplate FOR Container»
+	root = Tk()
+	root.title("«this.name»")
+	        root.geometry('300x300')
+	        parent = root
+	        parentLayout = TOP
+	
+	    	«EXPAND verticalLayout FOREACH verticalLayout»
+	«EXPAND horizontalLayout FOREACH horizontalLayout»
+	update()
+	root.mainloop()
+«ENDDEFINE»
+
+
+«DEFINE verticalLayout FOR VerticalLayout»
+	«this.name» = Frame(parent)
+	«this.name».pack(side=parentLayout)
+	
+	«this.name»Parent = parent
+	«this.name»ParentLayout = parentLayout
+	parent = «this.name»
+	parentLayout = TOP
+	    «EXPAND verticalLayout FOREACH verticalChildren»
+		«EXPAND horizontalLayout FOREACH horizontalChildren»
+		«EXPAND label FOREACH labelChildren»
+		«EXPAND textField FOREACH textFieldChildren»
+		«EXPAND combobox FOREACH comboboxChildren»
+		«EXPAND button FOREACH buttonChildren»
+		
+	parent = «this.name»Parent
+	parentLayout = «this.name»ParentLayout
+«ENDDEFINE»
+
+«DEFINE horizontalLayout FOR HorizontalLayout»
+	«this.name» = Frame(parent)
+	«this.name».pack(side=parentLayout)
+    
+	«this.name»Parent = parent
+	«this.name»ParentLayout = parentLayout
+	parent = «this.name»
+	parentLayout = LEFT
+	    «EXPAND verticalLayout FOREACH verticalChildren»
+    	«EXPAND horizontalLayout FOREACH horizontalChildren»
+    	«EXPAND label FOREACH labelChildren»
+    	«EXPAND textField FOREACH textFieldChildren»
+    	«EXPAND combobox FOREACH comboboxChildren»
+    	«EXPAND button FOREACH buttonChildren»
+    	
+    parent = «this.name»Parent
+    parentLayout = «this.name»ParentLayout
+«ENDDEFINE»
+
+«DEFINE label FOR Label»
+«this.name» = Label(parent, text='«this.name»', font=('Arial', 10))
+«this.name».pack(side=parentLayout)
+«IF this.name == "name"»
+	name['text'] = "Name: " + str(registerData[registerName.get()].getName())
+«ELSEIF this.name == "offset"»
+	offset['text'] = "offset: " + str(registerData[registerName.get()].getOffset())
+«ELSEIF this.name == "dataWidth"»
+	dataWidth.['text'] = "data width: " + str(registerData[registerName.get()].getDataWidth())
+«ELSEIF this.name == "bitField1Name"»
+	if(len(registerData[registerName.current(0)].getBitField()==1)):
+		bitField1Name['text'] = ("Not used")
+	else:
+		bitField1Name['text'] = (registerData[registerName.current(0)].getBitField()[1].getName())
+		
+«ELSEIF this.name == "bitField2Name"»
+	bitField2Name['text'] = (registerData[registerName.current(0)].getBitField()[0].getName());
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE textField FOR TextField»
+	JTextField «this.name» = new JTextField() 
+	parentPanel.add(«this.name»)
+«ENDDEFINE»
+
+«DEFINE combobox FOR Combobox»
+«IF this.name=="registerName"»
+	registerName = ttk.Combobox(parent)
+	registerName['values'] = registerData.keys()
+	def registerNameClick(eventObject):
+		update()
+	def update():
+	with open("file") as file:
+		my_list = file.readlines()
+		dataDict = {}
+		for x in my_list:
+			rowList = x.split(' ')
+			dataDict[rowList[0]] = rowList[1]
+		global registerValue
+		registerValue = int(dataDict[registerName.get()])
+		name['text'] = "Name:" + registerData[registerName.get()].getName()
+		offset['text'] = "offset: " + str(registerData[registerName.get()].getOffset())
+		dataWidth['text'] = "data Width: " + str(registerData[registerName.get()].getDataWidth())
+		if len(registerData[registerName.get()].getBitField()) == 1:
+			bitField1Name['text'] = "Not used";
+		else:
+			bitField1Name['text'] = registerData[registerName.get()].getBitField()[1].getName()
+		bitField2Name['text'] = registerData[registerName.get()].getBitField()[0].getName()
+		if len(registerData[registerName.get()].getBitField()) == 1:
+			bitField1Value.configure(state = 'disabled')
+		else:
+			bitField1Value.configure(state='normal')
+			bitField1Value['values'] = range(pow(2, registerData[registerName.get()].getBitField()[1].getWidth()))
+			bitField1Value.current((registerValue & (pow(2,registerData[registerName.get()].getBitField()[1].getWidth())- 1) << registerData[registerName.get()].getBitField()[1].getOffset()) >> registerData[registerName.get()].getBitField()[1].getOffset())
+		bitField2Value['values'] = range(pow(2, registerData[registerName.get()].getBitField()[0].getWidth()))
+		bitField2Value.current((registerValue & (
+		pow(2, registerData[registerName.get()].getBitField()[0].getWidth()) - 1) <<
+															registerData[registerName.get()].getBitField()[0].getOffset()) >>
+														 registerData[registerName.get()].getBitField()[0].getOffset())
+		registerName.bind("<<ComboboxSelected>>", update)
+«ELSEIF this.name == "bitField1Value"»
+	bitField1Value = ttk.Combobox(parent)
+	if(len(registerData[registerName.get()].getBitField())==1):
+		bitField1Value.configure(state='disabled')
+	else:
+		bitField1Value['values'] = range(pow(2, registerData[registerName.get()].getBitField()[0].getWidth()))
+	def bitField1ValueClick(eventObject):
+		global registerValue
+		registerValue = (registerValue & (pow(2, registerData[registerName.get()].getBitField()[0].getWidth()) - 1) << registerData[registerName.get()].getBitField()[1].getOffset())^ registerValue | (int(bitField1Value.get()) << registerData[registerName.get()].getBitField()[1].getOffset())
+		with open("file", "a") as myfile:
+			myfile.write('\n' + registerName.get() + str(registerValue))
+	bitField1Value.bind("<<ComboboxSelected>>", bitField1ValueClick)
+	bitField1Value.pack(side = parentLayout)
+«ELSEIF this.name == "bitField2Value"»
+	bitField2Value = ttk.Combobox(parent)
+	bitField2Value['values'] = range(pow(2, registerData[registerName.get()].getBitField()[0].getWidth()))
+	def bitField2ValueClick(eventObject):
+		global registerValue
+		registerValue = (registerValue & (pow(2, registerData[registerName.get()].getBitField()[0].getWidth()) - 1) << registerData[registerName.get()].getBitField()[0].getOffset()) ^ registerValue | (int(bitField2Value.get()) << registerData[registerName.get()].getBitField()[0].getOffset())
+		with open("file", "a") as myfile:
+			myfile.write('\n' + registerName.get() + str(registerValue))
+	bitField2Value.bind("<<ComboboxSelected>>", bitField2ValueClick)
+	bitField2Value.pack(side = parentLayout)
+«ENDIF»
+«this.name».pack(side = parentLayout)
+«ENDDEFINE»
+
+«DEFINE button FOR Button»
+	JButton «this.name» = new JButton("«this.name»") 
+	parentPanel.add(«this.name»)
+«ENDDEFINE»
+
+
+//data part
+
+«DEFINE componentTemplate FOR Component»
+	«EXPAND regMemSetTemplate FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetTemplate FOR RegMemSet»
+	«EXPAND regMemElementTemplate FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR Register»
+	regTmp = Register("«this.name»", «this.offset», «this.dataWidth»)
+	«EXPAND BitFieldTemplate FOREACH this.bitFieldElement»
+	registerData["«this.name»"] =  regTmp
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitField»
+	bitTmp = BitField("«this.name»", «this.offset», «this.width»)
+	regTmp.addBitField(bitTmp)
+«ENDDEFINE»
+
+//combobox part
+
+«DEFINE componentComboBox FOR Component»
+	«EXPAND regMemSetComboBox FOREACH regMemSet»
+«ENDDEFINE»
+
+«DEFINE regMemSetComboBox FOR RegMemSet»
+	«EXPAND regMemElementComboBox FOREACH regMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementComboBox FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementComboBox FOR Register»
+	registerName.addItem("«this.name»")
+«ENDDEFINE»
+
+«DEFINE BitFieldTemplate FOR BitFieldElement»
+«ENDDEFINE»
+
+«DEFINE regMemElementTemplate FOR RegMemElement»
+«ENDDEFINE»
+
+
+

@@ -1,6 +1,4 @@
 «IMPORT model»
-
-«EXTENSION template::GeneratorExtensions»
     	
 «DEFINE documentRoot FOR DocumentRoot»
 «FILE "Main.py"»
@@ -92,6 +90,8 @@ myGui = MyGui()
 		
 «ELSEIF this.name == "bitField2Name"»
 	bitField2Name['text'] = (registerData[registerName.current(0)].getBitField()[0].getName());
+«ELSE»
+	«this.name»['text'] = («this.name»)
 «ENDIF»
 «ENDDEFINE»
 

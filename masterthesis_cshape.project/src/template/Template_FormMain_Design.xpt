@@ -1,6 +1,4 @@
 «IMPORT model»
-
-«EXTENSION template::GeneratorExtensions»
     	
 «DEFINE documentRoot FOR DocumentRoot»
 «FILE "FormMain.Designer.cs"»

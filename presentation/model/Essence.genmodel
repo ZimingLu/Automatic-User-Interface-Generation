@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/presentation/src" modelPluginID="presentation"
+    modelName="Essence" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>../../masterthesis_java_test1004.project2/src/Essence.xsd</foreignModel>
+  <genPackages prefix="Essence" resource="XML" disposableProviderFactory="true" loadInitialization="true"
+      literalsInterface="false" ecorePackage="Essence.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//AccessType/none"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//AccessType/read"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//AccessType/write"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//AccessType/readwrite"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/clear"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/enable"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/interrupt"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/pulse"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/reset"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/set"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/status"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/toggle"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/register"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ActionType/trigger"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//BehaviorType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/ReadWrite"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/Read"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/ReadOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/WriteRead0"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/WriteRead1"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/WriteReadX"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/WriteOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/NoneRead0"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/NoneRead1"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/NoneReadX"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/None"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/Read0Only"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/Read1Only"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/ReadXOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BehaviorType/NoneOnly"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//BusErrorType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BusErrorType/ReadError"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BusErrorType/WriteError"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//BusErrorType/ReadWriteError"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//EndianType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//EndianType/LittleEndian"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//EndianType/BigEndian"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//FunctionType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//FunctionType/Input"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//FunctionType/Output"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//FunctionType/HWOutput"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//FunctionType/InputTest"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//FunctionType/OutputTest"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//FunctionType/AnalogTest"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//InterfaceDefRoleType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceDefRoleType/Master"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceDefRoleType/Slave"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceDefRoleType/System"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceDefRoleType/Monitor"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//InterfaceRoleType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/Master"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/Slave"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/System"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/Monitor"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MirroredMaster"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MirroredSlave"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MirroredSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MirroredMonitor"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MonitoredMaster"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MonitoredSlave"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MonitoredSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MirroredMonitoredMaster"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MirroredMonitoredSlave"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/MirroredMonitoredSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/None"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/Internal"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//InterfaceRoleType/Extension"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//MessageType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//MessageType/CONFIG"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//MessageType/RBS"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//MessageType/RBSU"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//MessageType/RBU"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//MessageType/TAS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//PortDirection">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//PortDirection/in"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//PortDirection/out"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//PortDirection/inout"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//PortInitiative">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//PortInitiative/provides"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//PortInitiative/requires"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//PortInitiative/both"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//ReservedType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ReservedType/unreserved"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//ReservedType/reserved"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//SignType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SignType/unsigned"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SignType/signed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//SpecialType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SpecialType/Table"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SpecialType/Message"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SpecialType/RegisterGroup"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SpecialType/BurstGroup"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//StrobeType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//StrobeType/NoStrobe"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//StrobeType/ReadStrobe"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//StrobeType/WriteStrobe"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//StrobeType/ReadWriteStrobe"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//SyncMode">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SyncMode/asynchronous"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//SyncMode/synchronous"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//TopSpinType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/noTopSpin"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/clc"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/clccnt"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/clcstat"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/config"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/control"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/dmae"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/errconf"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/hwapivers"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/icr"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/id"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/imsc"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/irqsc"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/irqsm"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/irqss"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/isr"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/mis"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/msconf"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/readonlysync"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//TopSpinType/ris"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Essence.ecore#//VirtualType">
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//VirtualType/false"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//VirtualType/true"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//VirtualType/none"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//VirtualType/toInternal"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//VirtualType/toExternal"/>
+      <genEnumLiterals ecoreEnumLiteral="Essence.ecore#//VirtualType/both"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="Essence.ecore#//AccessTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//ActionTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//BehaviorTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//BooleanExpr"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//BooleanLiteral"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//BusErrorTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//CommonExpr"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//EndianTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//FunctionTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//IntegerExpr"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//IntegerLiteral"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//InterfaceDefRoleTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//InterfaceRoleTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//MessageTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//PathExpr"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//PortDirectionObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//PortInitiativeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//ReservedTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//SignTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//SpecialTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//StringExpr"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//StringLiteral"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//StrobeTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//SyncModeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//TopSpinTypeObject"/>
+    <genDataTypes ecoreDataType="Essence.ecore#//VirtualTypeObject"/>
+    <genClasses ecoreClass="Essence.ecore#//Access">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Access/accessType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Access/strobeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Access/actionType"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//AccessByIndex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessByIndex/ascending"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessByIndex/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessByIndex/right"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//AccessByIndex/simpleSubElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//AccessByName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessByName/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//AccessByName/simpleSubElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//AccessCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessCondition/accessLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessCondition/busErrorType"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//AccessLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessLevel/accessLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//AccessLevel/accessType"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//AddressBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//AddressBlock/xRefRegMemSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//AddressBlock/xRefMasterInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//AddressBlock/xRefSlaveInterface"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Array">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Array/dataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Array/arrayDimension"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ArrayDimension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ArrayDimension/ascending"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ArrayDimension/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ArrayDimension/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BitField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BitField/accessExternal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BitField/accessInternal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitField/maxVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitField/minVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitField/reserved"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitField/signInterpretation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitField/virtual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitField/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitField/defaultMask"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BitField/accessLevel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BitField/enumerationElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//BitFieldElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitFieldElement/offset"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BitFieldGapElement"/>
+    <genClasses ecoreClass="Essence.ecore#//BitFieldSequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitFieldSequence/count"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitFieldSequence/minIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitFieldSequence/indexStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitFieldSequence/indexVar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitFieldSequence/altFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BitFieldSequence/bitFieldSequenceElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//BitFieldSequenceElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BitFieldSequenceElement/width"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BooleanDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BooleanDecl/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BooleanDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BooleanDef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BooleanGenDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//BooleanGenDecl/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Bus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Bus/extVLNV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Bus/maxMasters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Bus/maxSlaves"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Bus/noneInterface"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BusInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BusInstance/busInterfaceMap"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BusInstance/busNoneInterfaceMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BusInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BusInterfaceMap/xRefConnection"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//BusNoneInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BusNoneInterfaceMap/xRefBusNoneInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BusNoneInterfaceMap/xRefConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//BusNoneInterfaceMap/instancePortMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//CablePort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//CablePort/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//CableSignal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//CableSignal/dataType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//ComplexDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ComplexDataType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Component/interface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Component/regViewBlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Component/topSpinClkStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Component/regMemSet"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ComponentInstance"/>
+    <genClasses ecoreClass="Essence.ecore#//Connection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Connection/extVLNV"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//ConstDef"/>
+    <genClasses ecoreClass="Essence.ecore#//ConstDefBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ConstDefBlock/constDef"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//DataDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DataDecl/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//DataDecl/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//DataDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DataDef/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//DataDef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//DataGenDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DataGenDecl/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//DataGenDecl/defaultValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//DataType"/>
+    <genClasses ecoreClass="Essence.ecore#//DataTypeElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DataTypeElement/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//DataTypeElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//DescriptionItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//DescriptionItem/html"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//DescriptionItem/dita"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/bus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/interfaceDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/padTypeDB"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/product"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/silicon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/siPortDB"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/siSignalDB"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/system"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//DocumentRoot/testDB"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Enum">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Enum/enumElement"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//EnumElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumElement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Enumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Enumeration/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//EnumerationElement"/>
+    <genClasses ecoreClass="Essence.ecore#//EnumerationInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumerationInteger/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//EnumerationSequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumerationSequence/count"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumerationSequence/minIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumerationSequence/indexStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumerationSequence/indexVar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumerationSequence/altFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//EnumerationSequence/enumeration"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//EnumerationString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//EnumerationString/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//EssenceBase"/>
+    <genClasses ecoreClass="Essence.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Function/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Function/module"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Function/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//GapElement"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//GeneralInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GeneralInstance/extVLNV"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GeneralInstance/paramMap"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GeneralInstance/genericMap"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//GeneralInterface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GeneralInterface/interfaceView"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//GeneralPad">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GeneralPad/xRefPadType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//GeneralPad/lib"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//GeneralPad/width"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//GeneralPort"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//GeneralRegister">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//GeneralRegister/noShadow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GeneralRegister/resetType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//GenericDecl"/>
+    <genClasses ecoreClass="Essence.ecore#//GenericDeclBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GenericDeclBlock/genericDecl"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//GenericMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//GenericMap/xRefGenericDecl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//GenericMap/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//IndexVarUser"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//Instance"/>
+    <genClasses ecoreClass="Essence.ecore#//InstanceInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceInterfaceMap/xRefInstanceInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceInterfaceMap/xRefConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceInterfaceMap/instancePortMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InstancePortMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstancePortMap/xRefInstancePort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstancePortMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InstanceShellInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceShellInterfaceMap/xRefInstanceShellInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceShellInterfaceMap/xRefConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceShellInterfaceMap/instanceShellPortMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InstanceShellPortMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceShellPortMap/xRefInstanceShellPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InstanceShellPortMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//IntegerDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//IntegerDecl/defaultValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//IntegerDecl/enumeration"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//IntegerDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//IntegerDef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//IntegerGenDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//IntegerGenDecl/defaultValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//IntegerGenDecl/enumeration"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Interface/addressUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Interface/dataUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Interface/baseAddress"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Interface/extVLNV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Interface/range"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Interface/role"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Interface/systemGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Interface/addressBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InterfaceDefCablePort"/>
+    <genClasses ecoreClass="Essence.ecore#//InterfaceDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//InterfaceDefinition/addressUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//InterfaceDefinition/dataUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceDefinition/extVLNV"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceDefinition/interfaceDefView"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//InterfaceDefPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceDefPort/xRefSignal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//InterfaceDefPort/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InterfaceDefRole">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//InterfaceDefRole/role"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//InterfaceDefRole/systemGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceDefRole/interfaceDefPort"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InterfaceDefTransactionalPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//InterfaceDefTransactionalPort/initiative"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InterfaceDefView">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceDefView/interfaceDefRole"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InterfaceDefWirePort"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//InterfaceInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceInstance/instanceInterfaceMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InterfacePortMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfacePortMap/xRefLocalPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfacePortMap/xRefInterfacePort"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//InterfaceView">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceView/interfacePortMap"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//InterfaceView/port"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//LocalInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//LocalInterfaceMap/xRefLocalInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//LocalInterfaceMap/xRefConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//LocalInterfaceMap/localPortMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//LocalPortMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//LocalPortMap/xRefLocalPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//LocalPortMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Memory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Memory/accessType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Memory/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Memory/endianness"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//MethodDataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//MethodDataType/returnDataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//MethodDataType/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//MethodDataType/methodDataTypeElement"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//MethodDataTypeElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//MethodDataTypeElement/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//MethodDataTypeElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//MethodDataTypeElement/reference"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//ModelRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ModelRoot/constDefBlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ModelRoot/essenceVersion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ModelRoot/genericDeclBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ModelRoot/module"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ModelRoot/paramDeclBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ModelRoot/vLNV"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Module">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Module/module"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//MultiPad">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//MultiPad/singlePad"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//MultiViewRegister">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//MultiViewRegister/xRefRegisterView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//MultiViewRegister/registerView"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Net"/>
+    <genClasses ecoreClass="Essence.ecore#//NoneInterface"/>
+    <genClasses ecoreClass="Essence.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Package/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Package/pin"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PackageInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PackageInstance/pinNetMap"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//Pad"/>
+    <genClasses ecoreClass="Essence.ecore#//PadMultiplexed">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadMultiplexed/extVLNV"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadMultiplexed/xRefPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadMultiplexed/portGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PadNetMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadNetMap/xRefPad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadNetMap/xRefNet"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PadNonMultiplexed">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadNonMultiplexed/extVLNV"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadNonMultiplexed/siPortReq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadNonMultiplexed/xRefPadType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadNonMultiplexed/function"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PadSpecial"/>
+    <genClasses ecoreClass="Essence.ecore#//PadSupply">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadSupply/spec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadSupply/xRefPowerDomain"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PadType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadType/lib"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadType/driverStrength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadType/set"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadType/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PadType/spec"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PadTypeDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PadTypeDB/padType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//ParamDecl"/>
+    <genClasses ecoreClass="Essence.ecore#//ParamDeclBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ParamDeclBlock/paramDecl"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ParamMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ParamMap/xRefParamDecl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ParamMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PathRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PathRef/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PathRef/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Pin"/>
+    <genClasses ecoreClass="Essence.ecore#//PinNetMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PinNetMap/xRefPin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PinNetMap/xRefNet"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//Port"/>
+    <genClasses ecoreClass="Essence.ecore#//PortRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//PortRef/xRefLocalPort"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//PowerDomain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PowerDomain/powerConsumption"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PowerDomain/maxCurrent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//PowerDomain/averageCurrent"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Product">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Product/step"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Product/packageInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Product/siliconInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Product/net"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ProductInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductInstance/productInterfaceMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ProductInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductInterfaceMap/xRefConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductInterfaceMap/productPinMap"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductInterfaceMap/productPadMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ProductPadMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductPadMap/xRefPad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductPadMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ProductPinMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductPinMap/xRefPin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ProductPinMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Property/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Property/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//RealPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RealPort/direction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//RealPort/xRefDefaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Record">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Record/dataTypeElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//Reference"/>
+    <genClasses ecoreClass="Essence.ecore#//Register">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Register/mirrorSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Register/topSpinType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Register/xRefRegisterView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Register/bitFieldElement"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//RegisterView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegisterView/depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegisterView/depthVar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//RegisterView/bitFieldElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//RegMemElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemElement/offset"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//RegMemSequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSequence/count"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSequence/minIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSequence/indexStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSequence/indexVar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSequence/altFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSequence/pilot"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//RegMemSequence/sequenceElement"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//RegMemSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSet/addressUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSet/dataUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSet/special"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSet/messageType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//RegMemSet/opCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//RegMemSet/regMemElement"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//RegViewBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//RegViewBlock/registerView"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ResetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ResetType/resetLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ResetType/resetMask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ResetType/resetMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ResetType/resetType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ResetType/resetValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//ReturnDataType"/>
+    <genClasses ecoreClass="Essence.ecore#//ReturnElementAccess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ReturnElementAccess/simpleSubElementAccess"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//SequenceElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SequenceElement/dataWidth"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SequenceElement/accessCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ShellInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ShellInterfaceMap/xRefShellInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ShellInterfaceMap/xRefConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ShellInterfaceMap/shellPortMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//ShellPortMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ShellPortMap/xRefShellPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ShellPortMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiComponentInstance"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//Signal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Signal/xRefDefaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SignalMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SignalMap/xRefLocalSignal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SignalMap/xRefInterfaceDefSignal"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//SignalOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SignalOwner/signal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SignalOwner/signalMap"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//SiInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstance/siInstanceInterfaceMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiInstanceInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstanceInterfaceMap/xRefInstanceInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstanceInterfaceMap/siInstancePortMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiInstancePortMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstancePortMap/xRefInstancePort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstancePortMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiInstanceShellInterfaceMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstanceShellInterfaceMap/xRefInstanceShellInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstanceShellInterfaceMap/siInstanceShellPortMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiInstanceShellPortMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstanceShellPortMap/xRefInstanceShellPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiInstanceShellPortMap/xRefSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Silicon">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Silicon/step"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Silicon/padHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Silicon/kerfWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Silicon/kerfHeight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Silicon/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Silicon/pad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Silicon/powerDomain"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiliconInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiliconInstance/padNetMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SimpleDataType"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//SimpleSubElementAccess"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//SinglePad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/xCoordinate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/yCoordinate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/spacer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/opening"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/padCount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/place"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/orientation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/power"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SinglePad/ground"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//SingleSourceNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SingleSourceNode/custom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SingleSourceNode/hidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SingleSourceNode/iD"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SingleSourceNode/longDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SingleSourceNode/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SingleSourceNode/shortDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SingleSourceNode/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SingleSourceNode/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SingleSourceNode/xRefExtension"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SiPort/pdr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiPort/xRefTest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiPort/siPortReq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiPort/function"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiPortDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiPortDB/siPort"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiPortReq">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SiPortReq/driverStrength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SiPortReq/set"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//SiPortReq/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiSignal"/>
+    <genClasses ecoreClass="Essence.ecore#//SiSignalDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiSignalDB/siSignal"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SiSystemInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SiSystemInstance/siInstanceShellInterfaceMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//StringDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//StringDecl/defaultValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//StringDecl/enumeration"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//StringDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//StringDef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//StringGenDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//StringGenDecl/defaultValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//StringGenDecl/enumeration"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//SubElementAccess"/>
+    <genClasses ecoreClass="Essence.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//System/extVLNV"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//System/interface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//System/connection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//System/localInterfaceMap"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//System/instance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//System/shellInterfaceMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//SystemInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//SystemInstance/instanceShellInterfaceMap"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Test">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//Test/parallelFactor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Test/testReq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Test/function"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//TestDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//TestDB/test"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//TestReq">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//TestReq/driverStrength"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//TransactionalPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//TransactionalPort/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//TransactionalPort/initiative"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//TransactionalSignal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//TransactionalSignal/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Union">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//Union/dataTypeElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//ValueDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ValueDataType/signInterpretation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//ValueDataType/objectType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//ValueDataType/vector"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//VarDef"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//VarDefBlock"/>
+    <genClasses ecoreClass="Essence.ecore#//VLNV">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//VLNV/vendor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//VLNV/library"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//VLNV/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//VLNV/version"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//Void"/>
+    <genClasses ecoreClass="Essence.ecore#//WirePort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//WirePort/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//WireSignal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//WireSignal/dataType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Essence.ecore#//XRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRef/xRefTargetID"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefConnection"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefDataVar"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//XRefDirect"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//XRefExternal"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefExternalInterface"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefExternalPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefExternalPort/subElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefExternalSignal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefExternalSignal/subElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefGenericDecl"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefIFDPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefIFDPort/subElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefIndInterface"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//XRefIndirect"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefIndPin"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefIndPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefIndPort/subElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefIndSinglePad"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefInstance"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//XRefInternal"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefInternalInterface"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefInternalPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefInternalPort/subElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefInternalSignal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefInternalSignal/subElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefMasterInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRefMasterInterface/range"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRefMasterInterface/srcOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRefMasterInterface/tgtOffset"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefNet"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefNoneInterface"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefPadType"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefParamDecl"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefPin"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefPowerDomain"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefRealPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefRealPort/subElementAccess"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefRegisterView"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefRegMemSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRefRegMemSet/offset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefRegMemSet/accessCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefSinglePad"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefSiPort"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefSiSignal"/>
+    <genClasses ecoreClass="Essence.ecore#//XRefSlaveInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRefSlaveInterface/range"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRefSlaveInterface/srcOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Essence.ecore#//XRefSlaveInterface/tgtOffset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefSlaveInterface/xRefInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="Essence.ecore#//XRefTest"/>
+    <genClasses image="false" ecoreClass="Essence.ecore#//XRefVLNV">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Essence.ecore#//XRefVLNV/extVLNV"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

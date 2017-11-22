@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;masterthesis_java_final.project&apos;&#x0D;&#x0A;- Original project: &apos;masterthesis_java_test1004.project&apos;&#x0D;&#x0A;- Destination element: &apos;masterthesis_java_final.project&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     plugin.xml&#x0D;&#x0A;     META-INF" description="Copy elements" destination="=masterthesis_java_final.project" element1="plugin.xml" element2="META-INF" files="1" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1511333563739" units="0" version="1.0"/>
+</session>

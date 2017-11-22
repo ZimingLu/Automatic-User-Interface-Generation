@@ -1,0 +1,14 @@
+source.. = src/
+output.. = bin/
+bin.includes = plugin.xml,\
+               META-INF/,\
+               .,\
+               icons/,\
+               fragment.e4xmi,\
+               RXTXcomm.jar,\
+               swing2swt.jar
+source.RXTXcomm.jar = 
+source.swing2swt.jar = 
+jars.compile.order = RXTXcomm.jar,\
+                     .,\
+                     swing2swt.jar

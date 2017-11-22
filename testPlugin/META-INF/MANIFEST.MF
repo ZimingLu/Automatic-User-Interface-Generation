@@ -17,3 +17,4 @@ Import-Package: javax.annotation;version="1.2.0"
 Bundle-ClassPath: RXTXcomm.jar,
  .,
  swing2swt.jar
+Bundle-ActivationPolicy: lazy

@@ -1,10 +1,7 @@
 «IMPORT model»
-
-
     	
 «DEFINE documentRoot FOR DocumentRoot»
 «FILE "SWTViewer.java"»
-package test.parts;
 
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;

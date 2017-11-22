@@ -1,0 +1,358 @@
+«IMPORT model»
+    	
+«DEFINE documentRoot FOR DocumentRoot»
+«FILE "FormMain.py"»
+from Tkinter import *
+import ttk
+from PORT import *
+from math import *
+# from test import *
+import random
+
+
+class FormMain:
+  port = Port()
+
+  def __init__(self):
+    root = Tk()
+    root.title("container")
+    root.geometry('820x650')
+    self.basicForm(root)
+    self.registerForm(root, self.port)
+    root.mainloop()
+
+  def basicForm(self, root):
+    connectFrame = Frame(root, bd=1, relief=RIDGE)
+    connectFrame.pack(side=TOP, fill=X, padx=5, pady=10)
+    label = Label(connectFrame, text="COM port")
+    label.pack(padx=5, pady=10, side=LEFT)
+    comComboBox = ttk.Combobox(connectFrame, width=8)
+    comComboBox.pack(padx=5, pady=10, side=LEFT)
+    portList = ["off"] + self.port.getSerialPorts()
+    comComboBox['values'] = portList
+    comComboBox.current(0)
+
+    def comComboBoxSelected(event):
+      if comComboBox.get() == "off":
+        hideAll()
+        self.registerFrame.pack_forget()
+      else:
+        self.registerFrame.pack(side=TOP, fill=BOTH, padx=5, pady=10)
+        if not self.port.isPortOpen(comComboBox.get()):
+          self.port.openPort(comComboBox.get())
+        labelProtocol.pack(padx=5, pady=10, side=LEFT)
+        self.protocolComboBox.pack(padx=5, pady=10, side=LEFT)
+        if self.protocolComboBox.get() == "I2C":
+          hideAll()
+          labelProtocol.pack(padx=5, pady=10, side=LEFT)
+          self.protocolComboBox.pack(padx=5, pady=10, side=LEFT)
+          self.labelPort.pack(padx=5, pady=10, side=LEFT)
+          self.portSpinbox.pack(padx=5, pady=10, side=LEFT)
+          labelChannel.pack(padx=5, pady=10, side=LEFT)
+          self.channelSpinbox.pack(padx=5, pady=10, side=LEFT)
+          labelAddress.pack(padx=5, pady=10, side=LEFT)
+          self.addressSpinbox.pack(padx=5, pady=10, side=LEFT)
+          buttonReadAll.pack(padx=5, pady=10, side=LEFT)
+        elif self.protocolComboBox.get() == "SPI":
+          if not self.port.isPortOpen(comComboBox.get()):
+            self.port.openPort(comComboBox.get())
+          labelProtocol.pack(padx=5, pady=10, side=LEFT)
+          self.protocolComboBox.pack(padx=5, pady=10, side=LEFT)
+          labelSlave.pack(padx=5, pady=10, side=LEFT)
+          self.slaveSpinbox.pack(padx=5, pady=10, side=LEFT)
+          buttonReadAll.pack(padx=5, pady=10, side=LEFT)
+
+    def hideAll():
+      labelProtocol.pack_forget()
+      self.protocolComboBox.pack_forget()
+      self.labelPort.pack_forget()
+      self.portSpinbox.pack_forget()
+      labelChannel.pack_forget()
+      self.channelSpinbox.pack_forget()
+      labelAddress.pack_forget()
+      self.addressSpinbox.pack_forget()
+      labelSlave.pack_forget()
+      self.slaveSpinbox.pack_forget()
+      buttonReadAll.pack_forget()
+
+    def buttonRefreshClicked(event):
+      self.registerFrame.pack_forget()
+      hideAll()
+      comComboBox.current(0)
+
+    comComboBox.bind("<<ComboboxSelected>>", comComboBoxSelected)
+
+    buttonRefresh = Button(connectFrame, text="Refresh")
+    buttonRefresh.pack(padx=5, pady=10, side=LEFT)
+    buttonRefresh.bind('<Button-1>', buttonRefreshClicked)
+    # protocol part
+    labelProtocol = Label(connectFrame, text="Protocol:")
+    labelProtocol.pack(padx=5, pady=10, side=LEFT)
+    self.protocolComboBox = ttk.Combobox(connectFrame, width=8)
+    self.protocolComboBox.pack(padx=5, pady=10, side=LEFT)
+    self.protocolComboBox["values"] = ["I2C", "SPI"]
+    self.protocolComboBox.current(0)
+
+    def protocolComboBoxClicked(event):
+      if self.protocolComboBox.get() == "I2C":
+        hideAll()
+        labelProtocol.pack(padx=5, pady=10, side=LEFT)
+        self.protocolComboBox.pack(padx=5, pady=10, side=LEFT)
+        self.labelPort.pack(padx=5, pady=10, side=LEFT)
+        self.portSpinbox.pack(padx=5, pady=10, side=LEFT)
+        labelChannel.pack(padx=5, pady=10, side=LEFT)
+        self.channelSpinbox.pack(padx=5, pady=10, side=LEFT)
+        labelAddress.pack(padx=5, pady=10, side=LEFT)
+        self.addressSpinbox.pack(padx=5, pady=10, side=LEFT)
+        buttonReadAll.pack(padx=5, pady=10, side=LEFT)
+        labelSlave.pack_forget()
+        self.slaveSpinbox.pack_forget()
+      elif self.protocolComboBox.get() == "SPI":
+        hideAll()
+        labelProtocol.pack(padx=5, pady=10, side=LEFT)
+        self.protocolComboBox.pack(padx=5, pady=10, side=LEFT)
+        self.labelPort.pack_forget()
+        self.portSpinbox.pack_forget()
+        labelChannel.pack_forget()
+        self.channelSpinbox.pack_forget()
+        labelAddress.pack_forget()
+        self.addressSpinbox.pack_forget()
+        labelSlave.pack(padx=5, pady=10, side=LEFT)
+        self.slaveSpinbox.pack(padx=5, pady=10, side=LEFT)
+        buttonReadAll.pack(padx=5, pady=10, side=LEFT)
+
+    self.protocolComboBox.bind("<<ComboboxSelected>>", protocolComboBoxClicked)
+    # port part
+    self.labelPort = Label(connectFrame, text="Port:")
+    self.labelPort.pack(padx=5, pady=10, side=LEFT)
+    var = StringVar(root)
+    var.set("2")
+    self.portSpinbox = Spinbox(connectFrame, width=8, from_=1, to=2, textvariable=var)
+    self.portSpinbox.pack(padx=5, pady=10, side=LEFT)
+    # channel part
+    labelChannel = Label(connectFrame, text="Channel:")
+    labelChannel.pack(padx=5, pady=10, side=LEFT)
+    var = StringVar(root)
+    var.set("3")
+    self.channelSpinbox = Spinbox(connectFrame, width=8, from_=0, to=3, textvariable=var)
+    self.channelSpinbox.pack(padx=5, pady=10, side=LEFT)
+    # address part
+    labelAddress = Label(connectFrame, text="Address:")
+    labelAddress.pack(padx=5, pady=10, side=LEFT)
+    var = StringVar(root)
+    var.set("32")
+    self.addressSpinbox = Spinbox(connectFrame, width=8, from_=0, to=255, textvariable=var)
+    self.addressSpinbox.pack(padx=5, pady=10, side=LEFT)
+    # slave part
+    labelSlave = Label(connectFrame, text="Slave:")
+    labelSlave.pack(padx=5, pady=10, side=LEFT)
+    var = StringVar(root)
+    var.set("32")
+    self.slaveSpinbox = Spinbox(connectFrame, width=8, from_=0, to=255, textvariable=var)
+    labelSlave.pack_forget()
+    self.slaveSpinbox.pack_forget()
+
+    def buttonReadAllClick(event):
+      self.ReadAll()
+
+    buttonReadAll = Button(connectFrame, text="ReadAll")
+    buttonReadAll.pack(side=LEFT)
+    buttonReadAll.bind('<Button-1>', buttonReadAllClick)
+    hideAll()
+
+  def send_write_command(self, register, value):
+    if self.protocolComboBox.get() == "I2C":
+      self.port.write(register, value, HubPort=self.portSpinbox.get(),
+                      Channel=self.channelSpinbox.get(), DeviceAddress=self.addressSpinbox.get())
+    elif self.protocolComboBox.get() == "SPI":
+      self.port.write(register, value, SlaveAddress=self.slaveSpinbox.get())
+
+  def send_read_command(self, register, noBytes, skipRead):
+    if self.protocolComboBox.get() == "I2C":
+      if skipRead:
+        self.port.read(register, noBytes, HubPort=self.portSpinbox.get(), Channel=int(self.channelSpinbox.get()) + 1,
+                       DeviceAddress=self.addressSpinbox.get())
+        return self.port.read(register, noBytes, HubPort=self.portSpinbox.get(),
+                              Channel=int(self.channelSpinbox.get()) + 1,
+                              DeviceAddress=self.addressSpinbox.get())
+    elif self.protocolComboBox.get() == "SPI":
+      if skipRead:
+        self.port.read(register, noBytes, self.slaveSpinbox.get())
+      return self.port.read(register, noBytes, self.slaveSpinbox.get())
+
+  def registerForm(self, root, port):
+	i = 0
+	self.registerFrame = Frame(root, bd=1, relief=RIDGE, width = 550)
+	self.registerFrame.pack(side=TOP, fill = BOTH, padx=5, pady=10)
+	self.registerFrame.pack_forget()
+	«EXPAND RegisterGroupBoxAddAsChildern FOR this.component»
+    «EXPAND ControlsProperties FOR this.component»
+    «EXPAND readMethodComponent FOR this.component»
+  def ReadAll(self):
+    «EXPAND readAllMethodComponent FOR this.component»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE readAllMethodComponent FOR Component»
+	«EXPAND readAllMethodRegMem FOREACH this.regMemSet»
+«ENDDEFINE»
+
+«DEFINE readAllMethodRegMem FOR RegMemSet»
+	«EXPAND readAllMethodRegister FOREACH this.regMemElement»
+«ENDDEFINE»
+
+«DEFINE readAllMethodRegister FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE readAllMethodRegister FOR Register»
+	«EXPAND readAllMethodBitfield FOREACH this.bitFieldElement»
+«ENDDEFINE»
+
+«DEFINE readAllMethodBitfield FOR BitFieldElement»
+«ENDDEFINE»
+
+«DEFINE readAllMethodBitfield FOR BitField»
+	self.«this.name»Read()
+«ENDDEFINE»
+
+«DEFINE readMethodComponent FOR Component»
+	«EXPAND readMethodRegMem FOREACH this.regMemSet»
+«ENDDEFINE»
+
+«DEFINE readMethodRegMem FOR RegMemSet»
+	«EXPAND readMethodRegister FOREACH this.regMemElement»
+«ENDDEFINE»
+
+«DEFINE readMethodRegister FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE readMethodRegister FOR Register»
+	«EXPAND readMethodBitfield FOREACH this.bitFieldElement»
+«ENDDEFINE»
+
+«DEFINE readMethodBitfield FOR BitFieldElement»
+«ENDDEFINE»
+
+«DEFINE readMethodBitfield FOR BitField»
+«IF this.accessExternal.accessType.toString() == 'readwrite'»
+   «IF this.width == "1"»
+def «this.name»Read(self):
+	nobytes = self.«this.name»nobytes
+	if self.send_read_command(self.«this.name»regAddress, nobytes, True)==0:
+    	self.«this.name»CheckButton.deselect()
+	else:
+    	self.«this.name»CheckButton.select()
+	«ELSE»
+def «this.name»Read(self):
+	nobytes = self.«this.name»nobytes
+	self.«this.name»Spinbox.delete(0, END)
+	self.«this.name»Spinbox.insert(END, self.send_read_command(self.«this.name»regAddress, nobytes, True))
+	«ENDIF»
+«ENDIF»
+
+«IF this.accessExternal.accessType.toString() == 'read'»
+def «this.name»Read(self):
+	nobytes = self.«this.name»nobytes
+    self.«this.name»Entry.delete(0, END)
+    self.«this.name»Entry.insert(END, self.send_read_command(self.«this.name»regAddress, nobytes, True))
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE ControlsProperties FOR Component»
+	«EXPAND RegMemControlsProperties FOREACH this.regMemSet»
+«ENDDEFINE»
+
+«DEFINE RegMemControlsProperties FOR RegMemSet»
+	«EXPAND RegisterControlsProperties FOREACH this.regMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterControlsProperties FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterControlsProperties FOR Register»
+	«IF this.name != "ld5_ctrl" && this.name != "ld6_ctrl" && this.name != "ld7_ctrl"»
+	parent = «this.name»Frame
+	«this.name»RegLabel = Label(parent, text = "«this.name»")
+	«this.name»RegLabel.pack(side = TOP)
+	«ENDIF»
+	«FOREACH this.bitFieldElement AS bit»
+	self.«bit.name»nobytes = int(ceil(«this.dataWidth»/8))
+	self.«bit.name»regAddress = «this.offset»
+	«ENDFOREACH»
+	«EXPAND BitFieldControlsAsChildren FOREACH this.bitFieldElement»
+«ENDDEFINE»
+
+«DEFINE BitFieldControlsAsChildren FOR BitFieldElement»
+«ENDDEFINE»
+
+«DEFINE BitFieldControlsAsChildren FOR BitField»
+«IF this.accessExternal.accessType.toString() == 'readwrite'»
+   «IF this.width == "1"»
+	def «this.name»CheckEventHandler():
+		nobytes = 1
+		valueAsByteArray = []
+		value = int(self.«this.name»is_checked.get())
+		for i in range(nobytes):
+			valueAsByteArray.append(value % 256)
+			value = int(value / 256)
+		self.send_write_command(self.«this.name»regAddress, valueAsByteArray)
+	self.«this.name»is_checked = IntVar()
+	«IF this.name == "ld5_ctrl" || this.name == "ld6_ctrl" || this.name == "ld7_ctrl"»
+	self.«this.name»CheckButton = Checkbutton(ld4_ctrlFrame, text = "«this.name»", width = 20, command=«this.name»CheckEventHandler, variable=self.«this.name»is_checked)
+	«ELSE»
+	self.«this.name»CheckButton = Checkbutton(parent, text = "«this.name»", width = 20, command=«this.name»CheckEventHandler, variable=self.«this.name»is_checked)
+	«ENDIF»
+	self.«this.name»CheckButton.pack(side = TOP)
+	«ELSE»
+	«this.name»BitFieldFrame = Frame(parent)
+	«this.name»BitFieldFrame.pack(side = TOP)
+	def «this.name»SpinboxEventHandler(event=None):
+		nobytes = self.«this.name»nobytes
+		valueAsByteArray = []
+		value = int(self.«this.name»Spinbox.get())
+		for i in range(nobytes):
+			valueAsByteArray.append(value % 256)
+			value = int(value / 256)
+		self.send_write_command(self.«this.name»regAddress,valueAsByteArray)
+	«this.name»Label = Label(«this.name»BitFieldFrame, text = "«this.name»", width = 15)
+	«this.name»Label.pack(padx=5, pady=10, side=LEFT)
+	self.«this.name»Spinbox = Spinbox(«this.name»BitFieldFrame, width = 8, from_=0, to=pow(2, «this.width»)-1, command = «this.name»SpinboxEventHandler)
+	self.«this.name»Spinbox.pack(padx=5, pady=10, side=LEFT)
+	self.«this.name»Spinbox.bind('<Return>', «this.name»SpinboxEventHandler)
+     «ENDIF»
+«ENDIF»
+
+«IF this.accessExternal.accessType.toString() == 'read'»
+	def «this.name»EntryClick(event):
+		self.«this.name»Read();
+	«this.name»BitFieldFrame = Frame(parent)
+	«this.name»BitFieldFrame.pack(side = TOP)
+	«this.name»Label = Label(«this.name»BitFieldFrame, text = "«this.name»", width = 15)
+	«this.name»Label.pack(side = LEFT)
+	self.«this.name»Entry = Entry(«this.name»BitFieldFrame, width = 10)
+	self.«this.name»Entry.insert(END, "---")
+	self.«this.name»Entry.pack(side = LEFT)
+	self.«this.name»Entry.bind('<Button-1>', «this.name»EntryClick)
+«ENDIF»
+
+«ENDDEFINE»
+
+
+«DEFINE RegisterGroupBoxAddAsChildern FOR Component»
+	«EXPAND RegMemGroupBoxAddAsChildern FOREACH this.regMemSet»
+«ENDDEFINE»
+
+«DEFINE RegMemGroupBoxAddAsChildern FOR RegMemSet»
+	«EXPAND RegisterGroupBoxAddAsChildern FOREACH this.regMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterGroupBoxAddAsChildern FOR RegMemElement»
+«ENDDEFINE»
+
+«DEFINE RegisterGroupBoxAddAsChildern FOR Register»
+	«IF this.name != "ld5_ctrl" && this.name != "ld6_ctrl" && this.name != "ld7_ctrl"»
+	«this.name»Frame = Frame(self.registerFrame, bd=1, relief=RIDGE, width = 200)
+	«this.name»Frame.grid(row=i/4, column=i%4)
+	i = i + 1
+	«ENDIF»
+«ENDDEFINE»
