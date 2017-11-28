@@ -73,6 +73,12 @@ public class Main {
 		JPanel registerParentPanel = parentPanel;
 		parentPanel = register;
 
+		JLabel label = new JLabel();
+
+		label.setText("label");
+
+		parentPanel.add(label);
+
 		JComboBox registerName = new JComboBox();
 
 		for (String item : registerData.keySet()) {
@@ -80,6 +86,10 @@ public class Main {
 		}
 
 		parentPanel.add(registerName);
+
+		JComboBox combobox = new JComboBox();
+
+		parentPanel.add(combobox);
 
 		parentPanel = registerParentPanel;
 

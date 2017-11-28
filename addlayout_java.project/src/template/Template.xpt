@@ -1,6 +1,4 @@
 «IMPORT model»
-
-«EXTENSION template::GeneratorExtensions»
     	
 «DEFINE documentRoot FOR DocumentRoot»
 «FILE "Main.java"»
@@ -241,6 +239,8 @@ class data {
 		}
 	«ELSEIF this.name == "bitField2Name"»
 		bitField2Name.setText(registerData.get(registerName.getSelectedItem()).getBitField().get(0).getName());
+	«ELSE»
+		«this.name».setText("«this.name»");
 	«ENDIF»
 	parentPanel.add(«this.name»);
 «ENDDEFINE»

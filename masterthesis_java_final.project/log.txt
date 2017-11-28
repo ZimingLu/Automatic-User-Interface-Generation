@@ -334,4 +334,542 @@ $Write successful$i2c_write p=2; c=4; a=32; r=8; b=1 ; s=0
 
 $Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
 
+$Write successful$i2c_read p=2; c=4; a=32; r=0; l=2; s=0
+
+$255;15$i2c_read p=2; c=4; a=32; r=2; l=2; s=0
+
+$64;0$i2c_read p=2; c=4; a=32; r=4; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=12; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=14; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=16; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=18; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=19; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=20; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=21; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=22; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=24; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=26; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=28; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=29; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=30; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=32; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=33; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=34; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=36; l=2; s=0
+
+$255;255$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=100 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=64 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=64 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=4; b=0 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=4; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=4; b=0 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=0 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=7; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=8; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=8; b=0 ; s=0
+
+Write successful$i2c_write p=2; c=4; a=32; r=7; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=0 ; s=0
+
+$Write successful$i2c_read p=2; c=4; a=32; r=0; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=2; l=2; s=0
+
+;0$i2c_read p=2; c=4; a=32; r=4; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=12; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=14; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=16; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=18; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=19; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=20; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=21; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=22; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=24; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=26; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=28; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=29; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=30; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=32; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=33; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=34; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=36; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=0; l=2; s=0
+
+$255;15$i2c_read p=2; c=4; a=32; r=2; l=2; s=0
+
+$64;0$i2c_read p=2; c=4; a=32; r=4; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=12; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=14; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=16; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=18; l=1; s=0
+
+$6$i2c_read p=2; c=4; a=32; r=19; l=1; s=0
+
+$100$i2c_read p=2; c=4; a=32; r=20; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=21; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=22; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=24; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=26; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=28; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=29; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=30; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=32; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=33; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=34; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=36; l=2; s=0
+
+255;255$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+Write successful$i2c_write p=2; c=4; a=32; r=6; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+Write successful$i2c_write p=2; c=4; a=32; r=6; b=0 ; s=0
+
+Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=0 ; s=0
+
+$Write successful$i2c_read p=2; c=4; a=32; r=0; l=2; s=0
+
+$255;15$i2c_read p=2; c=4; a=32; r=2; l=2; s=0
+
+$64;0$i2c_read p=2; c=4; a=32; r=4; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=12; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=14; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=16; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=18; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=19; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=20; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=21; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=22; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=24; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=26; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=28; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=29; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=30; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=32; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=33; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=34; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=36; l=2; s=0
+
+$255;255$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=100 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=64 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=4; b=0 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=4; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=100 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=7; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=8; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=7; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=8; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=8; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=7; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+$I2C write failed!$i2c_write p=2; c=4; a=32; r=6; b=0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=0 ; s=0
+
+$Write successful$i2c_read p=2; c=4; a=32; r=0; l=2; s=0
+
+0;0$i2c_read p=2; c=4; a=32; r=2; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=4; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=12; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=14; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=16; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=18; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=19; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=20; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=21; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=22; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=24; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=26; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=28; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=29; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=30; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=32; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=33; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=34; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=36; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=0; l=2; s=0
+
+$255;15$i2c_read p=2; c=4; a=32; r=2; l=2; s=0
+
+$64;0$i2c_read p=2; c=4; a=32; r=4; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=6; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=7; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=8; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=9; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=10; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=11; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=12; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=14; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=16; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=18; l=1; s=0
+
+$6$i2c_read p=2; c=4; a=32; r=19; l=1; s=0
+
+$100$i2c_read p=2; c=4; a=32; r=20; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=21; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=22; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=24; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=26; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=28; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=29; l=1; s=0
+
+$0$i2c_read p=2; c=4; a=32; r=30; l=2; s=0
+
+$0;0$i2c_read p=2; c=4; a=32; r=32; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=33; l=1; s=0
+
+$255$i2c_read p=2; c=4; a=32; r=34; l=2; s=0
+
+$255;255$i2c_read p=2; c=4; a=32; r=36; l=2; s=0
+
+$255;255$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=255 15 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=100 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=0; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=64 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=2; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=4; b=0 0 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=4; b=232 3 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=6; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=7; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=8; b=1 ; s=0
+
+$Write successful$i2c_write p=2; c=4; a=32; r=9; b=1 ; s=0
+
 $Write successful

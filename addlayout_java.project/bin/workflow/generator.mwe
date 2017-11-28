@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <workflow>
-	<property name="model" value="addlayout_cshape.project/src/ifx_pmm_pas_reg_100.xmi" />
+	<property name="model" value="addlayout_java.project/src/ifx_pmm_pas_reg_100.xmi" />
 	<property name="src-gen" value="src-gen" />
 
 	<!-- set up EMF for standalone execution -->

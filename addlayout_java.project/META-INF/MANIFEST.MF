@@ -26,11 +26,3 @@ Require-Bundle: org.eclipse.xtend.profiler;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: model,
- model.impl,
- model.util,
- modelextension,
- modelextension.impl,
- modelextension.util
-Import-Package: org.spiritconsortium.xml.schema.spirit.spirit,
- org.spiritconsortium.xml.schema.spirit.spirit.util
